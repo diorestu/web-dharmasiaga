@@ -1,0 +1,5 @@
+<section id="asset-overview" class="asset-overview section" aria-labelledby="asset-overview-title">
+  <div class="section-kicker">Ringkasan indikatif</div>
+  <div class="asset-overview-head"><div><h2 id="asset-overview-title">Gambaran koperasi<br><em>di Denpasar.</em></h2><p>Contoh format data untuk membantu calon anggota membaca skala koperasi. Angka di bawah adalah estimasi perencanaan, bukan laporan resmi.</p></div><span class="estimate-badge">Data indikatif · 2026</span></div>
+  <div class="asset-scroll"><table><thead><tr><th>Nama</th><th>Asset</th><th>Modal</th><th>Simpanan</th><th>Piutang / investasi bisnis</th><th>Akumulasi penyaluran / omzet</th><th>Jumlah anggota</th></tr></thead><tbody><tr><th>KSP Dharma Siaga</th><td>Rp 18,4 M</td><td>Rp 4,2 M</td><td>Rp 11,8 M</td><td>Rp 14,6 M</td><td>Rp 31,2 M</td><td>± 2.400</td></tr><tr><th>Unit layanan Denpasar</th><td>Rp 7,1 M</td><td>Rp 1,8 M</td><td>Rp 4,6 M</td><td>Rp 5,8 M</td><td>Rp 12,7 M</td><td>± 860</td></tr></tbody></table></div>
+</section>
