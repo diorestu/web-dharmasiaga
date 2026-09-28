@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\CmsController;
-use Illuminate\Support\Facades\Route;
 use App\Models\SiteContent;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $content = SiteContent::pluck('value', 'key')->all();
+
     return view('home', compact('content'));
 })->name('home');
 Route::get('/blog', fn () => view('blog.index', ['posts' => [
@@ -16,5 +18,10 @@ Route::get('/blog', fn () => view('blog.index', ['posts' => [
 Route::view('/tentang-kami', 'pages.about')->name('pages.about');
 Route::view('/laporan', 'pages.reports')->name('pages.reports');
 Route::view('/kantor-cabang', 'pages.branches')->name('pages.branches');
+Route::post('/hubungi-kami', function (Request $request) {
+    $request->validate(['name' => ['required', 'string', 'max:100'], 'phone' => ['required', 'string', 'max:30'], 'email' => ['nullable', 'email', 'max:120'], 'service' => ['required', 'string', 'max:60']]);
+
+    return back()->with('contact_status', 'Terima kasih. Tim KSP Dharma Siaga akan menindaklanjuti permintaan Anda.');
+})->name('contact.submit');
 Route::get('/admin', [CmsController::class, 'edit'])->name('admin.edit');
 Route::post('/admin', [CmsController::class, 'update'])->name('admin.update');
