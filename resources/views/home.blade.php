@@ -12,6 +12,7 @@
     <div class="hero-art"><div class="sun-disc"></div><div class="hero-note"><span class="note-label">Catatan anggota / 04</span><strong>Modal yang berputar, manfaat yang kembali.</strong><span>Transparan sejak setoran pertama.</span></div><div class="hero-stamp">RT<br><small>koperasi</small></div></div>
     <div class="carousel-controls"><button type="button" aria-label="Slide sebelumnya" data-slide-prev>←</button><span><b data-slide-current>01</b> / 03</span><button type="button" aria-label="Slide berikutnya" data-slide-next>→</button></div>
   </section>
+  @include('partials.service-highlights')
   @include('partials.asset-overview')
   @include('partials.cooperative-metrics')
   @include('partials.about-video')

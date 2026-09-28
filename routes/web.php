@@ -13,5 +13,8 @@ Route::get('/blog', fn () => view('blog.index', ['posts' => [
     ['title' => 'Mengapa simpanan anggota penting?', 'excerpt' => 'Cara simpanan membangun daya tawar dan layanan bersama.', 'date' => '04 Sep 2026'],
     ['title' => 'Catatan dari cabang kami', 'excerpt' => 'Cerita lapangan dari tim yang mendampingi anggota.', 'date' => '21 Agu 2026'],
 ]]))->name('blog.index');
+Route::view('/tentang-kami', 'pages.about')->name('pages.about');
+Route::view('/laporan', 'pages.reports')->name('pages.reports');
+Route::view('/kantor-cabang', 'pages.branches')->name('pages.branches');
 Route::get('/admin', [CmsController::class, 'edit'])->name('admin.edit');
 Route::post('/admin', [CmsController::class, 'update'])->name('admin.update');
