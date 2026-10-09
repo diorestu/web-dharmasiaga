@@ -1,2 +1,59 @@
-@extends('layouts.app')
-@section('content')<header class="site-header"><a class="brand" href="{{ route('home') }}"><span class="brand-mark">rt</span><span>ruang tumbuh<span class="brand-dot">.</span></span></a><nav aria-label="Navigasi utama"><a href="{{ route('home') }}#about">Tentang</a><a href="{{ route('home') }}#benefits">Manfaat</a><a href="{{ route('home') }}#branches">Cabang</a><a href="{{ route('blog.index') }}" aria-current="page">Catatan</a></nav><a class="button button-small" href="{{ route('home') }}#membership">Menjadi anggota</a></header><main id="main-content" class="blog-page"><div class="section-kicker">Catatan koperasi</div><h1>Yang kami pelajari<br><em>bersama anggota.</em></h1><div class="post-grid">@foreach($posts as $post)<article class="post-card"><span>{{ $post['date'] }}</span><h2>{{ $post['title'] }}</h2><p>{{ $post['excerpt'] }}</p><a class="text-link" href="#">Baca catatan <span aria-hidden="true">↘</span></a></article>@endforeach</div></main><footer class="site-footer"><div class="footer-bottom"><span>© 2026 Ruang Tumbuh Koperasi</span><a href="{{ route('home') }}">Kembali ke beranda</a></div></footer>@endsection
+@extends('layouts.finbank')
+@php($title = 'Catatan Koperasi — KSP Dharma Siaga')
+@section('content')
+<section class="breadcrumb-area">
+            <div class="breadcrumb-area-bg"
+                style="background-image: url({{ asset('assets/images/resources/dharma-about.png') }});"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="inner-content">
+                            <div class="title" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="500">
+                                <h2>Catatan koperasi</h2>
+                            </div>
+                            <div class="breadcrumb-menu" data-aos="fade-left" data-aos-easing="linear"
+                                data-aos-duration="500">
+                                <ul>
+                                    <li><a href="{{ route('home') }}">Beranda</a></li>
+                                    <li class="active">Catatan koperasi</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><section class="blog-page-one"><div class="container"><div class="row">@foreach($posts as $post)
+<div class="col-xl-4 col-lg-4">
+                        <div id="catatan-{{ $loop->iteration }}" class="single-blog-style1 wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <div class="img-holder">
+                                <div class="inner">
+                                    <img src="{{ asset($loop->index === 1 ? 'assets/images/slides/dharma-business.png' : 'assets/images/resources/dharma-about.png') }}" alt="Ilustrasi kegiatan anggota dan usaha lokal di Bali">
+                                    <div class="overlay-icon">
+                                        <a href="{{ $loop->index === 0 ? route('pages.reports') : ($loop->index === 1 ? route('home').'#service' : route('pages.branches')) }}">
+                                            <span class="icon-right-arrow"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="category-date-box">
+                                    <div class="category">
+                                        <span class="icon-play-button-1"></span>
+                                        <h5>Koperasi</h5>
+                                    </div>
+                                    <div class="date">
+                                        <h5>{{ $post['date'] }}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-holder">
+                                <h3 class="blog-title">
+                                    <a href="{{ $loop->index === 0 ? route('pages.reports') : ($loop->index === 1 ? route('home').'#service' : route('pages.branches')) }}">
+                                        {{ $post['title'] }}
+                                    </a>
+                                </h3>
+                                <div class="bottom"><div class="meta-box"><p>{{ $post['excerpt'] }}</p></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Single blog Style1-->
+@endforeach</div></div></section>
+@endsection

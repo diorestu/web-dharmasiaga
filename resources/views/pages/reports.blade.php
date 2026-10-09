@@ -1,5 +1,26 @@
-@extends('layouts.app')
+@extends('layouts.finbank')
+@php($title = 'Laporan koperasi — KSP Dharma Siaga')
 @section('content')
-<header class="site-header"><a class="brand" href="{{ route('home') }}"><span class="brand-mark">ds</span><span>KSP Dharma Siaga<span class="brand-dot">.</span></span></a><nav aria-label="Navigasi utama"><a href="{{ route('home') }}#assets">Ringkasan</a><a href="{{ route('pages.about') }}">Tentang kami</a><a href="{{ route('pages.branches') }}">Kantor cabang</a><a href="{{ route('blog.index') }}">Catatan</a></nav><a class="button button-small" href="{{ route('home') }}#membership">Menjadi anggota</a></header>
-<main id="main-content" class="inner-page report-page"><div class="section-kicker">Laporan dan transparansi</div><h1>Angka yang dapat<br><em>dibaca bersama.</em></h1><p class="page-lead">Halaman ini menjadi tempat untuk laporan bulanan, ringkasan aset, dan dokumen koperasi yang telah disetujui untuk publikasi.</p><div class="report-state"><strong>Belum ada laporan resmi yang dipublikasikan.</strong><span>Data indikatif pada homepage bukan pengganti laporan keuangan.</span><a class="button button-small" href="{{ route('home') }}#asset-overview">Lihat data indikatif</a></div></main><footer class="site-footer"><div class="footer-bottom"><span>© 2026 KSP Dharma Siaga</span><a href="{{ route('home') }}">Kembali ke beranda</a></div></footer>
+<section class="breadcrumb-area">
+            <div class="breadcrumb-area-bg"
+                style="background-image: url({{ asset('assets/images/resources/dharma-about.png') }});"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="inner-content">
+                            <div class="title" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="500">
+                                <h2>Laporan koperasi</h2>
+                            </div>
+                            <div class="breadcrumb-menu" data-aos="fade-left" data-aos-easing="linear"
+                                data-aos-duration="500">
+                                <ul>
+                                    <li><a href="{{ route('home') }}">Beranda</a></li>
+                                    <li class="active">Laporan koperasi</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><section class="features-style1-area"><div class="container"><div class="sec-title text-center"><h2>Laporan koperasi</h2><div class="sub-title"><p>Ringkasan dan dokumen koperasi yang telah disetujui untuk publikasi.</p></div></div><div class="faq-style1-bottom-box text-center"><p>Belum ada laporan resmi yang dipublikasikan. Data indikatif bukan pengganti laporan keuangan.</p><div class="btns-box"><a class="btn-one" href="{{ route('home') }}#assets"><span class="txt">Lihat ringkasan indikatif</span></a></div></div></div></section>
 @endsection

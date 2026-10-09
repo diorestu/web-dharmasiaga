@@ -1,5 +1,26 @@
-@extends('layouts.app')
+@extends('layouts.finbank')
+@php($title = 'Kantor layanan — KSP Dharma Siaga')
 @section('content')
-<header class="site-header"><a class="brand" href="{{ route('home') }}"><span class="brand-mark">ds</span><span>KSP Dharma Siaga<span class="brand-dot">.</span></span></a><nav aria-label="Navigasi utama"><a href="{{ route('home') }}#assets">Ringkasan</a><a href="{{ route('pages.about') }}">Tentang kami</a><a href="{{ route('pages.branches') }}" aria-current="page">Kantor cabang</a><a href="{{ route('blog.index') }}">Catatan</a></nav><a class="button button-small" href="{{ route('home') }}#membership">Menjadi anggota</a></header>
-<main id="main-content" class="inner-page"><div class="section-kicker">Jaringan layanan</div><h1>Temui kami<br><em>di Denpasar.</em></h1><p class="page-lead">Daftar kantor akan diperbarui setelah alamat dan jam layanan resmi dikonfirmasi.</p><div class="branch-empty"><strong>Data kantor cabang sedang disiapkan.</strong><span>Hubungi tim KSP Dharma Siaga untuk mendapatkan titik layanan terbaru.</span><a class="button button-small" href="https://wa.me/6281234567890?text=Halo%20KSP%20Dharma%20Siaga%2C%20mohon%20info%20kantor%20layanan." target="_blank" rel="noreferrer">Tanya titik layanan</a></div></main><footer class="site-footer"><div class="footer-bottom"><span>© 2026 KSP Dharma Siaga</span><a href="{{ route('home') }}">Kembali ke beranda</a></div></footer>
+<section class="breadcrumb-area">
+            <div class="breadcrumb-area-bg"
+                style="background-image: url({{ asset('assets/images/resources/dharma-about.png') }});"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="inner-content">
+                            <div class="title" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="500">
+                                <h2>Kantor layanan</h2>
+                            </div>
+                            <div class="breadcrumb-menu" data-aos="fade-left" data-aos-easing="linear"
+                                data-aos-duration="500">
+                                <ul>
+                                    <li><a href="{{ route('home') }}">Beranda</a></li>
+                                    <li class="active">Kantor layanan</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><section class="features-style1-area"><div class="container"><div class="sec-title text-center"><h2>Kantor layanan</h2><div class="sub-title"><p>Temui tim KSP Dharma Siaga di Denpasar, Bali.</p></div></div><div class="faq-style1-bottom-box text-center"><p>Alamat kantor dan jam layanan resmi sedang disiapkan. Hubungi tim untuk informasi terbaru.</p><div class="btns-box"><a class="btn-one" href="{{ route('home') }}#contact"><span class="txt">Tanya titik layanan</span></a></div></div></div></section>
 @endsection

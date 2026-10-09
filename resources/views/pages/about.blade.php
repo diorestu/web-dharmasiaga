@@ -1,5 +1,85 @@
-@extends('layouts.app')
+@extends('layouts.finbank')
+@php($title = 'Tentang Kami — KSP Dharma Siaga')
 @section('content')
-<header class="site-header"><a class="brand" href="{{ route('home') }}"><span class="brand-mark">ds</span><span>KSP Dharma Siaga<span class="brand-dot">.</span></span></a><nav aria-label="Navigasi utama"><a href="{{ route('home') }}#assets">Laporan</a><a href="{{ route('pages.about') }}" aria-current="page">Tentang kami</a><a href="{{ route('pages.branches') }}">Kantor cabang</a><a href="{{ route('blog.index') }}">Catatan</a></nav><a class="button button-small" href="{{ route('home') }}#membership">Menjadi anggota</a></header>
-<main id="main-content" class="inner-page"><div class="section-kicker">Tentang KSP Dharma Siaga</div><h1>Koperasi yang hadir<br><em>di tengah anggota.</em></h1><div class="inner-grid"><div><h2>Sejarah dan arah</h2><p>KSP Dharma Siaga dibangun untuk menjadi ruang layanan keuangan yang mudah dijangkau oleh anggota dan pelaku usaha lokal di Denpasar.</p><p>Konten sejarah, badan hukum, nilai koperasi, dan struktur organisasi akan dikelola melalui CMS setelah data resmi tersedia.</p></div><div class="inner-aside"><span>Prinsip kerja</span><strong>Terbuka<br>bertanggung jawab<br>berbasis anggota.</strong></div></div></main><footer class="site-footer"><div class="footer-bottom"><span>© 2026 KSP Dharma Siaga</span><a href="{{ route('home') }}">Kembali ke beranda</a></div></footer>
+<section class="breadcrumb-area">
+            <div class="breadcrumb-area-bg"
+                style="background-image: url({{ asset('assets/images/resources/dharma-about.png') }});"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="inner-content">
+                            <div class="title" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="500">
+                                <h2>Tentang kami</h2>
+                            </div>
+                            <div class="breadcrumb-menu" data-aos="fade-left" data-aos-easing="linear"
+                                data-aos-duration="500">
+                                <ul>
+                                    <li><a href="{{ route('home') }}">Beranda</a></li>
+                                    <li class="active">Tentang kami</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+@include('partials.template-about')
+<section id="principles" class="choose-style1-area">
+            <div class="container">
+                <ul class="row choose-style1__content">
+
+                    <!--Start Single Choose Style1-->
+                    <li class="col-xl-4 col-lg-4 single-choose-style1-colum text-center">
+                        <div class="single-choose-style1">
+                            <div class="icon">
+                                <div class="icon-inner">
+                                    <span class="icon-crowd"></span>
+                                </div>
+                                <div class="counting">01</div>
+                            </div>
+                            <div class="text">
+                                <h3>Berbasis anggota</h3>
+                                <p>Simpanan dan partisipasi anggota menjadi bagian dari pertumbuhan bersama.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <!--End Single Choose Style1-->
+
+                    <!--Start Single Choose Style1-->
+                    <li class="col-xl-4 col-lg-4 single-choose-style1-colum text-center">
+                        <div class="single-choose-style1">
+                            <div class="icon">
+                                <div class="icon-inner">
+                                    <span class="icon-commitment"></span>
+                                </div>
+                                <div class="counting">02</div>
+                            </div>
+                            <div class="text">
+                                <h3>Bertanggung jawab</h3>
+                                <p>Keputusan layanan mempertimbangkan kebutuhan dan kemampuan anggota.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <!--End Single Choose Style1-->
+
+                    <!--Start Single Choose Style1-->
+                    <li class="col-xl-4 col-lg-4 single-choose-style1-colum text-center">
+                        <div class="single-choose-style1">
+                            <div class="icon">
+                                <div class="icon-inner">
+                                    <span class="icon-consistency"></span>
+                                </div>
+                                <div class="counting">03</div>
+                            </div>
+                            <div class="text">
+                                <h3>Terbuka</h3>
+                                <p>Informasi layanan dan ketentuan dijelaskan agar mudah dipahami.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <!--End Single Choose Style1-->
+
+                </ul>
+            </div>
+        </section>
 @endsection
