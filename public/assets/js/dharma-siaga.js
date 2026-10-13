@@ -5,6 +5,57 @@ import { getLoanPolicy, calculateLoanSimulation } from './loan-simulation.js';
 
   const currency = new Intl.NumberFormat('id-ID', {style: 'currency', currency: 'IDR', maximumFractionDigits: 0});
   const integer = new Intl.NumberFormat('id-ID', {maximumFractionDigits: 0});
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  function configureMotion() {
+    $.easing.dharmaEaseOut = progress => 1 - Math.pow(1 - progress, 3);
+    $.fx.off = reducedMotion.matches;
+    $('.accordion-box .acc-btn').each(function () {
+      $(this).attr({role: 'button', 'aria-expanded': String(this.classList.contains('active'))});
+    });
+    reducedMotion.addEventListener('change', event => {
+      $.fx.off = event.matches;
+      $('.acc-content, .tabs-content-box').stop(true, true);
+    });
+
+    $('.accordion-box').off('click', '.acc-btn').on('click', '.acc-btn', function () {
+      const box = $(this).closest('.accordion-box');
+      const item = $(this).closest('.accordion');
+      if (item.hasClass('active-block')) {
+        return;
+      }
+      const duration = reducedMotion.matches || document.documentElement.classList.contains('motion-keyboard') ? 0 : 220;
+      box.find('.acc-content').stop(true, false).slideUp({duration, easing: 'dharmaEaseOut'});
+      box.children('.accordion').removeClass('active-block');
+      box.find('.acc-btn').removeClass('active').attr('aria-expanded', 'false');
+      item.addClass('active-block');
+      $(this).addClass('active').attr('aria-expanded', 'true');
+      item.children('.acc-content').stop(true, false).slideDown({duration, easing: 'dharmaEaseOut'});
+    });
+
+    document.querySelectorAll('.service-style1-tab, .emi-calculator-tab').forEach(wrapper => {
+      const content = wrapper.querySelector('.tabs-content-box');
+      let frame;
+      wrapper.addEventListener('click', event => {
+        const button = event.target.closest('.tab-btn-item');
+        if (!button || button.classList.contains('active-btn-item')) {
+          return;
+        }
+        window.cancelAnimationFrame(frame);
+        const box = $(content).stop(true, false);
+        const startHeight = content.getBoundingClientRect().height;
+        box.css({height: startHeight, overflow: 'hidden'});
+        frame = window.requestAnimationFrame(() => {
+          const panel = content.querySelector('.tab-content-box-item-active');
+          const duration = reducedMotion.matches || !event.isTrusted ? 0 : 220;
+          box.animate({height: panel.getBoundingClientRect().height}, {duration, easing: 'dharmaEaseOut', complete: () => {
+            content.style.height = '';
+            content.style.overflow = '';
+          }});
+        });
+      }, true);
+    });
+  }
 
   function openLinkedSavingsProduct() {
     const product = document.getElementById(window.location.hash.slice(1));
@@ -17,8 +68,8 @@ import { getLoanPolicy, calculateLoanSimulation } from './loan-simulation.js';
     }
     window.setTimeout(() => {
       const headerHeight = document.querySelector('.stricky-header')?.offsetHeight ?? 0;
-      window.scrollTo({top: product.getBoundingClientRect().top + window.scrollY - headerHeight - 20, behavior: 'smooth'});
-    }, 350);
+      window.scrollTo({top: product.getBoundingClientRect().top + window.scrollY - headerHeight - 20, behavior: reducedMotion.matches ? 'auto' : 'smooth'});
+    }, reducedMotion.matches ? 0 : 260);
   }
 
   function configureCalculator(panel) {
@@ -152,12 +203,8 @@ import { getLoanPolicy, calculateLoanSimulation } from './loan-simulation.js';
 
   $(function () {
     document.querySelectorAll('[data-calculator]').forEach(configureCalculator);
+    configureMotion();
     window.addEventListener('hashchange', openLinkedSavingsProduct);
-    $('.accordion-box').on('click', '.acc-btn', function () {
-      this.closest('.accordion-box').querySelectorAll('.acc-btn').forEach(button => {
-        button.setAttribute('aria-expanded', String(button.classList.contains('active')));
-      });
-    });
 
     $('[data-service-select]').on('change', function () {
       window.location.href = `${document.querySelector('.logo-box-style1 a').href}#${this.value}`;
@@ -190,7 +237,10 @@ import { getLoanPolicy, calculateLoanSimulation } from './loan-simulation.js';
     $('.tab-btn-item, .acc-btn').attr('tabindex', '0').on('keydown', function (event) {
       if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault();
+        document.documentElement.classList.add('motion-keyboard');
         $(this).trigger('click');
+        this.getBoundingClientRect();
+        window.setTimeout(() => document.documentElement.classList.remove('motion-keyboard'), 0);
       }
     });
     const status = document.querySelector('#member-contact-form [role="status"], #member-contact-form [role="alert"]');

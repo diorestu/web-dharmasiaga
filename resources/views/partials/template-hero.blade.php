@@ -21,7 +21,7 @@
 
                     <!--Start Single Swiper Slide-->
                     <div class="swiper-slide">
-                        <div class="image-layer" style="background-image: url({{ asset('assets/images/slides/dharma-hero.png') }});">
+                        <div class="image-layer" style="background-image: url({{ asset('assets/images/resources/dharma-loan-service.jpeg') }}); background-position: center 25%;">
                         </div>
                         <div class="main-slider-style1__shape1"
                             style="background-image: url({{ asset('assets/images/shapes/slider-1-shape-1.png') }});">
@@ -56,7 +56,7 @@
 
                     <!--Start Single Swiper Slide-->
                     <div class="swiper-slide">
-                        <div class="image-layer" style="background-image: url({{ asset('assets/images/slides/dharma-business.png') }});">
+                        <div class="image-layer" style="background-image: url({{ asset('assets/images/resources/dharma-teller-service.jpeg') }}); background-position: center 25%;">
                         </div>
                         <div class="main-slider-style1__shape1"
                             style="background-image: url({{ asset('assets/images/shapes/slider-1-shape-1.png') }});">

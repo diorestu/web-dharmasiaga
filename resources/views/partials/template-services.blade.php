@@ -1,5 +1,5 @@
 <section id="service" class="service-style1-area">
-            <div class="service-style1-bg" style="background-image: url({{ asset('assets/images/slides/dharma-business.png') }});">
+            <div class="service-style1-bg" style="background-image: url({{ asset('assets/images/resources/dharma-loan-service.jpeg') }});">
             </div>
             <div class="container">
 

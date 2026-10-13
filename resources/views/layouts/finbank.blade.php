@@ -52,6 +52,7 @@
     <!-- Template styles -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/dharma-motion.css') }}?v={{ filemtime(public_path('assets/css/dharma-motion.css')) }}" />
 
 </head>
 <body>
