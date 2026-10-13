@@ -17,7 +17,7 @@
                                     <h3>Keanggotaan</h3>
                                 </div>
                                 <div class="footer-widget-links">
-                                    <ul><li><a href="{{ route('home') }}#contact">Cara bergabung</a></li><li><a href="{{ route('home') }}#service">Simpanan anggota</a></li><li><a href="{{ route('home') }}#service">Pinjaman anggota</a></li><li><a href="{{ route('home') }}#benefits">Manfaat keanggotaan</a></li></ul>
+                                    <ul><li><a href="{{ route('home') }}#contact">Cara bergabung</a></li><li><a href="{{ route('pages.savings') }}#simpanan-anggota">Simpanan anggota</a></li><li><a href="{{ route('home') }}#service">Pinjaman anggota</a></li><li><a href="{{ route('home') }}#benefits">Manfaat keanggotaan</a></li></ul>
                                 </div>
                             </div>
                         </div>
@@ -50,7 +50,7 @@
                                     <h3>Tentang kami</h3>
                                 </div>
                                 <div class="footer-widget-links">
-                                    <ul><li><a href="{{ route('pages.about') }}">Profil koperasi</a></li><li><a href="{{ route('pages.about') }}#principles">Prinsip koperasi</a></li><li><a href="{{ route('pages.branches') }}">Kantor layanan</a></li><li><a href="{{ route('blog.index') }}">Catatan koperasi</a></li></ul>
+                                    <ul><li><a href="{{ route('pages.history') }}">Sejarah Kami</a></li><li><a href="{{ route('pages.about') }}">Profil Koperasi</a></li><li><a href="{{ route('pages.about') }}#principles">Prinsip koperasi</a></li><li><a href="{{ route('pages.branches') }}">Kantor layanan</a></li><li><a href="{{ route('blog.index') }}">Catatan koperasi</a></li></ul>
                                 </div>
                             </div>
                         </div>
@@ -63,7 +63,7 @@
                                     <h3>Layanan</h3>
                                 </div>
                                 <div class="footer-widget-links">
-                                    <ul><li><a href="{{ route('home') }}#contact">Konsultasi simpanan</a></li><li><a href="{{ route('home') }}#contact">Konsultasi pinjaman</a></li><li><a href="{{ route('home') }}#contact">Informasi anggota</a></li><li><a href="{{ route('home') }}#faq">Pertanyaan umum</a></li></ul>
+                                    <ul><li><a href="{{ route('pages.savings') }}">Pilihan Simpanan</a></li><li><a href="{{ route('home') }}#contact">Konsultasi pinjaman</a></li><li><a href="{{ route('home') }}#contact">Informasi anggota</a></li><li><a href="{{ route('home') }}#faq">Pertanyaan umum</a></li></ul>
                                 </div>
                             </div>
                         </div>
@@ -105,13 +105,13 @@
                                     <ul>
                                         <li>
                                             <h3>
-                                                <a href="{{ route('home') }}#contact">Hubungi layanan</a>
+                                                <a href="tel:03618466651">0361 8466651–52</a>
                                             </h3>
                                             <p>Konsultasi anggota</p>
                                         </li>
                                         <li>
-                                            <h3>Denpasar, Bali</h3>
-                                            <p>Konfirmasi jam layanan melalui tim kami</p>
+                                            <h3>Lokasi Kantor</h3>
+                                            <p>{{ config('cooperative.office.address') }}</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -153,7 +153,7 @@
                         <div class="footer-menu">
                             <ul>
                                 <li><a href="{{ route('home') }}#contact">Informasi resmi</a></li>
-                                <li><a href="{{ route('pages.about') }}">Profil koperasi</a></li>
+                                <li><a href="{{ route('pages.history') }}">Sejarah Kami</a></li><li><a href="{{ route('pages.about') }}">Profil Koperasi</a></li>
                                 <li><a href="{{ route('home') }}#contact">Ketentuan layanan</a></li>
                                 <li><a href="{{ route('home') }}#faq">Pertanyaan anggota</a></li>
                             </ul>

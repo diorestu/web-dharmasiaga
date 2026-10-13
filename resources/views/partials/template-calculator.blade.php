@@ -3,7 +3,7 @@
                 <div class="sec-title text-center">
                     <h2>Rencanakan keuangan Anda</h2>
                     <div class="sub-title">
-                        <p>Estimasi flat sederhana untuk perencanaan, bukan penawaran resmi.</p>
+                        <p>Simulasi pinjaman anuitas dan perencanaan simpanan, bukan penawaran resmi.</p>
                     </div>
                 </div>
                 <div class="row">
@@ -48,63 +48,7 @@
                                     <div class="tab-content-box-item tab-content-box-item-active" id="home-loan" data-calculator="loan">
                                         <div class="emi-calculator-tab-content-box-item">
 
-                                            <div class="range-box">
-                                                <div class="row">
-                                                    <div class="col-lg-12 column">
-                                                        <div class="price-range-box">
-                                                            <div class="inner">
-                                                                <h4>Jumlah pinjaman</h4>
-                                                                <div class="price-range-slider"></div>
-                                                                <div class="range-input">
-                                                                    <div class="input">
-                                                                        <input type="text" class="property-amount"
-                                                                            name="field-name" readonly="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="right-box">
-                                                                <h5>Rp 100 juta</h5>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-lg-12 column">
-                                                        <div class="loan-term-range-box">
-                                                            <div class="inner">
-                                                                <h4>Tenor <span>(bulan)</span></h4>
-                                                                <div class="loan-term-range-slider"></div>
-                                                                <div class="range-input">
-                                                                    <div class="input">
-                                                                        <input type="text" class="loan-term-range"
-                                                                            name="field-name" readonly="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="right-box">
-                                                                <h5>60 bulan</h5>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-lg-12 column">
-                                                        <div class="interest-rate-range-box">
-                                                            <div class="inner">
-                                                                <h4>Estimasi jasa per tahun (%)</h4>
-                                                                <div class="interest-rate-range-slider"></div>
-                                                                <div class="range-input">
-                                                                    <div class="input">
-                                                                        <input type="text" class="interest-rate-range"
-                                                                            name="field-name" readonly="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="right-box">
-                                                                <h5>30%</h5>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            @include('partials.template-calculator-fields', ['calculatorId' => 'home-loan', 'isSaving' => false])
 
                                             <div class="emi-calculator-output-box clearfix">
                                                 <div class="left-box">
@@ -114,7 +58,7 @@
                                                         </div>
                                                         <div class="inner-title">
                                                             <h3>Angsuran per bulan</h3>
-                                                            <h2>Rp 0</h2>
+                                                            <h2 class="fs-4 text-break">Rp 0</h2>
                                                         </div>
                                                     </div>
                                                     <div class="btns-box">
@@ -131,7 +75,7 @@
                                                                     <span class="icon-right-arrow"></span>
                                                                 </div>
                                                                 <div class="text">
-                                                                    <a href="{{ route('home') }}#contact">Estimasi jasa</a>
+                                                                    <a href="{{ route('home') }}#contact">Total bunga</a>
                                                                     <p>Rp 0</p>
                                                                 </div>
                                                             </div>
@@ -158,63 +102,7 @@
                                     <div class="tab-content-box-item" id="personal-loan" data-calculator="saving">
                                         <div class="emi-calculator-tab-content-box-item">
 
-                                            <div class="range-box">
-                                                <div class="row">
-                                                    <div class="col-lg-12 column">
-                                                        <div class="price-range-box">
-                                                            <div class="inner">
-                                                                <h4>Setoran per bulan</h4>
-                                                                <div class="price-range-slider"></div>
-                                                                <div class="range-input">
-                                                                    <div class="input">
-                                                                        <input type="text" class="property-amount"
-                                                                            name="field-name" readonly="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="right-box">
-                                                                <h5>Rp 5 juta</h5>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-lg-12 column">
-                                                        <div class="loan-term-range-box">
-                                                            <div class="inner">
-                                                                <h4>Durasi <span>(bulan)</span></h4>
-                                                                <div class="loan-term-range-slider"></div>
-                                                                <div class="range-input">
-                                                                    <div class="input">
-                                                                        <input type="text" class="loan-term-range"
-                                                                            name="field-name" readonly="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="right-box">
-                                                                <h5>120 bulan</h5>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-lg-12 column">
-                                                        <div class="interest-rate-range-box">
-                                                            <div class="inner">
-                                                                <h4>Estimasi hasil per tahun (%)</h4>
-                                                                <div class="interest-rate-range-slider"></div>
-                                                                <div class="range-input">
-                                                                    <div class="input">
-                                                                        <input type="text" class="interest-rate-range"
-                                                                            name="field-name" readonly="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="right-box">
-                                                                <h5>20%</h5>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            @include('partials.template-calculator-fields', ['calculatorId' => 'personal-loan', 'isSaving' => true])
 
                                             <div class="emi-calculator-output-box clearfix">
                                                 <div class="left-box">
@@ -224,7 +112,7 @@
                                                         </div>
                                                         <div class="inner-title">
                                                             <h3>Estimasi saldo akhir</h3>
-                                                            <h2>Rp 0</h2>
+                                                            <h2 class="fs-4 text-break">Rp 0</h2>
                                                         </div>
                                                     </div>
                                                     <div class="btns-box">
@@ -268,63 +156,7 @@
                                     <div class="tab-content-box-item" id="vehicle-loan" data-calculator="loan">
                                         <div class="emi-calculator-tab-content-box-item">
 
-                                            <div class="range-box">
-                                                <div class="row">
-                                                    <div class="col-lg-12 column">
-                                                        <div class="price-range-box">
-                                                            <div class="inner">
-                                                                <h4>Jumlah pinjaman</h4>
-                                                                <div class="price-range-slider"></div>
-                                                                <div class="range-input">
-                                                                    <div class="input">
-                                                                        <input type="text" class="property-amount"
-                                                                            name="field-name" readonly="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="right-box">
-                                                                <h5>Rp 100 juta</h5>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-lg-12 column">
-                                                        <div class="loan-term-range-box">
-                                                            <div class="inner">
-                                                                <h4>Tenor <span>(bulan)</span></h4>
-                                                                <div class="loan-term-range-slider"></div>
-                                                                <div class="range-input">
-                                                                    <div class="input">
-                                                                        <input type="text" class="loan-term-range"
-                                                                            name="field-name" readonly="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="right-box">
-                                                                <h5>60 bulan</h5>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-lg-12 column">
-                                                        <div class="interest-rate-range-box">
-                                                            <div class="inner">
-                                                                <h4>Estimasi jasa per tahun (%)</h4>
-                                                                <div class="interest-rate-range-slider"></div>
-                                                                <div class="range-input">
-                                                                    <div class="input">
-                                                                        <input type="text" class="interest-rate-range"
-                                                                            name="field-name" readonly="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="right-box">
-                                                                <h5>30%</h5>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            @include('partials.template-calculator-fields', ['calculatorId' => 'vehicle-loan', 'isSaving' => false])
 
                                             <div class="emi-calculator-output-box clearfix">
                                                 <div class="left-box">
@@ -334,7 +166,7 @@
                                                         </div>
                                                         <div class="inner-title">
                                                             <h3>Angsuran per bulan</h3>
-                                                            <h2>Rp 0</h2>
+                                                            <h2 class="fs-4 text-break">Rp 0</h2>
                                                         </div>
                                                     </div>
                                                     <div class="btns-box">
@@ -351,7 +183,7 @@
                                                                     <span class="icon-right-arrow"></span>
                                                                 </div>
                                                                 <div class="text">
-                                                                    <a href="{{ route('home') }}#contact">Estimasi jasa</a>
+                                                                    <a href="{{ route('home') }}#contact">Total bunga</a>
                                                                     <p>Rp 0</p>
                                                                 </div>
                                                             </div>

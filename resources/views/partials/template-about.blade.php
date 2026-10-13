@@ -24,7 +24,7 @@
                                 <h2>Dekat dengan anggota,<br> tumbuh bersama<br> masyarakat.</h2>
                             </div>
                             <div class="text">
-                                <p>KSP Dharma Siaga menjadi ruang layanan simpan pinjam bagi anggota dan pelaku usaha lokal di Denpasar. Kami membantu anggota memahami pilihan layanan sebelum mengambil keputusan.</p>
+                                <p>Berawal dari pra-koperasi pada 18 Oktober 2003, KSP Dharma Siaga tumbuh dari semangat kebersamaan untuk memperkuat perekonomian dan meningkatkan kesejahteraan anggota.</p>
 
                                 <p>Simpanan, pinjaman, dan partisipasi anggota menjadi bagian dari pertumbuhan koperasi yang bertanggung jawab. </p>
                             </div>
@@ -42,7 +42,7 @@
                                             </div>
                                         </div>
                                         <div class="title-box">
-                                            <h3><a href="{{ route('pages.about') }}">Bersama merencanakan masa depan</a></h3>
+                                            <h3><a href="{{ route('pages.history') }}">Sejarah Kami</a></h3>
                                         </div>
                                     </div>
                                 </div>
@@ -59,7 +59,7 @@
                                             </div>
                                         </div>
                                         <div class="title-box">
-                                            <h3><a href="{{ route('pages.about') }}">Layanan yang mudah dipahami</a></h3>
+                                            <h3><a href="{{ route('pages.about') }}">Profil Koperasi</a></h3>
                                         </div>
                                     </div>
                                 </div>

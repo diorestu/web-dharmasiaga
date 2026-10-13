@@ -122,6 +122,6 @@
 <script src="{{ asset('assets/vendors/language-switcher/jquery.polyglot.language.switcher.js') }}"></script>
 <script src="{{ asset('assets/vendors/aos/aos.js') }}"></script>
 <script src="{{ asset('assets/js/custom.js') }}"></script>
-<script src="{{ asset('assets/js/dharma-siaga.js') }}"></script>
+<script type="module" src="{{ asset('assets/js/dharma-siaga.js') }}?v={{ filemtime(public_path('assets/js/dharma-siaga.js')) }}"></script>
 </body>
 </html>

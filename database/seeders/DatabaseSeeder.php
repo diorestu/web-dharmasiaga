@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         foreach ([
             'hero_title_id' => 'Tumbuh bersama, dengan cara yang lebih adil.',
             'hero_title_en' => 'Grow together, in a fairer way.',
-            'whatsapp' => '6281234567890',
+            'whatsapp' => config('cooperative.office.whatsapp_number'),
             'meta_description' => 'Koperasi yang menghubungkan anggota, modal, dan kesempatan secara terbuka.',
         ] as $key => $value) {
             SiteContent::updateOrCreate(['key' => $key], ['value' => $value]);

@@ -1,49 +1,163 @@
+import { getLoanPolicy, calculateLoanSimulation } from './loan-simulation.js';
+
 (function ($) {
   'use strict';
 
   const currency = new Intl.NumberFormat('id-ID', {style: 'currency', currency: 'IDR', maximumFractionDigits: 0});
+  const integer = new Intl.NumberFormat('id-ID', {maximumFractionDigits: 0});
+
+  function openLinkedSavingsProduct() {
+    const product = document.getElementById(window.location.hash.slice(1));
+    if (!product?.matches('.accordion[data-product]')) {
+      return;
+    }
+    const button = product.querySelector('.acc-btn');
+    if (!button.classList.contains('active')) {
+      button.click();
+    }
+    window.setTimeout(() => {
+      const headerHeight = document.querySelector('.stricky-header')?.offsetHeight ?? 0;
+      window.scrollTo({top: product.getBoundingClientRect().top + window.scrollY - headerHeight - 20, behavior: 'smooth'});
+    }, 350);
+  }
 
   function configureCalculator(panel) {
     const isSaving = panel.dataset.calculator === 'saving';
-    const settings = [
-      {selector: '.price-range-slider', input: '.property-amount', min: isSaving ? 0 : 1000000, max: isSaving ? 5000000 : 100000000, step: isSaving ? 50000 : 500000, value: isSaving ? 500000 : 10000000, label: isSaving ? 'Setoran per bulan' : 'Jumlah pinjaman', format: currency.format},
-      {selector: '.loan-term-range-slider', input: '.loan-term-range', min: 1, max: isSaving ? 120 : 60, step: 1, value: 12, label: isSaving ? 'Durasi simpanan' : 'Tenor pinjaman', format: value => `${value} bulan`},
-      {selector: '.interest-rate-range-slider', input: '.interest-rate-range', min: 0, max: isSaving ? 20 : 30, step: 0.1, value: isSaving ? 3 : 12, label: 'Estimasi persentase per tahun', format: value => `${value}%`}
-    ];
-    const values = settings.map(setting => setting.value);
+    const amount = panel.querySelector('[data-calculator-amount]');
+    const months = panel.querySelector('[data-calculator-months]');
+    const customMonths = panel.querySelector('[data-calculator-custom-months]');
+    const customField = panel.querySelector('[data-custom-months-field]');
+    const rate = panel.querySelector('[data-calculator-rate]');
+    const amountHint = panel.querySelector('[data-amount-hint]');
     const result = panel.querySelector('.inner-title h2');
     const totals = panel.querySelectorAll('.right-box .text p');
+    let activePolicy = null;
+    result.setAttribute('aria-live', 'polite');
 
-    function calculate() {
-      const [principal, months, rate] = values;
-      const deposited = isSaving ? principal * months : principal;
-      const interest = deposited * rate / 100 * months / 12;
-      result.textContent = currency.format(isSaving ? deposited + interest : (principal + interest) / months);
-      result.setAttribute('aria-live', 'polite');
-      totals[0].textContent = currency.format(interest);
-      totals[1].textContent = currency.format(isSaving ? deposited : principal + interest);
+    function synchronizeLoanPolicy(principal) {
+      const policy = getLoanPolicy(principal);
+      if (!policy) {
+        return;
+      }
+      rate.value = policy.monthlyRatePercent.toLocaleString('id-ID');
+      if (activePolicy?.maximumMonths === policy.maximumMonths) {
+        activePolicy = policy;
+        return;
+      }
+      activePolicy = policy;
+      const previousChoice = months.value;
+      const choices = [12, 18, 24, 36, 48, 60].filter(value => value <= policy.maximumMonths);
+      months.replaceChildren(...choices.map(value => new Option(`${value} bulan`, String(value))), new Option('Lainnya — isi jumlah bulan', 'custom'));
+      months.value = previousChoice === 'custom' || choices.includes(Number(previousChoice)) ? previousChoice : String(policy.maximumMonths);
+      customMonths.min = String(policy.minimumMonths);
+      customMonths.max = String(policy.maximumMonths);
+      panel.querySelector('[data-months-error]').textContent = `Masukkan tenor antara ${policy.minimumMonths} dan ${policy.maximumMonths} bulan.`;
     }
 
-    settings.forEach((setting, index) => {
-      const slider = $(panel).find(setting.selector);
-      if (slider.hasClass('ui-slider')) {
-        slider.slider('destroy');
+    function maskLoanAmount() {
+      const raw = amount.value;
+      const caret = amount.selectionStart ?? raw.length;
+      const digitsBeforeCaret = raw.slice(0, caret).replace(/\D/g, '').length;
+      const digits = raw.replace(/\D/g, '');
+      if (!digits) {
+        amount.value = '';
+        return;
       }
-      const input = panel.querySelector(setting.input);
-      input.setAttribute('aria-label', setting.label);
-      const sync = value => {
-        values[index] = value;
-        input.value = setting.format(value);
-        slider.find('.ui-slider-handle').attr({'role': 'slider', 'aria-label': setting.label, 'aria-valuemin': setting.min, 'aria-valuemax': setting.max, 'aria-valuenow': value, 'aria-valuetext': setting.format(value)});
-        calculate();
-      };
-      slider.slider({range: 'min', min: setting.min, max: setting.max, step: setting.step, value: setting.value, slide: (_event, ui) => sync(ui.value), change: (_event, ui) => sync(ui.value)});
-      sync(setting.value);
+      const value = Math.min(Number(digits), Number(amount.dataset.maxAmount));
+      const formatted = integer.format(value);
+      amount.value = formatted;
+      const targetDigits = Math.min(digitsBeforeCaret, String(value).length);
+      let position = 0;
+      let countedDigits = 0;
+      while (position < formatted.length && countedDigits < targetDigits) {
+        if (/\d/.test(formatted[position])) {
+          countedDigits++;
+        }
+        position++;
+      }
+      amount.setSelectionRange(position, position);
+    }
+
+    function calculate() {
+      const principal = isSaving ? amount.valueAsNumber : (amount.value ? Number(amount.value.replace(/\D/g, '')) : NaN);
+      if (!isSaving) {
+        synchronizeLoanPolicy(principal);
+      }
+      const usesCustomMonths = months.value === 'custom';
+      customField.hidden = !usesCustomMonths;
+      customMonths.disabled = !usesCustomMonths;
+      if (!isSaving) {
+        const outOfRange = Number.isFinite(principal) && (principal < Number(amount.dataset.minAmount) || principal > Number(amount.dataset.maxAmount));
+        amount.setCustomValidity(outOfRange ? panel.querySelector('.invalid-feedback').textContent.trim() : '');
+      }
+      const controls = [amount, rate, ...(usesCustomMonths ? [customMonths] : [])];
+      controls.forEach(control => {
+        const invalid = !control.validity.valid;
+        control.classList.toggle('is-invalid', invalid);
+        control.setAttribute('aria-invalid', String(invalid));
+      });
+      const duration = usesCustomMonths ? customMonths.valueAsNumber : Number(months.value);
+      amountHint.textContent = amount.validity.valid ? currency.format(principal) : '';
+      if (controls.some(control => !control.validity.valid) || !Number.isFinite(duration) || duration <= 0) {
+        result.textContent = '—';
+        totals.forEach(total => {total.textContent = '—';});
+        return;
+      }
+      if (isSaving) {
+        const deposited = principal * duration;
+        const interest = deposited * rate.valueAsNumber / 100 * duration / 12;
+        result.textContent = currency.format(deposited + interest).replace(/\u00a0/g, ' ');
+        totals[0].textContent = currency.format(interest);
+        totals[1].textContent = currency.format(deposited);
+      } else {
+        const simulation = calculateLoanSimulation(principal, duration);
+        result.textContent = simulation ? currency.format(simulation.monthlyPayment).replace(/\u00a0/g, ' ') : '—';
+        totals[0].textContent = simulation ? currency.format(simulation.totalInterest) : '—';
+        totals[1].textContent = simulation ? currency.format(simulation.totalPayment) : '—';
+      }
+    }
+
+    if (!isSaving) {
+      amount.addEventListener('beforeinput', event => {
+        const start = amount.selectionStart;
+        const end = amount.selectionEnd;
+        const backward = event.inputType === 'deleteContentBackward';
+        const forward = event.inputType === 'deleteContentForward';
+        if (start !== null && start === end && (backward || forward)) {
+          const separatorPosition = backward ? start - 1 : start;
+          if (amount.value[separatorPosition] === '.') {
+            event.preventDefault();
+            const from = backward ? separatorPosition - 1 : separatorPosition;
+            const to = backward ? start : separatorPosition + 2;
+            amount.value = amount.value.slice(0, from) + amount.value.slice(to);
+            amount.setSelectionRange(from, from);
+            maskLoanAmount();
+            calculate();
+            return;
+          }
+        }
+        if (event.inputType === 'insertText' && event.data && /\D/.test(event.data)) {
+          event.preventDefault();
+        }
+      });
+      amount.addEventListener('input', maskLoanAmount);
+      maskLoanAmount();
+    }
+    [amount, months, customMonths, rate].forEach(control => {
+      control.addEventListener('input', calculate);
+      control.addEventListener('change', calculate);
     });
+    calculate();
   }
 
   $(function () {
     document.querySelectorAll('[data-calculator]').forEach(configureCalculator);
+    window.addEventListener('hashchange', openLinkedSavingsProduct);
+    $('.accordion-box').on('click', '.acc-btn', function () {
+      this.closest('.accordion-box').querySelectorAll('.acc-btn').forEach(button => {
+        button.setAttribute('aria-expanded', String(button.classList.contains('active')));
+      });
+    });
 
     $('[data-service-select]').on('change', function () {
       window.location.href = `${document.querySelector('.logo-box-style1 a').href}#${this.value}`;
@@ -86,6 +200,7 @@
   });
 
   $(window).on('load', function () {
+    openLinkedSavingsProduct();
     $('#polyglotLanguageSwitcher').polyglotLanguageSwitcher({effect: 'slide', animSpeed: 100, testMode: true, onChange: event => {
       document.querySelectorAll('[data-copy-id][data-copy-en]').forEach(element => {
         element.lang = event.selectedItem;
@@ -99,4 +214,4 @@
     }});
     $('#polyglotLanguageSwitcher a').on('click', event => event.preventDefault());
   });
-})(jQuery);
+})(window.jQuery);

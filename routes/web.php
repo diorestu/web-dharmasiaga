@@ -16,6 +16,8 @@ Route::get('/blog', fn () => view('blog.index', ['posts' => [
     ['title' => 'Catatan dari cabang kami', 'excerpt' => 'Cerita lapangan dari tim yang mendampingi anggota.', 'date' => '21 Agu 2026'],
 ]]))->name('blog.index');
 Route::view('/tentang-kami', 'pages.about')->name('pages.about');
+Route::view('/sejarah-kami', 'pages.history')->name('pages.history');
+Route::view('/simpanan', 'pages.savings')->name('pages.savings');
 Route::view('/laporan', 'pages.reports')->name('pages.reports');
 Route::view('/kantor-cabang', 'pages.branches')->name('pages.branches');
 Route::post('/hubungi-kami', function (Request $request) {

@@ -69,7 +69,7 @@
                                         <div class="icon-outer"><i class="icon-right-arrow"></i></div>
                                         <h3>Di mana kantor layanan koperasi?</h3>
                                     </div>
-                                    <div class="acc-content"><p>KSP Dharma Siaga berada di Denpasar, Bali. Alamat dan jam layanan resmi dapat dikonfirmasi melalui tim koperasi.</p>
+                                    <div class="acc-content"><p>Kantor KSP Dharma Siaga berlokasi di {{ config('cooperative.office.address') }}. Konfirmasikan jam layanan melalui tim koperasi sebelum berkunjung.</p>
                                     </div>
                                 </li>
                                 <li class="accordion block">
