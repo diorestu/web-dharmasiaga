@@ -29,7 +29,7 @@
                                 <div class="inner">
                                     <img src="{{ asset($loop->index === 1 ? 'assets/images/slides/dharma-business.png' : 'assets/images/resources/dharma-about.png') }}" alt="Ilustrasi kegiatan anggota dan usaha lokal di Bali">
                                     <div class="overlay-icon">
-                                        <a href="{{ $loop->index === 0 ? route('pages.reports') : ($loop->index === 1 ? route('home').'#service' : route('pages.branches')) }}">
+                                        <a href="{{ $loop->index === 0 ? route('home').'#assets' : ($loop->index === 1 ? route('home').'#service' : route('pages.branches')) }}">
                                             <span class="icon-right-arrow"></span>
                                         </a>
                                     </div>
@@ -46,7 +46,7 @@
                             </div>
                             <div class="text-holder">
                                 <h3 class="blog-title">
-                                    <a href="{{ $loop->index === 0 ? route('pages.reports') : ($loop->index === 1 ? route('home').'#service' : route('pages.branches')) }}">
+                                    <a href="{{ $loop->index === 0 ? route('home').'#assets' : ($loop->index === 1 ? route('home').'#service' : route('pages.branches')) }}">
                                         {{ $post['title'] }}
                                     </a>
                                 </h3>

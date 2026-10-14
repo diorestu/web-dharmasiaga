@@ -29,7 +29,7 @@
                                     <h3>Informasi</h3>
                                 </div>
                                 <div class="footer-widget-links">
-                                    <ul><li><a href="{{ route('pages.reports') }}">Laporan koperasi</a></li><li><a href="{{ route('home') }}#assets">Ringkasan indikatif</a></li><li><a href="{{ route('home') }}#contact">Ketentuan produk</a></li></ul>
+                                    <ul><li><a href="{{ route('home') }}#assets">Ringkasan indikatif</a></li><li><a href="{{ route('home') }}#contact">Ketentuan produk</a></li></ul>
                                 </div>
                             </div>
                             <div class="single-footer-widget single-footer-widget--link-box-style2">
@@ -125,8 +125,8 @@
                                 <div class="single-footer-widget-right-colum">
                                     <ul>
                                         <li>
-                                            <a href="{{ route('pages.reports') }}">
-                                                Laporan koperasi
+                                            <a href="{{ route('home') }}#assets">
+                                                Ringkasan koperasi
                                                 <span class="icon-download"></span>
                                             </a>
                                         </li>

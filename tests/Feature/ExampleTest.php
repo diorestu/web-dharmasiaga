@@ -21,8 +21,13 @@ class ExampleTest extends TestCase
 
     public function test_public_information_pages_render_successfully(): void
     {
-        foreach (['pages.about', 'pages.reports', 'pages.branches', 'blog.index'] as $routeName) {
+        foreach (['pages.about', 'pages.branches', 'blog.index'] as $routeName) {
             $this->get(route($routeName))->assertStatus(200);
         }
+    }
+
+    public function test_removed_reports_page_returns_not_found(): void
+    {
+        $this->get('/laporan')->assertStatus(404);
     }
 }

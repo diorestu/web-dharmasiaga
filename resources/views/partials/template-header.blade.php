@@ -24,14 +24,6 @@
 
                         <!--Start Main Header Style1 Top Right-->
                         <div class="main-header-style1-top__right">
-                            <div class="header-menu-style1">
-                                <ul>
-                                    <li><a href="{{ route('pages.about') }}">Tentang</a></li>
-                                    <li><a href="{{ route('home') }}#faq">FAQ</a></li>
-                                    <li><a href="{{ route('home') }}#service">Produk</a></li>
-                                    <li><a href="{{ route('pages.reports') }}">Laporan</a></li>
-                                </ul>
-                            </div>
                             <div class="box-search-style1">
                                 <a href="#" class="search-toggler">
                                     <span class="icon-search"></span>
@@ -73,15 +65,12 @@
 <li><a href="{{ route('home') }}">Beranda</a></li>
 <li class="dropdown"><a href="{{ route('home') }}#service">Produk</a><ul><li><a href="{{ route('pages.savings') }}">Semua Simpanan</a></li>@foreach(config('cooperative.savings') as $product)<li><a href="{{ route('pages.savings') }}#{{ $product['id'] }}">{{ $product['menu_title'] ?? $product['title'] }}</a></li>@endforeach<li><a href="{{ route('home') }}#simulator">Pinjaman</a></li><li><a href="{{ route('home') }}#simulator">Simulasi keuangan</a></li></ul></li>
 <li class="dropdown"><a href="{{ route('pages.about') }}">Tentang</a><ul><li><a href="{{ route('pages.history') }}">Sejarah Kami</a></li><li><a href="{{ route('pages.about') }}">Profil Koperasi</a></li><li><a href="{{ route('pages.branches') }}">Lokasi Kantor</a></li></ul></li>
-<li><a href="{{ route('blog.index') }}">Catatan</a></li><li><a href="{{ route('pages.reports') }}">Laporan</a></li><li><a href="{{ route('home') }}#contact">Kontak</a></li></ul>
+<li><a href="{{ route('blog.index') }}">Catatan</a></li><li><a href="{{ route('home') }}#contact">Kontak</a></li></ul>
                                 </div>
                             </div>
 
                             <div class="main-menu-style1-right">
                                 <div class="header-btn-one">
-                                    <a href="{{ route('pages.reports') }}">
-                                        <span class="icon-home-button"></span>Laporan
-                                    </a>
                                     <a class="style2" href="{{ route('home') }}#contact">
                                         <span class="icon-payment"></span>Gabung anggota
                                     </a>

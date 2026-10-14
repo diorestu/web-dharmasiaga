@@ -1,7 +1,7 @@
 @extends('layouts.finbank')
 @php($title = 'Profil Koperasi — KSP Dharma Siaga')
 @section('content')
-@include('partials.template-breadcrumb', ['pageTitle' => 'Profil Koperasi'])
+@include('partials.template-breadcrumb', ['pageTitle' => 'Profil Koperasi', 'bgImage' => 'assets/images/resources/dharma-profile.jpeg'])
 <section class="choose-style1-area"><div class="container">
     <div class="sec-title text-center"><h2>Pengurus dan Pengawas</h2></div>
     <ul class="row choose-style1__content">

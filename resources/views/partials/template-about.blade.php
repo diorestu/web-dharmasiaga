@@ -5,7 +5,7 @@
                     <div class="col-xl-6">
                         <div class="intro-style1-video-gallery">
                             <div class="intro-style1-video-gallery-bg"
-                                style="background-image: url({{ asset('assets/images/resources/dharma-about.png') }});">
+                                style="background-image: url({{ asset('assets/images/resources/dharma-community.jpeg') }});">
                             </div>
                             <div class="intro-video-gallery-style1">
                                 <div class="icon wow zoomIn animated" data-wow-delay="300ms" data-wow-duration="1500ms">
@@ -52,7 +52,7 @@
                                     <div class="intro-style1-single-box">
                                         <div class="img-box">
                                             <div class="img-box-inner">
-                                                <img src="{{ asset('assets/images/slides/dharma-business.png') }}" alt="Ilustrasi pelaku usaha kerajinan di Bali">
+                                                <img src="{{ asset('assets/images/resources/dharma-profile.jpeg') }}" alt="Ilustrasi profil KSP Dharma Siaga">
                                             </div>
                                             <div class="overlay-text">
                                                 <h3>Koperasi</h3>

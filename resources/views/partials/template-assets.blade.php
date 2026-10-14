@@ -7,4 +7,4 @@
                                 </table>
                             </div>
 
-                        </div><div class="faq-style1-bottom-box text-center"><p class="text-white">Angka final mengikuti laporan resmi koperasi.</p><div class="btns-box"><a class="btn-one" href="{{ route('pages.reports') }}"><span class="txt">Laporan koperasi</span></a></div></div></div></section>
+                        </div><div class="faq-style1-bottom-box text-center"><p class="text-white">Angka final mengikuti laporan resmi koperasi.</p></div></div></section>
