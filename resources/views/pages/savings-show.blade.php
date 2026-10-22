@@ -1,7 +1,7 @@
 @extends('layouts.finbank')
 @php($title = $product['title'].' — KSP Dharma Siaga')
 @section('content')
-@include('partials.template-breadcrumb', ['pageTitle' => 'Produk Simpanan'])
+@include('partials.template-breadcrumb', ['pageTitle' => 'Produk Simpanan', 'secondaryHeading' => true])
 <section class="savings-detail py-5">
     <div class="container py-4">
         <div class="row justify-content-center">

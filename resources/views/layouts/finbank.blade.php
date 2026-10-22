@@ -3,17 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ $title ?? 'KSP Dharma Siaga — Koperasi Simpan Pinjam' }}</title>
-    <!-- Favicons Icons -->
-<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/favicons/favicon-32x32.png') }}" />
-<link rel="manifest" href="{{ asset('assets/images/favicons/site.webmanifest') }}" />
-    <meta name="description" content="{{ $content['meta_description'] ?? 'Simpanan, pinjaman, dan informasi keanggotaan KSP Dharma Siaga di Denpasar, Bali.' }}">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ $title ?? 'KSP Dharma Siaga' }}">
-    <meta property="og:description" content="{{ $content['meta_description'] ?? 'Simpanan, pinjaman, dan informasi keanggotaan KSP Dharma Siaga di Denpasar, Bali.' }}">
-    <meta property="og:image" content="{{ asset('images/ksp-dharma-siaga-logo.jpeg') }}">
-    <meta property="og:url" content="{{ url()->current() }}">
-    <link rel="icon" href="{{ asset('images/ksp-dharma-siaga-logo.jpeg') }}">
+    @include('partials.seo-head')
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"
         rel="stylesheet">

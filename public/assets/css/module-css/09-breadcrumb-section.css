@@ -71,7 +71,7 @@
     background-image: -ms-linear-gradient(0deg, rgb(138, 15, 61) 0%, rgb(207, 23, 60) 100%);
 }
 
-.breadcrumb-area .title h2 {
+.breadcrumb-area .title :is(h1, h2) {
     font-size: 40px;
     line-height: 1.2em;
     font-weight: 500;

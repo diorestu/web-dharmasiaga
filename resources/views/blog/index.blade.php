@@ -9,7 +9,7 @@
                     <div class="col-xl-12">
                         <div class="inner-content">
                             <div class="title" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="500">
-                                <h2>Berita koperasi</h2>
+                                <h1>Berita koperasi</h1>
                             </div>
                             <div class="breadcrumb-menu" data-aos="fade-left" data-aos-easing="linear"
                                 data-aos-duration="500">

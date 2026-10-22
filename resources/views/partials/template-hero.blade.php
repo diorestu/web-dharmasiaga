@@ -32,7 +32,7 @@
                                     <div class="main-slider-content">
                                         <div class="main-slider-content__inner">
                                             <div class="big-title">
-                                                <h2 data-copy-id="{{ $content['hero_title_id'] ?? 'Tumbuh bersama,|untuk masa depan|yang lebih baik.' }}" data-copy-en="{{ $content['hero_title_en'] ?? 'Grow together,|for a better|tomorrow.' }}">@if(!empty($content['hero_title_id'])){{ $content['hero_title_id'] }}@else Tumbuh bersama,<br> untuk masa depan<br> yang lebih baik.@endif</h2>
+                                                <h1 data-copy-id="{{ $content['hero_title_id'] ?? 'Tumbuh bersama,|untuk masa depan|yang lebih baik.' }}" data-copy-en="{{ $content['hero_title_en'] ?? 'Grow together,|for a better|tomorrow.' }}">@if(!empty($content['hero_title_id'])){{ $content['hero_title_id'] }}@else Tumbuh bersama,<br> untuk masa depan<br> yang lebih baik.@endif</h1>
                                             </div>
                                             <div class="text">
                                                 <p>

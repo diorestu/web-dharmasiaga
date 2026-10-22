@@ -183,7 +183,7 @@
     transition-delay: 1000ms;
 }
 
-.main-slider .main-slider-content .big-title h2 {
+.main-slider .main-slider-content .big-title :is(h1, h2) {
     color: #ffffff;
     font-size: 60px;
     line-height: 1.2em;

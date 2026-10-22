@@ -1180,7 +1180,7 @@
         margin: 0 auto;
     }
 
-    .breadcrumb-area .title h2 {
+    .breadcrumb-area .title :is(h1, h2) {
         font-size: 36px;
     }
 
@@ -2946,7 +2946,7 @@
         display: none;
     }
 
-    .main-slider .main-slider-content .big-title h2 {
+    .main-slider .main-slider-content .big-title :is(h1, h2) {
         font-size: 40px;
     }
 
@@ -3033,11 +3033,11 @@
         display: none;
     }
 
-    .main-slider .main-slider-content .big-title h2 {
+    .main-slider .main-slider-content .big-title :is(h1, h2) {
         font-size: 40px;
     }
 
-    .main-slider .main-slider-content .big-title h2 br {
+    .main-slider .main-slider-content .big-title :is(h1, h2) br {
         display: none;
     }
 

@@ -2,9 +2,14 @@
 
 use App\Http\Controllers\CmsController;
 use App\Http\Controllers\SavingsController;
+use App\Http\Controllers\SeoController;
 use App\Models\SiteContent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
+Route::get('/sitemap.xml', [SeoController::class, 'sitemap'])->name('seo.sitemap');
+Route::get('/robots.txt', [SeoController::class, 'robots'])->name('seo.robots');
+Route::get('/llms.txt', [SeoController::class, 'llms'])->name('seo.llms');
 
 Route::get('/', function () {
     $content = SiteContent::pluck('value', 'key')->all();
