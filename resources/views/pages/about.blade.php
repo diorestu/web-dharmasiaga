@@ -1,13 +1,13 @@
 @extends('layouts.finbank')
 @php($title = 'Profil Koperasi — KSP Dharma Siaga')
 @section('content')
-@include('partials.template-breadcrumb', ['pageTitle' => 'Profil Koperasi', 'bgImage' => 'assets/images/resources/dharma-profile.jpeg'])
+@include('partials.template-breadcrumb', ['pageTitle' => 'Profil Koperasi', 'bgImage' => 'assets/images/resources/dharma-office-angle.jpeg'])
 <section class="choose-style1-area"><div class="container">
-    <div class="sec-title text-center"><h2>Pengurus dan Pengawas</h2></div>
+    <div class="sec-title text-center pt-5"><h2>Pengurus dan Pengawas</h2></div>
     <ul class="row choose-style1__content">
         @foreach(config('cooperative.leadership') as $person)
         <li class="col-xl-4 col-lg-4 single-choose-style1-colum text-center"><div class="single-choose-style1">
-            <div class="icon"><div class="icon-inner"><span class="icon-crowd"></span></div><div class="counting">{{ str_pad((string) $loop->iteration, 2, '0', STR_PAD_LEFT) }}</div></div>
+            <div class="leadership-photo"><img src="{{ asset($person['photo']) }}" alt="{{ $person['name'] }}, {{ $person['role'] }}" width="640" height="640" loading="lazy" decoding="async"></div>
             <div class="text"><h3>{{ $person['role'] }}</h3><p class="text-dark">{{ $person['name'] }}</p></div>
         </div></li>
         @endforeach

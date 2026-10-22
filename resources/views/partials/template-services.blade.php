@@ -64,7 +64,7 @@
                                                     <div class="icon">
                                                         <span class="icon-safebox"></span>
                                                     </div>
-                                                    <h3><a href="{{ route('pages.savings') }}#simpanan-anggota">Simpanan anggota</a></h3>
+                                                    <h3><a href="{{ route('pages.savings.show', 'simpanan-anggota') }}">Simpanan anggota</a></h3>
                                                     <div class="border-box"></div>
                                                     <p>Bangun kebiasaan menyimpan untuk rencana dan kebutuhan mendatang.</p>
                                                     <h6><span>*</span> Ketentuan mengikuti produk</h6>
@@ -120,7 +120,7 @@
                                                     <div class="icon">
                                                         <span class="icon-safebox"></span>
                                                     </div>
-                                                    <h3><a href="{{ route('pages.savings') }}#simpanan-anggota">Simpanan anggota</a></h3>
+                                                    <h3><a href="{{ route('pages.savings.show', 'simpanan-anggota') }}">Simpanan anggota</a></h3>
                                                     <div class="border-box"></div>
                                                     <p>Bangun kebiasaan menyimpan untuk rencana dan kebutuhan mendatang.</p>
                                                     <h6><span>*</span> Ketentuan mengikuti produk</h6>

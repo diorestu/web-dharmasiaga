@@ -16,7 +16,7 @@
                         <ol class="ps-4 mb-4">@foreach($section['items'] as $item)<li class="mb-3"><strong><span aria-hidden="true">{{ $loop->iteration }}.</span> {{ $item['title'] }}</strong>@if($item['text'])<p>{{ $item['text'] }}</p>@endif</li>@endforeach</ol>
                     @endforeach
                     @if(isset($product['note']))<p class="mb-4"><strong>Catatan:</strong> {{ $product['note'] }}</p>@endif
-                    <a class="text-dark text-decoration-underline" href="{{ route('home') }}#contact">Konsultasikan produk ini</a>
+                    <a class="btn-one" href="{{ route('pages.savings.show', $product['id']) }}"><span class="txt">Detail layanan dan konsultasi</span></a>
                 </div></div>
             </li>
         @endforeach

@@ -17,10 +17,8 @@
                                 <div class="shape-bottom">
                                     <img src="{{ asset('assets/images/shapes/shape-2.png') }}" alt="">
                                 </div>
-                                <div class="counting-box">
-                                    <div class="counting-box-bg"
-                                        style="background-image: url({{ asset('assets/images/shapes/counting-box-bg.png') }});"></div>
-                                    <h3>01</h3>
+                                <div class="benefit-photo">
+                                    <img src="{{ asset('assets/images/resources/dharma-simpanan.jpeg') }}" alt="Pelayanan simpanan anggota di KSP Dharma Siaga" width="1254" height="1254" loading="lazy" decoding="async">
                                 </div>
                                 <div class="text-box">
                                     <h4>Simpanan anggota</h4>
@@ -45,10 +43,8 @@
                                 <div class="shape-bottom">
                                     <img src="{{ asset('assets/images/shapes/shape-2.png') }}" alt="">
                                 </div>
-                                <div class="counting-box">
-                                    <div class="counting-box-bg"
-                                        style="background-image: url({{ asset('assets/images/shapes/counting-box-bg.png') }});"></div>
-                                    <h3>02</h3>
+                                <div class="benefit-photo">
+                                    <img src="{{ asset('assets/images/resources/dharma-pinjaman.jpeg') }}" alt="Konsultasi kebutuhan pinjaman bersama anggota" width="1254" height="1254" loading="lazy" decoding="async">
                                 </div>
                                 <div class="text-box">
                                     <h4>Pinjaman anggota</h4>
@@ -73,10 +69,8 @@
                                 <div class="shape-bottom">
                                     <img src="{{ asset('assets/images/shapes/shape-2.png') }}" alt="">
                                 </div>
-                                <div class="counting-box">
-                                    <div class="counting-box-bg"
-                                        style="background-image: url({{ asset('assets/images/shapes/counting-box-bg.png') }});"></div>
-                                    <h3>03</h3>
+                                <div class="benefit-photo">
+                                    <img src="{{ asset('assets/images/resources/dharma-keanggotaan.jpeg') }}" alt="Kebersamaan anggota KSP Dharma Siaga" width="1254" height="1254" loading="lazy" decoding="async">
                                 </div>
                                 <div class="text-box">
                                     <h4>Keanggotaan</h4>

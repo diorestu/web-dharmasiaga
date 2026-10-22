@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CmsController;
+use App\Http\Controllers\SavingsController;
 use App\Models\SiteContent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,7 @@ Route::get('/blog', fn () => view('blog.index', ['posts' => [
 Route::view('/tentang-kami', 'pages.about')->name('pages.about');
 Route::view('/sejarah-kami', 'pages.history')->name('pages.history');
 Route::view('/simpanan', 'pages.savings')->name('pages.savings');
+Route::get('/simpanan/{service}', [SavingsController::class, 'show'])->name('pages.savings.show');
 Route::view('/kantor-cabang', 'pages.branches')->name('pages.branches');
 Route::post('/hubungi-kami', function (Request $request) {
     $request->validate(['name' => ['required', 'string', 'max:100'], 'phone' => ['required', 'string', 'max:30'], 'email' => ['nullable', 'email', 'max:120'], 'service' => ['required', 'string', 'max:60']]);

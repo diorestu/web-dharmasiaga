@@ -1,0 +1,264 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - navigation "Navigasi utama" [ref=e5]:
+      - link "Humi — halaman utama" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Humi" [ref=e7]
+      - generic [ref=e8]:
+        - link "Produk" [ref=e9] [cursor=pointer]:
+          - /url: /#product
+        - link "Solusi" [ref=e10] [cursor=pointer]:
+          - /url: /#solutions
+        - link "Fitur" [ref=e11] [cursor=pointer]:
+          - /url: /features
+        - link "Harga" [ref=e12] [cursor=pointer]:
+          - /url: /#pricing
+        - link "Berita" [ref=e13] [cursor=pointer]:
+          - /url: /berita
+        - link "Kontak" [ref=e14] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e15]:
+        - link "Masuk" [ref=e16] [cursor=pointer]:
+          - /url: /login
+        - link "Mulai Trial Gratis" [ref=e17] [cursor=pointer]:
+          - /url: /register
+  - main [ref=e21]:
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - heading "Kelola tim Anda dengan lebih sederhana" [level=1] [ref=e25]
+        - paragraph [ref=e26]: Humi adalah HRIS terpadu untuk perusahaan modern. Otomatisasi absensi, cuti, payroll, dan approval dalam satu platform yang mudah digunakan.
+        - generic [ref=e27]:
+          - link "Mulai Trial Gratis" [ref=e28] [cursor=pointer]:
+            - /url: /register
+          - link "Lihat Solusi" [ref=e31] [cursor=pointer]:
+            - /url: "#solutions"
+      - generic [ref=e32]:
+        - generic [ref=e33]:
+          - paragraph [ref=e34]: 70%
+          - paragraph [ref=e35]: Efisiensi proses HR
+        - generic [ref=e36]:
+          - paragraph [ref=e37]: < 10 mnt
+          - paragraph [ref=e38]: Waktu proses payroll
+        - generic [ref=e39]:
+          - paragraph [ref=e40]: 99.9%
+          - paragraph [ref=e41]: Akurasi data
+      - img "Preview dashboard Humi" [ref=e43]
+    - generic [ref=e45]:
+      - generic [ref=e46]:
+        - heading "Satu alur dari data karyawan sampai payroll." [level=2] [ref=e47]
+        - paragraph [ref=e48]: Humi menjaga proses HR tetap terhubung, sehingga tim tidak perlu menyusun ulang data yang sama di setiap tahap.
+      - list [ref=e49]:
+        - listitem [ref=e50]:
+          - generic [ref=e52]:
+            - generic [ref=e53]: "01"
+            - generic [ref=e54]:
+              - heading "Data menjadi sumber yang sama" [level=3] [ref=e60]
+              - paragraph [ref=e61]: Profil, posisi, jadwal, dan kebijakan kerja tersimpan dalam satu basis operasional.
+        - listitem [ref=e62]:
+          - generic [ref=e64]:
+            - generic [ref=e65]: "02"
+            - generic [ref=e66]:
+              - heading "Aktivitas harian tercatat" [level=3] [ref=e70]
+              - paragraph [ref=e71]: Absensi, cuti, lembur, koreksi, dan approval bergerak dalam alur yang dapat ditinjau.
+        - listitem [ref=e72]:
+          - generic [ref=e73]:
+            - generic [ref=e74]: "03"
+            - generic [ref=e75]:
+              - heading "Payroll siap diproses" [level=3] [ref=e80]
+              - paragraph [ref=e81]: Data yang telah disetujui menjadi dasar payroll, slip gaji, dan laporan manajemen.
+    - generic [ref=e83]:
+      - generic [ref=e84]:
+        - heading "Buka satu area. Lihat hubungannya dengan area lain." [level=2] [ref=e85]
+        - paragraph [ref=e86]: Pilih bagian produk untuk melihat bagaimana Humi menyimpan konteks dari aktivitas harian hingga penggajian.
+      - generic [ref=e87]:
+        - generic "Area produk Humi" [ref=e88]:
+          - button "Data karyawan Aktif" [pressed] [ref=e89]:
+            - generic [ref=e95]: Data karyawan
+            - generic [ref=e96]: Aktif
+          - button "Absensi & jadwal" [ref=e97]
+          - button "Cuti & approval" [ref=e108]
+          - button "Payroll" [ref=e114]
+        - generic [ref=e120]:
+          - generic [ref=e121]:
+            - generic [ref=e122]:
+              - heading "Satu sumber data untuk seluruh tim." [level=3] [ref=e129]
+              - paragraph [ref=e130]: Profil, jabatan, kontrak, dokumen, dan struktur organisasi tersimpan dalam catatan yang sama untuk HR dan manajemen.
+            - generic [ref=e131]: Data terpusat
+          - generic [ref=e135]:
+            - generic [ref=e136]:
+              - text: "01"
+              - paragraph [ref=e137]: Profil dan dokumen karyawan
+            - generic [ref=e138]:
+              - text: "02"
+              - paragraph [ref=e139]: Posisi serta struktur organisasi
+            - generic [ref=e140]:
+              - text: "03"
+              - paragraph [ref=e141]: Riwayat kontrak dan pekerjaan
+    - generic [ref=e143]:
+      - generic [ref=e144]:
+        - heading "Dibentuk untuk operasional yang berbeda." [level=2] [ref=e145]
+        - paragraph [ref=e146]: Pilih konteks perusahaan untuk melihat alur Humi yang paling relevan dengan cara tim Anda bekerja.
+      - generic [ref=e147]:
+        - link [ref=e148] [cursor=pointer]:
+          - /url: /hris-outsourcing
+          - generic [ref=e153]:
+            - heading "Outsourcing" [level=3] [ref=e154]
+            - paragraph [ref=e155]: Kelola sub-company, lokasi klien, manpower request, absensi lapangan, payroll, dan billing klien.
+          - generic [ref=e156]: Lihat solusi outsourcing
+        - link [ref=e159] [cursor=pointer]:
+          - /url: /hris-retail-fnb
+          - generic [ref=e165]:
+            - heading "Retail & F&B" [level=3] [ref=e166]
+            - paragraph [ref=e167]: Susun shift outlet, absensi, cuti, lembur, kasbon, dan payroll untuk tim cabang.
+          - generic [ref=e168]: Lihat solusi retail
+        - link [ref=e171] [cursor=pointer]:
+          - /url: /hris-manufaktur-shift
+          - generic [ref=e174]:
+            - heading "Manufaktur shift" [level=3] [ref=e175]
+            - paragraph [ref=e176]: Pantau roster, koreksi absensi, lembur, payroll, dan performa tim produksi.
+          - generic [ref=e177]: Lihat solusi manufaktur
+    - generic [ref=e181]:
+      - generic [ref=e182]:
+        - heading "Mulai kecil. Tambah modul saat dibutuhkan." [level=2] [ref=e183]
+        - paragraph [ref=e184]: Coba alur inti lebih dulu, lalu pilih paket berdasarkan kebutuhan operasional tim.
+      - generic [ref=e185]:
+        - article [ref=e186]:
+          - heading "Free Trial" [level=3] [ref=e188]
+          - paragraph [ref=e189]: Uji alur HR harian sebelum menentukan paket untuk operasional perusahaan.
+          - generic [ref=e190]: Gratis
+          - list [ref=e193]:
+            - listitem [ref=e194]:
+              - generic [ref=e197]: Maksimal 10 karyawan
+            - listitem [ref=e198]:
+              - generic [ref=e201]: Masa trial 30 hari
+            - listitem [ref=e202]:
+              - generic [ref=e205]: Fitur operasional inti
+            - listitem [ref=e206]:
+              - generic [ref=e209]: Portal karyawan
+            - listitem [ref=e210]:
+              - generic [ref=e214]: Rekrutmen tersedia di Plus
+          - link "Mulai Trial" [ref=e215] [cursor=pointer]:
+            - /url: /register
+        - article [ref=e216]:
+          - heading "Basic" [level=3] [ref=e218]
+          - paragraph [ref=e219]: Untuk perusahaan yang ingin menjalankan administrasi dan payroll dalam satu sistem.
+          - generic [ref=e220]:
+            - generic [ref=e221]: Rp 2.900
+            - generic [ref=e222]: /karyawan/bulan
+          - list [ref=e224]:
+            - listitem [ref=e225]:
+              - generic [ref=e228]: Manajemen Karyawan
+            - listitem [ref=e229]:
+              - generic [ref=e232]: Kehadiran & Absensi
+            - listitem [ref=e233]:
+              - generic [ref=e236]: Jadwal Kerja
+            - listitem [ref=e237]:
+              - generic [ref=e240]: Cuti & Izin
+            - listitem [ref=e241]:
+              - generic [ref=e245]: Rekrutmen tersedia di Plus
+          - link "Pilih Basic" [ref=e246] [cursor=pointer]:
+            - /url: /register
+        - article [ref=e247]:
+          - generic [ref=e248]:
+            - heading "Plus" [level=3] [ref=e249]
+            - generic [ref=e250]: Rekomendasi
+          - paragraph [ref=e251]: Untuk tim yang membutuhkan alur HR lengkap, dari rekrutmen sampai pengelolaan aset.
+          - generic [ref=e252]:
+            - generic [ref=e253]: Rp 7.500
+            - generic [ref=e254]: /karyawan/bulan
+          - list [ref=e256]:
+            - listitem [ref=e257]:
+              - generic [ref=e260]: Manajemen Karyawan
+            - listitem [ref=e261]:
+              - generic [ref=e264]: Kehadiran & Absensi
+            - listitem [ref=e265]:
+              - generic [ref=e268]: Jadwal Kerja
+            - listitem [ref=e269]:
+              - generic [ref=e272]: Cuti & Izin
+            - listitem [ref=e273]:
+              - generic [ref=e276]: Lembur
+            - listitem [ref=e277]:
+              - generic [ref=e280]: Penggajian
+            - listitem [ref=e281]:
+              - generic [ref=e284]: Notifikasi
+            - listitem [ref=e285]:
+              - generic [ref=e288]: Survey
+            - listitem [ref=e289]:
+              - generic [ref=e292]: Struktur Organisasi
+            - listitem [ref=e293]:
+              - generic [ref=e296]: Rekrutmen
+            - listitem [ref=e297]:
+              - generic [ref=e300]: Kasbon
+            - listitem [ref=e301]:
+              - generic [ref=e304]: Asset Management
+          - link "Pilih Plus" [ref=e305] [cursor=pointer]:
+            - /url: /register
+      - paragraph [ref=e306]: Harga belum termasuk PPN. Pembayaran melalui transfer bank dan invoice dibuat setelah konfirmasi.
+    - generic [ref=e308]:
+      - generic [ref=e309]:
+        - heading "Pertanyaan sebelum memulai." [level=2] [ref=e310]
+        - paragraph [ref=e311]: Jawaban singkat tentang trial, setup, import data, dan penggunaan Humi untuk sistem kerja shift.
+      - generic [ref=e312]:
+        - group [ref=e313]:
+          - generic "Apa yang bisa dicoba selama masa trial?" [ref=e314] [cursor=pointer]
+        - group [ref=e318]:
+          - generic "Berapa lama proses setup Humi?" [ref=e319] [cursor=pointer]
+        - group [ref=e323]:
+          - generic "Apakah data karyawan lama bisa diimpor?" [ref=e324] [cursor=pointer]
+        - group [ref=e328]:
+          - generic "Apakah Humi cocok untuk bisnis dengan sistem shift?" [ref=e329] [cursor=pointer]
+        - group [ref=e333]:
+          - generic "Apa yang terjadi setelah trial selesai?" [ref=e334] [cursor=pointer]
+    - generic [ref=e340]:
+      - heading "Siapkan operasi HR yang bisa ditelusuri dari awal sampai payroll." [level=2] [ref=e341]
+      - generic [ref=e342]:
+        - link "Mulai Trial Gratis" [ref=e343] [cursor=pointer]:
+          - /url: /register
+        - link "Diskusikan kebutuhan via WhatsApp" [ref=e346] [cursor=pointer]:
+          - /url: https://wa.me/6285710999144?text=Halo%20Humi%2C%20saya%20ingin%20konsultasi%20tentang%20HRIS.
+  - contentinfo [ref=e347]:
+    - generic [ref=e348]:
+      - generic [ref=e349]:
+        - generic [ref=e350]:
+          - generic [ref=e351]: Humi HRIS
+          - paragraph [ref=e353]: Data yang sama. Keputusan yang lebih mudah.
+          - paragraph [ref=e354]: Satukan operasi HR harian dalam satu sistem yang rapi, mudah ditelusuri, dan siap digunakan tim.
+        - navigation "Tautan footer" [ref=e355]:
+          - generic [ref=e356]:
+            - paragraph [ref=e357]: Produk
+            - generic [ref=e358]:
+              - link "Produk" [ref=e359] [cursor=pointer]:
+                - /url: /#product
+              - link "Fitur" [ref=e360] [cursor=pointer]:
+                - /url: /features
+              - link "Software HRIS" [ref=e361] [cursor=pointer]:
+                - /url: /software-hris
+              - link "Harga" [ref=e362] [cursor=pointer]:
+                - /url: /#pricing
+          - generic [ref=e363]:
+            - paragraph [ref=e364]: Jelajahi
+            - generic [ref=e365]:
+              - link "Solusi" [ref=e366] [cursor=pointer]:
+                - /url: /#solutions
+              - link "Berita" [ref=e367] [cursor=pointer]:
+                - /url: /berita
+              - link "Karier" [ref=e368] [cursor=pointer]:
+                - /url: /careers
+          - generic [ref=e369]:
+            - paragraph [ref=e370]: Mulai
+            - generic [ref=e371]:
+              - link "Mulai Trial Gratis" [ref=e372] [cursor=pointer]:
+                - /url: /register
+              - link "Kontak kami" [ref=e373] [cursor=pointer]:
+                - /url: /contact
+              - link "Masuk" [ref=e374] [cursor=pointer]:
+                - /url: /login
+      - generic [ref=e375]:
+        - link "Humi — halaman utama" [ref=e376] [cursor=pointer]:
+          - /url: /
+          - img "Humi" [ref=e377]
+        - generic [ref=e378]:
+          - generic [ref=e379]: © 2026 Humi
+          - generic [ref=e380]: HR lebih rapi, tim lebih siap.
+  - link "Hubungi Humi via WhatsApp" [ref=e381] [cursor=pointer]:
+    - /url: https://wa.me/6285710999144?text=Halo%20Humi%2C%20saya%20ingin%20konsultasi%20tentang%20HRIS.

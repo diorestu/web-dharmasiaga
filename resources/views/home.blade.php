@@ -4,7 +4,6 @@
 @include('partials.template-benefits')
 @include('partials.template-services')
 @include('partials.template-about')
-@include('partials.template-assets')
 @include('partials.template-faq')
 @include('partials.template-calculator')
 @include('partials.template-contact')

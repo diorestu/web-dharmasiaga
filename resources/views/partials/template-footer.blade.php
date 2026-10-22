@@ -17,7 +17,7 @@
                                     <h3>Keanggotaan</h3>
                                 </div>
                                 <div class="footer-widget-links">
-                                    <ul><li><a href="{{ route('home') }}#contact">Cara bergabung</a></li><li><a href="{{ route('pages.savings') }}#simpanan-anggota">Simpanan anggota</a></li><li><a href="{{ route('home') }}#service">Pinjaman anggota</a></li><li><a href="{{ route('home') }}#benefits">Manfaat keanggotaan</a></li></ul>
+                                    <ul><li><a href="{{ route('home') }}#contact">Cara bergabung</a></li><li><a href="{{ route('pages.savings.show', 'simpanan-anggota') }}">Simpanan anggota</a></li><li><a href="{{ route('home') }}#service">Pinjaman anggota</a></li><li><a href="{{ route('home') }}#benefits">Manfaat keanggotaan</a></li></ul>
                                 </div>
                             </div>
                         </div>
@@ -29,7 +29,7 @@
                                     <h3>Informasi</h3>
                                 </div>
                                 <div class="footer-widget-links">
-                                    <ul><li><a href="{{ route('home') }}#assets">Ringkasan indikatif</a></li><li><a href="{{ route('home') }}#contact">Ketentuan produk</a></li></ul>
+                                    <ul><li><a href="{{ route('home') }}#contact">Ketentuan produk</a></li></ul>
                                 </div>
                             </div>
                             <div class="single-footer-widget single-footer-widget--link-box-style2">
@@ -50,7 +50,7 @@
                                     <h3>Tentang kami</h3>
                                 </div>
                                 <div class="footer-widget-links">
-                                    <ul><li><a href="{{ route('pages.history') }}">Sejarah Kami</a></li><li><a href="{{ route('pages.about') }}">Profil Koperasi</a></li><li><a href="{{ route('pages.about') }}#principles">Prinsip koperasi</a></li><li><a href="{{ route('pages.branches') }}">Kantor layanan</a></li><li><a href="{{ route('blog.index') }}">Catatan koperasi</a></li></ul>
+                                    <ul><li><a href="{{ route('pages.history') }}">Sejarah Kami</a></li><li><a href="{{ route('pages.about') }}">Profil Koperasi</a></li><li><a href="{{ route('pages.about') }}#principles">Prinsip koperasi</a></li><li><a href="{{ route('pages.branches') }}">Kantor layanan</a></li><li><a href="{{ route('blog.index') }}">Berita koperasi</a></li></ul>
                                 </div>
                             </div>
                         </div>
@@ -124,12 +124,6 @@
                             <div class="single-footer-widget">
                                 <div class="single-footer-widget-right-colum">
                                     <ul>
-                                        <li>
-                                            <a href="{{ route('home') }}#assets">
-                                                Ringkasan koperasi
-                                                <span class="icon-download"></span>
-                                            </a>
-                                        </li>
                                         <li>
                                             <a href="{{ route('home') }}#contact">
                                                 Hubungi tim kami

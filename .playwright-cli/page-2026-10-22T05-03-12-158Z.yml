@@ -1,0 +1,526 @@
+- generic [active] [ref=f5e1]:
+  - generic [ref=f5e2]:
+    - banner [ref=f5e3]:
+      - text:     
+      - navigation [ref=f5e4]:
+        - generic [ref=f5e7]:
+          - generic [ref=f5e8]:
+            - link [ref=f5e10] [cursor=pointer]:
+              - /url: http://127.0.0.1:8014
+              - img "KSP Dharma Siaga" [ref=f5e11]
+            - generic [ref=f5e12]:
+              - link "Buka menu" [ref=f5e13] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=f5e14]: 
+              - text:  
+          - text: 
+      - text:  
+    - main [ref=f5e15]:
+      - generic [ref=f5e17]:
+        - generic [ref=f5e18]:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading "KSP Dharma Siaga, dekat dengan kebutuhan anggota." [level=2]
+                      - generic:
+                        - paragraph: Kunjungi kantor layanan kami di Denpasar. Diskusikan kebutuhan simpanan dan pinjaman bersama tim koperasi.
+                      - generic:
+                        - link "Lokasi kantor layanan":
+                          - /url: http://127.0.0.1:8014/kantor-cabang
+          - generic [ref=f5e19]:
+            - link "Lihat layanan " [ref=f5e20] [cursor=pointer]:
+              - /url: http://127.0.0.1:8014#service
+              - text: Lihat layanan
+              - generic [ref=f5e21]: 
+            - link "Hubungi kami " [ref=f5e22] [cursor=pointer]:
+              - /url: http://127.0.0.1:8014#contact
+              - text: Hubungi kami
+              - generic [ref=f5e23]: 
+          - generic [ref=f5e30]:
+            - heading "Tumbuh bersama, dengan cara yang lebih adil." [level=2] [ref=f5e32]
+            - paragraph [ref=f5e34]: KSP Dharma Siaga mendampingi kebutuhan simpanan dan pinjaman anggota di Denpasar, Bali.
+            - link "Konsultasi keanggotaan" [ref=f5e36] [cursor=pointer]:
+              - /url: http://127.0.0.1:8014#contact
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading "Simpanan terarah, rencana keluarga lebih terjaga." [level=2]
+                      - generic:
+                        - paragraph: Mulai dari percakapan tentang kebutuhan Anda. Temukan layanan yang sesuai bersama tim koperasi.
+                      - generic:
+                        - link "Konsultasi keanggotaan":
+                          - /url: http://127.0.0.1:8014#contact
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading "Dukung usaha, bangun peluang bersama anggota." [level=2]
+                      - generic:
+                        - paragraph: Mulai dari percakapan tentang kebutuhan Anda. Temukan layanan yang sesuai bersama tim koperasi.
+                      - generic:
+                        - link "Konsultasi keanggotaan":
+                          - /url: http://127.0.0.1:8014#contact
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading "KSP Dharma Siaga, dekat dengan kebutuhan anggota." [level=2]
+                      - generic:
+                        - paragraph: Kunjungi kantor layanan kami di Denpasar. Diskusikan kebutuhan simpanan dan pinjaman bersama tim koperasi.
+                      - generic:
+                        - link "Lokasi kantor layanan":
+                          - /url: http://127.0.0.1:8014/kantor-cabang
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading "KSP Dharma Siaga, dekat dengan kebutuhan anggota." [level=2]
+                      - generic:
+                        - paragraph: Kunjungi kantor layanan kami di Denpasar. Diskusikan kebutuhan simpanan dan pinjaman bersama tim koperasi.
+                      - generic:
+                        - link "Lokasi kantor layanan":
+                          - /url: http://127.0.0.1:8014/kantor-cabang
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading "Tumbuh bersama, dengan cara yang lebih adil." [level=2]
+                      - generic:
+                        - paragraph: KSP Dharma Siaga mendampingi kebutuhan simpanan dan pinjaman anggota di Denpasar, Bali.
+                      - generic:
+                        - link "Konsultasi keanggotaan":
+                          - /url: http://127.0.0.1:8014#contact
+        - text:  
+      - generic [ref=f5e38]:
+        - generic [ref=f5e39]:
+          - heading "Langkah kecil, manfaat bersama" [level=2] [ref=f5e40]
+          - paragraph [ref=f5e42]: Dari simpanan hingga usaha, mulai dari kebutuhan anggota.
+        - list [ref=f5e44]:
+          - listitem [ref=f5e45]:
+            - generic [ref=f5e46]:
+              - img "Pelayanan simpanan anggota di KSP Dharma Siaga" [ref=f5e50]
+              - generic [ref=f5e51]:
+                - heading "Simpanan anggota" [level=4] [ref=f5e52]
+                - heading "Rencanakan keuangan lebih terarah" [level=3] [ref=f5e53]
+                - paragraph [ref=f5e54]: Kenali pilihan simpanan dan ketentuannya bersama tim koperasi.
+                - link "Pelajari layanan " [ref=f5e56] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8014#contact
+                  - text: Pelajari layanan
+                  - generic [ref=f5e57]: 
+          - listitem [ref=f5e58]:
+            - generic [ref=f5e59]:
+              - img "Konsultasi kebutuhan pinjaman bersama anggota" [ref=f5e63]
+              - generic [ref=f5e64]:
+                - heading "Pinjaman anggota" [level=4] [ref=f5e65]
+                - heading "Dukungan untuk kebutuhan Anda" [level=3] [ref=f5e66]
+                - paragraph [ref=f5e67]: Diskusikan kebutuhan dana dan kemampuan angsuran sebelum mengajukan.
+                - link "Pelajari layanan " [ref=f5e69] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8014#contact
+                  - text: Pelajari layanan
+                  - generic [ref=f5e70]: 
+          - listitem [ref=f5e71]:
+            - generic [ref=f5e72]:
+              - img "Kebersamaan anggota KSP Dharma Siaga" [ref=f5e76]
+              - generic [ref=f5e77]:
+                - heading "Keanggotaan" [level=4] [ref=f5e78]
+                - heading "Bertumbuh sebagai bagian koperasi" [level=3] [ref=f5e79]
+                - paragraph [ref=f5e80]: Dapatkan informasi layanan dan ikut memahami perkembangan koperasi.
+                - link "Pelajari layanan " [ref=f5e82] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8014#contact
+                  - text: Pelajari layanan
+                  - generic [ref=f5e83]: 
+      - generic [ref=f5e86]:
+        - generic [ref=f5e89]:
+          - generic [ref=f5e90]:
+            - heading "Layanan untuk kebutuhan Anda" [level=2] [ref=f5e91]
+            - paragraph [ref=f5e93]: Simpanan dan pinjaman yang dipahami bersama.
+          - link "" [ref=f5e95] [cursor=pointer]:
+            - /url: http://127.0.0.1:8014#contact
+        - generic [ref=f5e99]:
+          - list [ref=f5e101]:
+            - listitem [ref=f5e102]:
+              - generic [ref=f5e103] [cursor=pointer]:
+                - generic [ref=f5e104]:
+                  - heading "Layanan untuk" [level=4] [ref=f5e105]
+                  - heading "Anggota" [level=3] [ref=f5e106]
+                - generic [ref=f5e107]: 
+            - listitem [ref=f5e109]:
+              - generic [ref=f5e110] [cursor=pointer]:
+                - generic [ref=f5e111]:
+                  - heading "Layanan untuk" [level=4] [ref=f5e112]
+                  - heading "Pelaku usaha" [level=3] [ref=f5e113]
+                - generic [ref=f5e114]: 
+          - generic [ref=f5e119]:
+            - generic [ref=f5e121]:
+              - generic [ref=f5e122]: 
+              - heading [level=3] [ref=f5e124]:
+                - link "Simpanan anggota" [ref=f5e125] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8014/simpanan#simpanan-anggota
+              - paragraph [ref=f5e127]: Bangun kebiasaan menyimpan untuk rencana dan kebutuhan mendatang.
+              - heading "* Ketentuan mengikuti produk" [level=6] [ref=f5e128]
+              - link "" [ref=f5e130] [cursor=pointer]:
+                - /url: http://127.0.0.1:8014#contact
+            - generic [ref=f5e133]:
+              - generic [ref=f5e134]: 
+              - heading [level=3] [ref=f5e136]:
+                - link "Konsultasi layanan" [ref=f5e137] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8014#contact
+              - paragraph [ref=f5e139]: Tanyakan pilihan layanan, persyaratan, dan ketentuan langsung kepada tim.
+              - heading "* Informasi melalui tim koperasi" [level=6] [ref=f5e140]
+              - link "" [ref=f5e142] [cursor=pointer]:
+                - /url: http://127.0.0.1:8014#contact
+            - generic [ref=f5e145]:
+              - generic [ref=f5e146]: 
+              - heading [level=3] [ref=f5e148]:
+                - link "Pinjaman anggota" [ref=f5e149] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8014#contact
+              - paragraph [ref=f5e151]: Rencanakan kebutuhan dana dengan angsuran yang sesuai kemampuan.
+              - heading "* Melalui penilaian koperasi" [level=6] [ref=f5e152]
+              - link "" [ref=f5e154] [cursor=pointer]:
+                - /url: http://127.0.0.1:8014#contact
+        - link "Konsultasikan kebutuhan" [ref=f5e159] [cursor=pointer]:
+          - /url: http://127.0.0.1:8014#contact
+      - generic [ref=f5e162]:
+        - link "" [ref=f5e168] [cursor=pointer]:
+          - /url: https://www.youtube.com/watch?v=ScMzIvxBSi4
+        - generic [ref=f5e171]:
+          - heading "Dekat dengan anggota, tumbuh bersama masyarakat." [level=2] [ref=f5e173]
+          - generic [ref=f5e174]:
+            - paragraph [ref=f5e175]: Berawal dari pra-koperasi pada 18 Oktober 2003, KSP Dharma Siaga tumbuh dari semangat kebersamaan untuk memperkuat perekonomian dan meningkatkan kesejahteraan anggota.
+            - paragraph [ref=f5e176]: Simpanan, pinjaman, dan partisipasi anggota menjadi bagian dari pertumbuhan koperasi yang bertanggung jawab.
+          - generic [ref=f5e177]:
+            - generic [ref=f5e179]:
+              - generic [ref=f5e180]:
+                - img "Ilustrasi konsultasi anggota koperasi di Bali" [ref=f5e182]
+                - heading "Anggota" [level=3] [ref=f5e184]
+              - heading [level=3] [ref=f5e186]:
+                - link "Sejarah Kami" [ref=f5e187] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8014/sejarah-kami
+            - generic [ref=f5e189]:
+              - generic [ref=f5e190]:
+                - img "Ilustrasi profil KSP Dharma Siaga" [ref=f5e192]
+                - heading "Koperasi" [level=3] [ref=f5e194]
+              - heading [level=3] [ref=f5e196]:
+                - link "Profil Koperasi" [ref=f5e197] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8014/tentang-kami
+      - generic [ref=f5e199]:
+        - generic [ref=f5e202]:
+          - generic [ref=f5e203]:
+            - heading "Pertanyaan anggota" [level=2] [ref=f5e204]
+            - paragraph [ref=f5e206]: Informasi awal sebelum memulai keanggotaan.
+          - generic [ref=f5e207]:
+            - heading "Temukan jawaban" [level=3] [ref=f5e208]
+            - generic [ref=f5e210]:
+              - textbox "Cari pertanyaan..." [ref=f5e211]
+              - button "Cari pertanyaan" [ref=f5e212] [cursor=pointer]:
+                - generic [ref=f5e213]: 
+        - generic [ref=f5e214]:
+          - img "Ilustrasi konsultasi anggota koperasi di Bali" [ref=f5e218]
+          - list [ref=f5e221]:
+            - listitem [ref=f5e222]:
+              - button " Bagaimana cara menjadi anggota?" [expanded] [ref=f5e223] [cursor=pointer]:
+                - generic [ref=f5e224]: 
+                - heading "Bagaimana cara menjadi anggota?" [level=3] [ref=f5e226]
+              - paragraph [ref=f5e228]: Hubungi tim KSP Dharma Siaga untuk mengetahui persyaratan, dokumen, dan tahapan pendaftaran anggota.
+            - listitem [ref=f5e229]:
+              - button " Apa saja ketentuan simpanan?" [ref=f5e230] [cursor=pointer]:
+                - generic [ref=f5e231]: 
+                - heading "Apa saja ketentuan simpanan?" [level=3] [ref=f5e233]
+            - listitem [ref=f5e234]:
+              - button " Bagaimana mengajukan pinjaman?" [ref=f5e235] [cursor=pointer]:
+                - generic [ref=f5e236]: 
+                - heading "Bagaimana mengajukan pinjaman?" [level=3] [ref=f5e238]
+            - listitem [ref=f5e239]:
+              - button " Di mana kantor layanan koperasi?" [ref=f5e240] [cursor=pointer]:
+                - generic [ref=f5e241]: 
+                - heading "Di mana kantor layanan koperasi?" [level=3] [ref=f5e243]
+            - listitem [ref=f5e244]:
+              - button " Apakah simulasi merupakan penawaran resmi?" [ref=f5e245] [cursor=pointer]:
+                - generic [ref=f5e246]: 
+                - heading "Apakah simulasi merupakan penawaran resmi?" [level=3] [ref=f5e248]
+        - generic [ref=f5e251]:
+          - paragraph [ref=f5e252]:
+            - text: Masih ada pertanyaan? Silakan
+            - link "hubungi tim kami." [ref=f5e253] [cursor=pointer]:
+              - /url: http://127.0.0.1:8014#contact
+          - link "Konsultasi keanggotaan" [ref=f5e255] [cursor=pointer]:
+            - /url: http://127.0.0.1:8014#contact
+      - generic [ref=f5e257]:
+        - generic [ref=f5e258]:
+          - heading "Rencanakan keuangan Anda" [level=2] [ref=f5e259]
+          - paragraph [ref=f5e261]: Simulasi pinjaman anuitas dan perencanaan simpanan, bukan penawaran resmi.
+        - generic [ref=f5e264]:
+          - list [ref=f5e267]:
+            - listitem [ref=f5e268]:
+              - generic [ref=f5e269] [cursor=pointer]:
+                - generic [ref=f5e270]: 
+                - paragraph [ref=f5e272]: Pinjaman
+            - listitem [ref=f5e273]:
+              - generic [ref=f5e274] [cursor=pointer]:
+                - generic [ref=f5e275]: 
+                - paragraph [ref=f5e277]: Simpanan
+            - listitem [ref=f5e278]:
+              - generic [ref=f5e279] [cursor=pointer]:
+                - generic [ref=f5e280]: 
+                - paragraph [ref=f5e282]: Pinjaman usaha
+          - generic [ref=f5e284]:
+            - generic [ref=f5e286]:
+              - generic [ref=f5e287]:
+                - generic [ref=f5e288]:
+                  - generic [ref=f5e289]: Jumlah pinjaman (Rp)
+                  - textbox "Jumlah pinjaman (Rp)" [ref=f5e290]: 10.000.000
+                  - generic [ref=f5e291]: Rp 10.000.000
+                - generic [ref=f5e292]:
+                  - generic [ref=f5e293]: Tenor (bulan)
+                  - combobox "Tenor (bulan)" [ref=f5e294]:
+                    - option "12 bulan" [selected]
+                    - option "18 bulan"
+                    - option "24 bulan"
+                    - option "36 bulan"
+                    - option "Lainnya — isi jumlah bulan"
+                - generic [ref=f5e295]:
+                  - generic [ref=f5e296]: Suku bunga anuitas per bulan (%)
+                  - textbox "Suku bunga anuitas per bulan (%)" [ref=f5e297]: "2"
+                  - generic [ref=f5e298]: Otomatis mengikuti jumlah pinjaman.
+              - generic [ref=f5e299]:
+                - generic [ref=f5e300]:
+                  - generic [ref=f5e301]:
+                    - generic [ref=f5e302]: 
+                    - generic [ref=f5e304]:
+                      - heading "Angsuran per bulan" [level=3] [ref=f5e305]
+                      - heading "Rp 945.596" [level=2] [ref=f5e306]
+                  - link "Konsultasi" [ref=f5e308] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8014#contact
+                - list [ref=f5e310]:
+                  - listitem [ref=f5e311]:
+                    - generic [ref=f5e312]:
+                      - generic [ref=f5e313]: 
+                      - generic [ref=f5e315]:
+                        - link "Total bunga" [ref=f5e316] [cursor=pointer]:
+                          - /url: http://127.0.0.1:8014#contact
+                        - paragraph [ref=f5e317]: Rp 1.347.152
+                  - listitem [ref=f5e318]:
+                    - generic [ref=f5e319]:
+                      - generic [ref=f5e320]: 
+                      - generic [ref=f5e322]:
+                        - link "Total pembayaran" [ref=f5e323] [cursor=pointer]:
+                          - /url: http://127.0.0.1:8014#contact
+                        - paragraph [ref=f5e324]: Rp 11.347.152
+            - option "3 bulan"
+            - option "6 bulan"
+            - option "12 bulan" [selected]
+            - option "18 bulan"
+            - option "24 bulan"
+            - option "36 bulan"
+            - option "48 bulan"
+            - option "60 bulan"
+            - option "120 bulan"
+            - option "Lainnya — isi jumlah bulan"
+            - option "12 bulan" [selected]
+            - option "18 bulan"
+            - option "24 bulan"
+            - option "36 bulan"
+            - option "Lainnya — isi jumlah bulan"
+      - generic [ref=f5e327]:
+        - generic [ref=f5e329]:
+          - generic [ref=f5e331]:
+            - heading "Mulai dari percakapan bersama." [level=2] [ref=f5e332]
+            - paragraph [ref=f5e333]: Ceritakan kebutuhan Anda kepada tim KSP Dharma Siaga.
+          - list [ref=f5e334]:
+            - listitem [ref=f5e335]:
+              - generic [ref=f5e336]: 
+              - generic [ref=f5e338]:
+                - paragraph [ref=f5e339]: Alamat kantor
+                - heading "Jalan Pura Demak Gang I No. 9, Pemecutan Klod, Kec. Denpasar Barat, Kota Denpasar, Bali" [level=3] [ref=f5e340]
+            - listitem [ref=f5e341]:
+              - generic [ref=f5e342]: 
+              - generic [ref=f5e344]:
+                - paragraph [ref=f5e345]: Telepon
+                - heading [level=3] [ref=f5e346]:
+                  - link "0361 8466651" [ref=f5e347] [cursor=pointer]:
+                    - /url: tel:03618466651
+                - heading [level=3] [ref=f5e348]:
+                  - link "0361 8466652" [ref=f5e349] [cursor=pointer]:
+                    - /url: tel:03618466652
+            - listitem [ref=f5e350]:
+              - generic [ref=f5e351]: 
+              - generic [ref=f5e353]:
+                - paragraph [ref=f5e354]: WhatsApp
+                - heading [level=3] [ref=f5e355]:
+                  - link "081338728258" [ref=f5e356] [cursor=pointer]:
+                    - /url: https://wa.me/6281338728258?text=Halo%20KSP%20Dharma%20Siaga%2C%20saya%20ingin%20informasi%20keanggotaan.
+            - listitem [ref=f5e357]:
+              - generic [ref=f5e358]: 
+              - generic [ref=f5e360]:
+                - paragraph [ref=f5e361]: Jam layanan
+                - heading "Konfirmasikan kepada tim koperasi" [level=3] [ref=f5e362]
+                - text: Sebelum mengunjungi kantor
+          - link " Buka peta" [ref=f5e365] [cursor=pointer]:
+            - /url: https://www.google.com/maps/search/?api=1&query=Jalan%20Pura%20Demak%20Gang%20I%20No.%209%2C%20Pemecutan%20Klod%2C%20Kec.%20Denpasar%20Barat%2C%20Kota%20Denpasar%2C%20Bali
+            - generic [ref=f5e366]: 
+            - text: Buka peta
+        - generic [ref=f5e369]:
+          - generic [ref=f5e370]:
+            - generic [ref=f5e371]: Nama lengkap
+            - textbox "Nama lengkap" [ref=f5e373]:
+              - /placeholder: Nama Anda
+          - generic [ref=f5e374]:
+            - generic [ref=f5e375]: Email (opsional)
+            - textbox "Email (opsional)" [ref=f5e377]:
+              - /placeholder: nama@email.com
+          - generic [ref=f5e378]:
+            - generic [ref=f5e379]: Nomor telepon / WhatsApp
+            - textbox "Nomor telepon / WhatsApp" [ref=f5e381]:
+              - /placeholder: 08xxxxxxxxxx
+          - generic [ref=f5e382]:
+            - generic [ref=f5e383]: Layanan yang dibutuhkan
+            - textbox "Layanan yang dibutuhkan" [ref=f5e385]:
+              - /placeholder: Simpanan, pinjaman, atau keanggotaan
+          - generic [ref=f5e386]:
+            - generic [ref=f5e387]: Pesan
+            - textbox "Pesan" [ref=f5e389]:
+              - /placeholder: ""
+          - button "Kirim permintaan" [ref=f5e391] [cursor=pointer]
+    - contentinfo [ref=f5e392]:
+      - generic [ref=f5e394]:
+        - generic [ref=f5e395]: 
+        - generic [ref=f5e398]:
+          - generic [ref=f5e400]:
+            - heading "Keanggotaan" [level=3] [ref=f5e402]
+            - list [ref=f5e404]:
+              - listitem [ref=f5e405]:
+                - link " Cara bergabung" [ref=f5e406] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8014#contact
+              - listitem [ref=f5e407]:
+                - link " Simpanan anggota" [ref=f5e408] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8014/simpanan#simpanan-anggota
+              - listitem [ref=f5e409]:
+                - link " Pinjaman anggota" [ref=f5e410] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8014#service
+              - listitem [ref=f5e411]:
+                - link " Manfaat keanggotaan" [ref=f5e412] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8014#benefits
+          - generic [ref=f5e413]:
+            - generic [ref=f5e414]:
+              - heading "Informasi" [level=3] [ref=f5e416]
+              - list [ref=f5e418]:
+                - listitem [ref=f5e419]:
+                  - link " Ketentuan produk" [ref=f5e420] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8014#contact
+            - generic [ref=f5e421]:
+              - heading "Perencanaan" [level=3] [ref=f5e423]
+              - list [ref=f5e425]:
+                - listitem [ref=f5e426]:
+                  - link " Simulasi pinjaman" [ref=f5e427] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8014#simulator
+                - listitem [ref=f5e428]:
+                  - link " Simulasi simpanan" [ref=f5e429] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8014#simulator
+          - generic [ref=f5e431]:
+            - heading "Tentang kami" [level=3] [ref=f5e433]
+            - list [ref=f5e435]:
+              - listitem [ref=f5e436]:
+                - link " Sejarah Kami" [ref=f5e437] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8014/sejarah-kami
+              - listitem [ref=f5e438]:
+                - link " Profil Koperasi" [ref=f5e439] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8014/tentang-kami
+              - listitem [ref=f5e440]:
+                - link " Prinsip koperasi" [ref=f5e441] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8014/tentang-kami#principles
+              - listitem [ref=f5e442]:
+                - link " Kantor layanan" [ref=f5e443] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8014/kantor-cabang
+              - listitem [ref=f5e444]:
+                - link " Berita koperasi" [ref=f5e445] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8014/blog
+          - generic [ref=f5e447]:
+            - heading "Layanan" [level=3] [ref=f5e449]
+            - list [ref=f5e451]:
+              - listitem [ref=f5e452]:
+                - link " Pilihan Simpanan" [ref=f5e453] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8014/simpanan
+              - listitem [ref=f5e454]:
+                - link " Konsultasi pinjaman" [ref=f5e455] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8014#contact
+              - listitem [ref=f5e456]:
+                - link " Informasi anggota" [ref=f5e457] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8014#contact
+              - listitem [ref=f5e458]:
+                - link " Pertanyaan umum" [ref=f5e459] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8014#faq
+      - generic [ref=f5e462]:
+        - generic [ref=f5e465]:
+          - link [ref=f5e467] [cursor=pointer]:
+            - /url: http://127.0.0.1:8014
+            - img "KSP Dharma Siaga" [ref=f5e468]
+          - paragraph [ref=f5e470]:
+            - text: Copyright © 2026
+            - link "KSP Dharma Siaga." [ref=f5e471] [cursor=pointer]:
+              - /url: http://127.0.0.1:8014
+            - text: Koperasi simpan pinjam di Denpasar, Bali.
+        - list [ref=f5e475]:
+          - listitem [ref=f5e476]:
+            - heading [level=3] [ref=f5e477]:
+              - link "0361 8466651–52" [ref=f5e478] [cursor=pointer]:
+                - /url: tel:03618466651
+            - paragraph [ref=f5e479]: Konsultasi anggota
+          - listitem [ref=f5e480]:
+            - heading "Lokasi Kantor" [level=3] [ref=f5e481]
+            - paragraph [ref=f5e482]: Jalan Pura Demak Gang I No. 9, Pemecutan Klod, Kec. Denpasar Barat, Kota Denpasar, Bali
+        - list [ref=f5e486]:
+          - listitem [ref=f5e487]:
+            - link "Hubungi tim kami " [ref=f5e488] [cursor=pointer]:
+              - /url: http://127.0.0.1:8014#contact
+              - text: Hubungi tim kami
+              - generic [ref=f5e489]: 
+      - generic [ref=f5e492]:
+        - list [ref=f5e494]:
+          - listitem [ref=f5e495]:
+            - link "Informasi resmi" [ref=f5e496] [cursor=pointer]:
+              - /url: http://127.0.0.1:8014#contact
+          - listitem [ref=f5e497]:
+            - link "Sejarah Kami" [ref=f5e498] [cursor=pointer]:
+              - /url: http://127.0.0.1:8014/sejarah-kami
+          - listitem [ref=f5e499]:
+            - link "Profil Koperasi" [ref=f5e500] [cursor=pointer]:
+              - /url: http://127.0.0.1:8014/tentang-kami
+          - listitem [ref=f5e501]:
+            - link "Ketentuan layanan" [ref=f5e502] [cursor=pointer]:
+              - /url: http://127.0.0.1:8014#contact
+          - listitem [ref=f5e503]:
+            - link "Pertanyaan anggota" [ref=f5e504] [cursor=pointer]:
+              - /url: http://127.0.0.1:8014#faq
+        - list [ref=f5e506]:
+          - listitem [ref=f5e507]:
+            - link "Hubungi koperasi" [ref=f5e508] [cursor=pointer]:
+              - /url: http://127.0.0.1:8014#contact
+              - generic [ref=f5e509]: 
+  - generic [ref=f5e510]:
+    - generic [ref=f5e511] [cursor=pointer]
+    - generic [ref=f5e513]:
+      - generic [ref=f5e514]: Cari informasi
+      - searchbox "Cari informasi" [ref=f5e515]
+      - button "Cari" [ref=f5e516] [cursor=pointer]:
+        - generic [ref=f5e517]: 
+  - text: 

@@ -123,8 +123,33 @@
                         </div>
                     </div>
                     <!--End Single Swiper Slide-->
-
-
+                    @foreach(['dharma-office-front.jpeg', 'dharma-office-angle.jpeg'] as $officePhoto)
+                    <div class="swiper-slide">
+                        <div class="image-layer" style="background-image: url({{ asset('assets/images/resources/'.$officePhoto) }}); background-position: center;">
+                        </div>
+                        <div class="main-slider-style1__shape1"
+                            style="background-image: url({{ asset('assets/images/shapes/slider-1-shape-1.png') }});"></div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="main-slider-content">
+                                        <div class="main-slider-content__inner">
+                                            <div class="big-title">
+                                                <h2>KSP Dharma Siaga,<br> dekat dengan<br> kebutuhan anggota.</h2>
+                                            </div>
+                                            <div class="text">
+                                                <p>Kunjungi kantor layanan kami di Denpasar.<br> Diskusikan kebutuhan simpanan dan pinjaman bersama tim koperasi.</p>
+                                            </div>
+                                            <div class="btns-box">
+                                                <a class="btn-one" href="{{ route('pages.branches') }}"><span class="txt">Lokasi kantor layanan</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
                 </div>
 
                 <!-- If we need navigation buttons -->

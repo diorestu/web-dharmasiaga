@@ -23,4 +23,13 @@ class CooperativeContentTest extends TestCase
             ->assertSee('tel:03618466651', false)
             ->assertSee('https://wa.me/6281338728258', false);
     }
+
+    public function test_landing_page_links_to_the_company_profile_video(): void
+    {
+        $this->get('/')
+            ->assertSee('https://www.youtube.com/watch?v=S7J8ypC3x78', false)
+            ->assertSee('Putar video company profile KSP Dharma Siaga')
+            ->assertSeeText('Video Company Profile')
+            ->assertDontSee('ScMzIvxBSi4');
+    }
 }

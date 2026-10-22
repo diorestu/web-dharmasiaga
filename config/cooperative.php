@@ -11,12 +11,12 @@ return [
         ],
     ],
     'leadership' => [
-        ['role' => 'Ketua', 'name' => 'Drs. I Gede Suriadnyana, S.E., M.M.'],
-        ['role' => 'Bendahara', 'name' => 'Ni Nyoman Juniari'],
-        ['role' => 'Sekretaris', 'name' => 'Ni Putu Yuli Astiti'],
-        ['role' => 'Pengawas', 'name' => 'Ni Luh Adi Cahyani'],
-        ['role' => 'Pengawas', 'name' => 'I Nyoman Suweda'],
-        ['role' => 'Pengawas', 'name' => 'I Made Purwa Budaya'],
+        ['role' => 'Ketua', 'name' => 'Drs. I Gede Suriadnyana, S.E., M.M.', 'photo' => 'assets/images/resources/ketua.png'],
+        ['role' => 'Bendahara', 'name' => 'Ni Nyoman Juniari', 'photo' => 'assets/images/resources/bendahara.png'],
+        ['role' => 'Sekretaris', 'name' => 'Ni Putu Yuli Astiti', 'photo' => 'assets/images/resources/sekretaris.png'],
+        ['role' => 'Ketua Pengawas', 'name' => 'Ni Luh Adi Cahyani', 'photo' => 'assets/images/resources/ketua-pengawas.png'],
+        ['role' => 'Anggota Pengawas', 'name' => 'I Nyoman Suweda', 'photo' => 'assets/images/resources/anggota-pengawas-2.png'],
+        ['role' => 'Anggota Pengawas', 'name' => 'I Made Purwa Budaya', 'photo' => 'assets/images/resources/anggota-pengawas-3.png'],
     ],
     'vision' => 'KSP Dharma Siaga menjadi koperasi yang tumbuh dan berkembang secara sehat, dapat dipercaya, serta mampu meningkatkan kesejahteraan anggota setiap tahun.',
     'missions' => [
@@ -40,6 +40,7 @@ return [
     'savings' => [
         [
             'id' => 'simpanan-anggota', 'title' => 'Simpanan Anggota',
+            'referral_code' => 'DS-SIMPANAN-ANGGOTA',
             'description' => 'Simpanan Anggota adalah dana yang dihimpun dari anggota menjadi modal bersama untuk mendukung kesejahteraan seluruh anggota melalui pengelolaan yang aman, transparan, dan bertanggung jawab. Di KSP Dharma Siaga, simpanan anggota tidak hanya menabung, tetapi ikut membangun masa depan bersama.',
             'sections' => [
                 ['title' => 'Persyaratan keanggotaan', 'items' => [
@@ -50,6 +51,7 @@ return [
         ],
         [
             'id' => 'siduta', 'menu_title' => 'SIDUTA', 'title' => 'Simpanan Duka Anggota (SIDUTA)',
+            'referral_code' => 'DS-SIDUTA',
             'description' => 'Simpanan Duka Anggota (SIDUTA) adalah program simpanan sosial berprinsip gotong royong dari KSP Dharma Siaga yang memberikan perlindungan dan manfaat santunan bagi anggota serta keluarga ketika mengalami musibah. Wujud kepedulian koperasi untuk meringankan beban anggota di masa duka.',
             'sections' => [
                 ['title' => 'Skema setoran dan kepesertaan', 'items' => [
@@ -66,6 +68,7 @@ return [
         ],
         [
             'id' => 'simpanan-sukarela', 'title' => 'Simpanan Sukarela',
+            'referral_code' => 'DS-SIMPANAN-SUKARELA',
             'description' => 'Simpanan Sukarela adalah simpanan anggota yang diperuntukkan bagi masyarakat umum, di mana penyetoran dan penarikannya dapat dilakukan sewaktu-waktu sesuai ketentuan. Produk yang fleksibel, aman, dan menguntungkan untuk masa depan Anda.',
             'sections' => [
                 ['title' => 'Keunggulan dan manfaat', 'items' => [
@@ -82,6 +85,7 @@ return [
         ],
         [
             'id' => 'simpanan-siaga', 'title' => 'Simpanan Siaga',
+            'referral_code' => 'DS-SIMPANAN-SIAGA',
             'description' => 'Simpanan Siaga adalah produk tabungan program unggulan KSP Dharma Siaga dengan sistem setoran rutin sekali sebulan. Dirancang untuk membantu anggota mewujudkan impian masa depan secara terencana, disiplin, dan menguntungkan. Dana berkembang dengan sistem bunga berbunga (compound interest) untuk membantu mencapai tujuan spesifik.',
             'sections' => [
                 ['title' => 'Setoran dan jangka waktu', 'items' => [
@@ -98,6 +102,7 @@ return [
         ],
         [
             'id' => 'simpanan-berjangka', 'title' => 'Simpanan Berjangka',
+            'referral_code' => 'DS-SIMPANAN-BERJANGKA',
             'description' => 'Simpanan Berjangka adalah produk simpanan investasi dengan jangka waktu tertentu (3, 6, dan 12 bulan) yang memberikan imbal hasil bunga kompetitif dan pasti. Dana dikelola secara aman untuk memberikan keuntungan sesuai pilihan tenor.',
             'sections' => [
                 ['title' => '5 manfaat dan keunggulan', 'items' => [
@@ -112,6 +117,7 @@ return [
         ],
         [
             'id' => 'saham', 'menu_title' => 'SAHAM', 'title' => 'Sertifikat Modal Siaga Mandiri (SAHAM)',
+            'referral_code' => 'DS-SAHAM',
             'description' => 'Sertifikat Modal Siaga Mandiri adalah produk penyertaan modal anggota dengan setoran minimal dan jangka waktu tertentu yang memberikan jasa modal kompetitif sekaligus perlindungan santunan. Bukan sekadar menabung, tetapi berinvestasi sambil mendapatkan perlindungan untuk keluarga.',
             'sections' => [
                 ['title' => '4 manfaat dan keuntungan eksklusif', 'items' => [

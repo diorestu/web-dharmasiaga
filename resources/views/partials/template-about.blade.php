@@ -5,17 +5,18 @@
                     <div class="col-xl-6">
                         <div class="intro-style1-video-gallery">
                             <div class="intro-style1-video-gallery-bg"
-                                style="background-image: url({{ asset('assets/images/resources/dharma-community.jpeg') }});">
+                                style="background-image: url({{ asset('assets/images/resources/dharma-office-front.jpeg') }});">
                             </div>
                             <div class="intro-video-gallery-style1">
                                 <div class="icon wow zoomIn animated" data-wow-delay="300ms" data-wow-duration="1500ms">
-                                    <a class="video-popup" title="Video tentang koperasi"
-                                        href="https://www.youtube.com/watch?v=ScMzIvxBSi4">
-                                        <span class="icon-play-button-1"></span>
+                                    <a class="video-popup" title="Video Company Profile KSP Dharma Siaga" aria-label="Putar video company profile KSP Dharma Siaga"
+                                        href="https://www.youtube.com/watch?v=S7J8ypC3x78">
+                                        <span class="icon-play-button-1" aria-hidden="true"></span>
                                     </a>
                                 </div>
                             </div>
                         </div>
+                        <p class="text-center mt-3 text-dark">Video Company Profile KSP Dharma Siaga</p>
                     </div>
 
                     <div class="col-xl-6">
