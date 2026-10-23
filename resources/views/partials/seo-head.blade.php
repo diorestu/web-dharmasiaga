@@ -20,9 +20,9 @@
 <meta name="twitter:image" content="{{ $seo['image'] }}">
 <meta name="twitter:image:alt" content="KSP Dharma Siaga, koperasi simpan pinjam di Denpasar, Bali">
 <meta name="theme-color" content="#8a0f3d">
-<link rel="icon" href="{{ asset('favicon.ico') }}" sizes="any">
-<link rel="icon" type="image/png" sizes="96x96" href="{{ asset('favicon-96x96.png') }}">
-<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
+<link rel="icon" href="{{ asset('favicon.ico') }}?v={{ filemtime(public_path('favicon.ico')) }}" sizes="any">
+<link rel="icon" type="image/png" sizes="96x96" href="{{ asset('favicon-96x96.png') }}?v={{ filemtime(public_path('favicon-96x96.png')) }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}?v={{ filemtime(public_path('apple-touch-icon.png')) }}">
 <link rel="manifest" href="{{ asset('site.webmanifest') }}">
 @if(config('seo.google_verification'))
 <meta name="google-site-verification" content="{{ config('seo.google_verification') }}">
