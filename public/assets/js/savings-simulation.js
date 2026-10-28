@@ -4,10 +4,10 @@ export function calculateSavingsSimulation(monthlyDeposit, months) {
   }
 
   const annualRatePercent = 6;
-  const monthlyRate = Math.pow(1 + annualRatePercent / 100, 1 / 12) - 1;
   let finalBalance = 0;
   for (let month = 0; month < months; month++) {
-    finalBalance = finalBalance * (1 + monthlyRate) + monthlyDeposit;
+    const monthlyInterest = Math.floor(finalBalance * annualRatePercent / 1200);
+    finalBalance += monthlyInterest + monthlyDeposit;
   }
   const totalDeposited = monthlyDeposit * months;
 

@@ -19,17 +19,32 @@ test('the first end-of-month deposit has not yet earned interest', () => {
   assert.equal(result.annualRatePercent, 6);
 });
 
-test('monthly deposits earn compound interest at an effective annual rate of 6%', () => {
-  const result = calculateSavingsSimulation(100000, 12);
-  assert.ok(Math.abs(result.finalBalance - 1232652.834204) < 0.01);
-  assert.equal(result.totalDeposited, 1200000);
-  assert.ok(Math.abs(result.totalInterest - (result.finalBalance - 1200000)) < 0.01);
+for (const [months, interest, balance] of [
+  [1, 0, 1000000], [2, 5000, 2005000], [3, 10025, 3015025],
+  [4, 15075, 4030100], [5, 20150, 5050250], [6, 25251, 6075501],
+  [7, 30377, 7105878], [8, 35529, 8141407], [9, 40707, 9182114],
+  [10, 45910, 10228024], [11, 51140, 11279164], [12, 56395, 12335559],
+]) {
+  test(`matches month ${months} in the supplied Simpanan Siaga table`, () => {
+    const result = calculateSavingsSimulation(1000000, months);
+    const previousBalance = months === 1 ? 0 : calculateSavingsSimulation(1000000, months - 1).finalBalance;
+    assert.equal(result.finalBalance, balance);
+    assert.equal(result.finalBalance - previousBalance - 1000000, interest);
+    assert.equal(result.totalDeposited, 1000000 * months);
+    assert.equal(result.totalInterest, balance - result.totalDeposited);
+  });
+}
+
+test('monthly interest is floored to whole rupiah before adding the next deposit', () => {
+  assert.equal(calculateSavingsSimulation(100199, 2).finalBalance, 200898);
+  assert.equal(calculateSavingsSimulation(100200, 2).finalBalance, 200901);
 });
 
-test('compound interest scales with the monthly deposit', () => {
-  const minimum = calculateSavingsSimulation(100000, 24);
-  const higher = calculateSavingsSimulation(500000, 24);
-  assert.ok(Math.abs(higher.finalBalance - minimum.finalBalance * 5) < 0.01);
-  assert.ok(Math.abs(minimum.finalBalance - 2539264.838460) < 0.01);
-  assert.ok(calculateSavingsSimulation(5000000, 120));
+test('minimum and maximum supported deposits produce whole-rupiah balances', () => {
+  for (const amount of [100000, 5000000]) {
+    const result = calculateSavingsSimulation(amount, 120);
+    assert.ok(Number.isSafeInteger(result.finalBalance));
+    assert.ok(Number.isSafeInteger(result.totalInterest));
+    assert.ok(result.finalBalance > result.totalDeposited);
+  }
 });

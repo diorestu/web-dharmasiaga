@@ -33,7 +33,7 @@
         <label class="form-label fw-bold text-dark" for="{{ $calculatorId }}-rate">{{ $isSaving ? 'Bunga berbunga per tahun (%)' : 'Suku bunga anuitas per bulan (%)' }}</label>
         @if($isSaving)
             <input class="form-control form-control-lg" id="{{ $calculatorId }}-rate" type="number" value="6" data-calculator-rate readonly aria-describedby="{{ $calculatorId }}-rate-hint">
-            <div class="form-text text-dark" id="{{ $calculatorId }}-rate-hint">Bunga majemuk efektif 6% per tahun, dihitung bulanan dengan asumsi setoran pada akhir bulan.</div>
+            <div class="form-text text-dark" id="{{ $calculatorId }}-rate-hint">Bunga 6% per tahun (0,5% per bulan) dari saldo sebelumnya, dibulatkan ke bawah ke rupiah penuh sebelum setoran berikutnya ditambahkan. Setoran bulan pertama belum mendapat bunga.</div>
         @else
             <input class="form-control form-control-lg" id="{{ $calculatorId }}-rate" type="text" value="{{ $isBusiness ? '1,6' : '2' }}" data-calculator-rate readonly aria-describedby="{{ $calculatorId }}-rate-hint">
             <div class="form-text text-dark" id="{{ $calculatorId }}-rate-hint">{{ $isBusiness ? 'UMKM: Rp20–50 juta = 1,6%; Rp51–100 juta = 1,5%; Rp101–200 juta = 1,4% per bulan.' : 'Otomatis mengikuti jumlah pinjaman.' }}</div>

@@ -7244,14 +7244,26 @@ li.single-benefits-box-colum:nth-child(6) .single-benefits-box .icon {
 
 
 .cooperative-overview {
-  padding: 100px 0;
-  background: #f7f1eb;
+  padding: 72px 0;
+  background: #ffffff;
+}
+
+.cooperative-overview .container {
+  max-width: 1040px;
+}
+
+.cooperative-overview .sec-title {
+  padding-bottom: 36px;
+}
+
+.cooperative-overview .sec-title h2 {
+  font-size: clamp(28px, 3vw, 36px);
 }
 
 .cooperative-overview-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 48px;
+  gap: 64px;
 }
 
 .overview-figure {
@@ -7260,45 +7272,83 @@ li.single-benefits-box-colum:nth-child(6) .single-benefits-box .icon {
 }
 
 .overview-figure figcaption h3 {
-  font-size: 24px;
-  margin-bottom: 8px;
+  font-size: 20px;
+  margin-bottom: 4px;
 }
 
 .overview-figure figcaption p {
   color: #655e59;
-  margin-bottom: 20px;
+  margin-bottom: 28px;
+  font-size: 14px;
 }
 
 .overview-chart {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  font-variant-numeric: tabular-nums;
+}
+
+.overview-chart-column {
+  min-width: 0;
+  text-align: center;
+}
+
+.overview-chart-track {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 190px;
+  border-bottom: 1px solid #e6e2df;
+}
+
+.overview-chart-value {
+  position: absolute;
+  top: -26px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #1a1c23;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.overview-chart-year {
   display: block;
-  width: 100%;
-  height: auto;
-  overflow: visible;
-}
-
-.overview-chart-gridline {
-  stroke: #d7d0ca;
-  stroke-width: 1;
-}
-
-.overview-chart-axis {
-  fill: #655e59;
+  padding-top: 10px;
+  color: #655e59;
   font-size: 13px;
 }
 
-.overview-chart-value,
-.overview-chart-year {
-  fill: #1a1c23;
-  font-size: 15px;
-  font-weight: 600;
-}
-
 .overview-chart-bar {
-  fill: var(--thm-base);
+  position: relative;
+  width: 48px;
+  max-width: 60%;
+  background: #b57a90;
 }
 
-.overview-figure--assets .overview-chart-bar {
-  fill: #17634c;
+.overview-chart-bar--latest {
+  background: var(--thm-base);
+}
+
+.overview-details {
+  margin-top: 32px;
+  color: #655e59;
+  font-size: 14px;
+}
+
+.overview-details summary {
+  width: fit-content;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.overview-details summary:focus-visible {
+  outline: 2px solid var(--thm-base);
+  outline-offset: 5px;
+}
+
+.overview-data-scroll {
+  overflow-x: auto;
 }
 
 .overview-data-table {
@@ -7329,12 +7379,37 @@ li.single-benefits-box-colum:nth-child(6) .single-benefits-box .icon {
 
 @media (max-width: 767px) {
   .cooperative-overview {
-    padding: 64px 0;
+    padding: 48px 0;
   }
 
   .cooperative-overview-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 48px;
+    gap: 20px;
+  }
+
+  .overview-figure figcaption h3 {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .overview-figure figcaption p {
+    font-size: 12px;
+  }
+
+  .overview-chart-track {
+    height: 140px;
+  }
+
+  .overview-chart-value {
+    top: -24px;
+    font-size: 10px;
+  }
+
+  .overview-chart-year {
+    font-size: 10px;
+  }
+
+  .overview-data-table {
+    font-size: 13px;
   }
 }
 
