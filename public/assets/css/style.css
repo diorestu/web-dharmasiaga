@@ -6967,8 +6967,7 @@ li.single-benefits-box-colum:nth-child(6) .single-benefits-box .icon {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
-  background-color: #646464;
-  background-blend-mode: luminosity;
+  border-radius: 8px;
 }
 
 
@@ -7090,24 +7089,26 @@ li.single-benefits-box-colum:nth-child(6) .single-benefits-box .icon {
 .intro-style1-single-box .img-box {
   position: relative;
   display: block;
-  background-color: #646464;
+  background-color: transparent;
 }
 
 .intro-style1-single-box .img-box .img-box-inner {
   position: relative;
   display: block;
   overflow: hidden;
+  border-radius: 6px;
 }
 
 .intro-style1-single-box .img-box img {
   width: 100%;
-  mix-blend-mode: luminosity;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
   transform: scale(1.0);
-  transition: all 200ms ease;
+  transition: all 300ms ease;
 }
 
 .intro-style1-single-box:hover .img-box img {
-  transform: scale(1.2) rotate(0deg);
+  transform: scale(1.08) rotate(0deg);
 }
 
 .intro-style1-single-box .title-box {

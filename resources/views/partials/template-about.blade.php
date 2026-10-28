@@ -36,7 +36,7 @@
                                     <div class="intro-style1-single-box">
                                         <div class="img-box">
                                             <div class="img-box-inner">
-                                                <img src="{{ asset('assets/images/resources/dharma-about.png') }}" alt="Ilustrasi konsultasi anggota koperasi di Bali">
+                                                <img src="{{ asset('assets/images/resources/dharma-community.jpeg') }}" alt="Konsultasi dan kebersamaan anggota KSP Dharma Siaga" width="600" height="450" loading="lazy">
                                             </div>
                                             <div class="overlay-text">
                                                 <h3>Anggota</h3>
@@ -53,7 +53,7 @@
                                     <div class="intro-style1-single-box">
                                         <div class="img-box">
                                             <div class="img-box-inner">
-                                                <img src="{{ asset('assets/images/resources/dharma-profile.jpeg') }}" alt="Ilustrasi profil KSP Dharma Siaga">
+                                                <img src="{{ asset('assets/images/resources/dharma-office-angle.jpeg') }}" alt="Kantor dan profil KSP Dharma Siaga" width="600" height="450" loading="lazy">
                                             </div>
                                             <div class="overlay-text">
                                                 <h3>Koperasi</h3>
