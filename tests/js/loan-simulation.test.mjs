@@ -10,52 +10,33 @@ for (const [principal, rate, maximumMonths] of [
   [100000000, 1.4, 60],
   [200000000, 1.4, 60],
 ]) {
-  test(`business loan policy for Rp ${principal}`, () => {
-    const policy = getLoanPolicy(principal, 'business');
-    assert.equal(policy.monthlyRatePercent, rate);
-    assert.equal(policy.maximumMonths, maximumMonths);
-    const result = calculateLoanSimulation(principal, 12, 'business');
-    assert.equal(result.monthlyRatePercent, rate);
-    assert.ok(result.totalPayment > principal);
-    assert.equal(calculateLoanSimulation(principal, maximumMonths + 1, 'business'), null);
-    assert.equal(calculateLoanSimulation(principal, 11, 'business'), null);
+  test(`loan policy for Rp ${principal} (standard & business)`, () => {
+    for (const loanType of ['standard', 'business']) {
+      const policy = getLoanPolicy(principal, loanType);
+      assert.ok(policy, `policy should exist for Rp ${principal} (${loanType})`);
+      assert.equal(policy.monthlyRatePercent, rate);
+      assert.equal(policy.maximumMonths, maximumMonths);
+      const result = calculateLoanSimulation(principal, 12, loanType);
+      assert.equal(result.monthlyRatePercent, rate);
+      assert.ok(result.totalPayment > principal);
+      assert.equal(calculateLoanSimulation(principal, maximumMonths + 1, loanType), null);
+      assert.equal(calculateLoanSimulation(principal, 11, loanType), null);
+    }
   });
 }
 
-test('business loan rejects amounts outside the specified range', () => {
-  for (const principal of [0, -1, NaN, 19999999, 200000001]) {
-    assert.equal(getLoanPolicy(principal, 'business'), null);
-    assert.equal(calculateLoanSimulation(principal, 12, 'business'), null);
+test('loan rejects amounts below Rp 20.000.000 and above Rp 200.000.000 (no 2% tier)', () => {
+  for (const loanType of ['standard', 'business']) {
+    for (const principal of [0, -1, 999999, 1000000, 5000000, 10000000, 19999999, NaN, Infinity, Number.MAX_SAFE_INTEGER + 1, 200000001]) {
+      assert.equal(getLoanPolicy(principal, loanType), null);
+      assert.equal(calculateLoanSimulation(principal, 12, loanType), null);
+    }
   }
 });
 
-for (const [principal, monthlyRatePercent, maximumMonths] of [
-  [1000000, 2, 36],
-  [19999999, 2, 36],
-  [20000000, 1.6, 36],
-  [49999999, 1.6, 36],
-  [50000000, 1.5, 60],
-  [99999999, 1.5, 60],
-  [100000000, 1.4, 60],
-  [150000000, 1.4, 60],
-]) {
-  test(`standard loan policy for Rp ${principal}`, () => {
-    const policy = getLoanPolicy(principal);
-    assert.equal(policy.monthlyRatePercent, monthlyRatePercent);
-    assert.equal(calculateLoanSimulation(principal, 12)?.monthlyRatePercent, monthlyRatePercent);
-    assert.ok(calculateLoanSimulation(principal, maximumMonths));
-    assert.equal(calculateLoanSimulation(principal, 11), null);
-    assert.equal(calculateLoanSimulation(principal, maximumMonths + 1), null);
-  });
-}
-
-test('invalid principal or duration does not produce a repayment', () => {
-  for (const principal of [0, -1, 999999, NaN, Infinity, Number.MAX_SAFE_INTEGER + 1, 1000000.5]) {
-    assert.equal(getLoanPolicy(principal), null);
-    assert.equal(calculateLoanSimulation(principal, 12), null);
-  }
-  for (const duration of [0, -1, NaN, Infinity, 12.5]) {
-    assert.equal(calculateLoanSimulation(10000000, duration), null);
+test('invalid duration does not produce a repayment', () => {
+  for (const duration of [0, -1, NaN, Infinity, 12.5, 61]) {
+    assert.equal(calculateLoanSimulation(20000000, duration), null);
   }
 });
 

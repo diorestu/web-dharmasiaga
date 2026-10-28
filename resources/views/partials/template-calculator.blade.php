@@ -58,7 +58,7 @@
                                                         </div>
                                                         <div class="inner-title">
                                                             <h3>Angsuran per bulan</h3>
-                                                            <h2 class="fs-4 text-break">Rp 0</h2>
+                                                            <h2 class="fs-4 text-break">Rp 1.845.041</h2>
                                                         </div>
                                                     </div>
                                                     <div class="btns-box">
@@ -76,7 +76,7 @@
                                                                 </div>
                                                                 <div class="text">
                                                                     <a href="{{ route('home') }}#contact">Total bunga</a>
-                                                                    <p>Rp 0</p>
+                                                                    <p>Rp 2.140.494</p>
                                                                 </div>
                                                             </div>
                                                         </li>
@@ -87,7 +87,7 @@
                                                                 </div>
                                                                 <div class="text">
                                                                     <a href="{{ route('home') }}#contact">Total pembayaran</a>
-                                                                    <p>Rp 0</p>
+                                                                    <p>Rp 22.140.494</p>
                                                                 </div>
                                                             </div>
                                                         </li>
@@ -166,7 +166,7 @@
                                                         </div>
                                                         <div class="inner-title">
                                                             <h3>Angsuran per bulan</h3>
-                                                            <h2 class="fs-4 text-break">Rp 0</h2>
+                                                            <h2 class="fs-4 text-break">Rp 1.845.041</h2>
                                                         </div>
                                                     </div>
                                                     <div class="btns-box">
@@ -184,7 +184,7 @@
                                                                 </div>
                                                                 <div class="text">
                                                                     <a href="{{ route('home') }}#contact">Total bunga</a>
-                                                                    <p>Rp 0</p>
+                                                                    <p>Rp 2.140.494</p>
                                                                 </div>
                                                             </div>
                                                         </li>
@@ -195,7 +195,7 @@
                                                                 </div>
                                                                 <div class="text">
                                                                     <a href="{{ route('home') }}#contact">Total pembayaran</a>
-                                                                    <p>Rp 0</p>
+                                                                    <p>Rp 22.140.494</p>
                                                                 </div>
                                                             </div>
                                                         </li>
