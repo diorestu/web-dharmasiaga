@@ -9,6 +9,18 @@ class CooperativeContentTest extends TestCase
 {
     use RefreshDatabase;
 
+    public function test_homepage_overview_shows_members_and_assets_from_the_supplied_data(): void
+    {
+        $response = $this->get('/');
+
+        $response->assertSee('id="assets"', false)->assertSeeText('Gambaran koperasi')
+            ->assertSeeText('Jumlah anggota')->assertSeeText('Aset koperasi');
+        foreach (['2.902', '3.573', '4.105', '4.356', '84.653.416.322', '99.709.162.452', '111.681.495.129', '116.685.986.612'] as $value) {
+            $response->assertSeeText($value);
+        }
+        $response->assertDontSeeText('Data indikatif')->assertDontSeeText('Rp 18,4 M');
+    }
+
     public function test_history_and_savings_pages_are_accessible_from_navigation(): void
     {
         $this->get('/sejarah-kami')->assertSee('18 Oktober 2003');

@@ -1,6 +1,12 @@
 <?php
 
 return [
+    'overview' => [
+        ['year' => 2022, 'members' => 2902, 'assets' => 84653416322],
+        ['year' => 2023, 'members' => 3573, 'assets' => 99709162452],
+        ['year' => 2024, 'members' => 4105, 'assets' => 111681495129],
+        ['year' => 2025, 'members' => 4356, 'assets' => 116685986612],
+    ],
     'history' => [
         'tagline' => 'Berawal dari Kebersamaan, Bertumbuh dalam Kepercayaan',
         'paragraphs' => [

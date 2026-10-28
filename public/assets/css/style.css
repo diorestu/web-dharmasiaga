@@ -7243,6 +7243,101 @@ li.single-benefits-box-colum:nth-child(6) .single-benefits-box .icon {
 }
 
 
+.cooperative-overview {
+  padding: 100px 0;
+  background: #f7f1eb;
+}
+
+.cooperative-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px;
+}
+
+.overview-figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.overview-figure figcaption h3 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.overview-figure figcaption p {
+  color: #655e59;
+  margin-bottom: 20px;
+}
+
+.overview-chart {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.overview-chart-gridline {
+  stroke: #d7d0ca;
+  stroke-width: 1;
+}
+
+.overview-chart-axis {
+  fill: #655e59;
+  font-size: 13px;
+}
+
+.overview-chart-value,
+.overview-chart-year {
+  fill: #1a1c23;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.overview-chart-bar {
+  fill: var(--thm-base);
+}
+
+.overview-figure--assets .overview-chart-bar {
+  fill: #17634c;
+}
+
+.overview-data-table {
+  width: 100%;
+  margin-top: 16px;
+  color: #1a1c23;
+  font-variant-numeric: tabular-nums;
+}
+
+.overview-data-table th,
+.overview-data-table td {
+  padding: 12px 0;
+  border-bottom: 1px solid #d7d0ca;
+}
+
+.overview-data-table th {
+  font-weight: 500;
+}
+
+.overview-data-table thead th {
+  font-weight: 700;
+}
+
+.overview-data-table th:last-child,
+.overview-data-table td {
+  text-align: right;
+}
+
+@media (max-width: 767px) {
+  .cooperative-overview {
+    padding: 64px 0;
+  }
+
+  .cooperative-overview-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 48px;
+  }
+}
+
 .savings-detail-title {
   font-size: clamp(30px, 4vw, 46px);
   line-height: 1.2;

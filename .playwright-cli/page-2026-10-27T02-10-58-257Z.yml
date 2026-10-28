@@ -1,0 +1,165 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - generic [ref=e5]: Internal Server Error
+    - button "Copy as Markdown" [ref=e11] [cursor=pointer]
+  - generic [ref=e18]:
+    - generic [ref=e19]:
+      - heading "ParseError" [level=1] [ref=e20]
+      - generic [ref=e21]: resources/views/partials/template-assets.blade.php:25
+      - paragraph [ref=e23]: syntax error, unexpected token "class"
+    - generic [ref=e24]:
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - generic [ref=e27]: LARAVEL
+          - generic [ref=e28]: 13.32.0
+        - generic [ref=e29]:
+          - generic [ref=e30]: PHP
+          - generic [ref=e31]: 8.4.27
+      - generic [ref=e32]: UNHANDLED
+      - generic [ref=e36]: CODE 0
+    - generic [ref=e38]:
+      - generic [ref=e39]: "500"
+      - generic [ref=e43]: GET
+      - generic [ref=e47]: http://127.0.0.1:8014
+      - button [ref=e48] [cursor=pointer]
+  - generic [ref=e53]:
+    - generic [ref=e54]:
+      - heading "Exception trace" [level=3] [ref=e60]
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - generic [ref=e63] [cursor=pointer]:
+            - generic [ref=e66]:
+              - code [ref=e70]:
+                - generic [ref=e71]: "Illuminate\\Filesystem\\Filesystem::{closure:Illuminate\\Filesystem\\Filesystem::getRequire():120}()"
+              - generic [ref=e72]: resources/views/partials/template-assets.blade.php:25
+            - button [ref=e75]
+          - code [ref=e84]:
+            - generic [ref=e85]: 20 </figcaption>
+            - generic [ref=e86]: "21 <svg class=\"overview-chart\" viewBox=\"0 0 520 260\" role=\"img\" aria-labelledby=\"overview-{{ $chart['key'] }}-title overview-{{ $chart['key'] }}-description\">"
+            - generic [ref=e87]: "22 <desc id=\"overview-{{ $chart['key'] }}-description\">Grafik batang {{ strtolower($chart['title']) }} tahun 2022–2025. Nilai lengkap tersedia pada tabel setelah grafik.</desc>"
+            - generic [ref=e88]: 23 @foreach($chart['ticks'] as $tick)
+            - generic [ref=e89]: 24 @php($y = 210 - ($tick / $chart['maximum']) * 180)
+            - generic [ref=e90]: "25 <line class=\"overview-chart-gridline\" x1=\"56\" x2=\"510\" y1=\"{{ $y }}\" y2=\"{{ $y }}\" />"
+            - generic [ref=e91]: "26 <text class=\"overview-chart-axis\" x=\"46\" y=\"{{ $y + 4 }}\" text-anchor=\"end\">{{ number_format($tick / $chart['divisor'], 0, ',', '.') }}</text>"
+            - generic [ref=e92]: 27 @endforeach
+            - generic [ref=e93]: 28 @foreach($history as $row)
+            - generic [ref=e94]: 29 @php
+            - generic [ref=e95]: 30 $height = ($row[$chart['key']] / $chart['maximum']) * 180;
+            - generic [ref=e96]: 31 $x = 80 + $loop->index * 112;
+            - generic [ref=e97]: "32 $value = number_format($row[$chart['key']] / $chart['divisor'], $chart['key'] === 'assets' ? 2 : 0, ',', '.');"
+            - generic [ref=e98]: 33 @endphp
+            - generic [ref=e99]: "34 <rect class=\"overview-chart-bar\" x=\"{{ $x }}\" y=\"{{ 210 - $height }}\" width=\"68\" height=\"{{ $height }}\">"
+            - generic [ref=e100]: "35 <title>{{ $row['year'] }}: {{ $chart['key'] === 'assets' ? 'Rp' : '' }}{{ number_format($row[$chart['key']], 0, ',', '.') }}{{ $chart['key'] === 'members' ? ' anggota' : '' }}</title>"
+            - generic [ref=e101]: 36 </rect>
+            - generic [ref=e102]: "37"
+        - generic [ref=e104] [cursor=pointer]:
+          - generic [ref=e109]: 6 vendor frames
+          - button [ref=e110]
+        - generic [ref=e116] [cursor=pointer]:
+          - generic [ref=e119]:
+            - code [ref=e123]:
+              - generic [ref=e124]: Illuminate\View\View->render()
+            - generic [ref=e125]: resources/views/home.blade.php:7
+          - button [ref=e128]
+        - generic [ref=e134] [cursor=pointer]:
+          - generic [ref=e139]: 37 vendor frames
+          - button [ref=e140]
+        - generic [ref=e146] [cursor=pointer]:
+          - generic [ref=e149]:
+            - code [ref=e153]:
+              - generic [ref=e154]: "Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}(object(Illuminate\\Http\\Request))"
+            - generic [ref=e155]: app/Http/Middleware/SearchIndexing.php:19
+          - button [ref=e158]
+        - generic [ref=e164] [cursor=pointer]:
+          - generic [ref=e169]: 23 vendor frames
+          - button [ref=e170]
+        - generic [ref=e176] [cursor=pointer]:
+          - generic [ref=e179]:
+            - code [ref=e183]:
+              - generic [ref=e184]: Illuminate\Foundation\Application->handleRequest(object(Illuminate\Http\Request))
+            - generic [ref=e185]: public/index.php:20
+          - button [ref=e188]
+        - generic [ref=e194] [cursor=pointer]:
+          - generic [ref=e199]: 1 vendor frame
+          - button [ref=e200]
+    - generic [ref=e205]:
+      - generic [ref=e206]:
+        - heading "Queries" [level=3] [ref=e211]
+        - generic [ref=e212]: 1-2 of 2
+      - generic [ref=e214]:
+        - generic [ref=e215]:
+          - generic [ref=e216]:
+            - generic [ref=e217]: sqlite
+            - code [ref=e224]:
+              - generic [ref=e225]: select * from "sessions" where "id" = 'Lg0yIiZBax1w2sPfauzV6jaSEacgUqZajtHz6gle' limit 1
+          - generic [ref=e226]: 2.81ms
+        - generic [ref=e227]:
+          - generic [ref=e228]:
+            - generic [ref=e229]: sqlite
+            - code [ref=e236]:
+              - generic [ref=e237]: select "value", "key" from "site_contents"
+          - generic [ref=e238]: 0.22ms
+  - generic [ref=e240]:
+    - generic [ref=e241]:
+      - heading "Headers" [level=2] [ref=e242]
+      - generic [ref=e243]:
+        - generic [ref=e244]:
+          - generic [ref=e245]: host
+          - generic [ref=e247]: 127.0.0.1:8014
+        - generic [ref=e248]:
+          - generic [ref=e249]: connection
+          - generic [ref=e251]: keep-alive
+        - generic [ref=e252]:
+          - generic [ref=e253]: sec-ch-ua
+          - generic [ref=e255]: "\"Google Chrome\";v=\"155\", \"Chromium\";v=\"155\", \"Not(A:Brand\";v=\"24\""
+        - generic [ref=e256]:
+          - generic [ref=e257]: sec-ch-ua-mobile
+          - generic [ref=e259]: "?0"
+        - generic [ref=e260]:
+          - generic [ref=e261]: sec-ch-ua-platform
+          - generic [ref=e263]: "\"macOS\""
+        - generic [ref=e264]:
+          - generic [ref=e265]: upgrade-insecure-requests
+          - generic [ref=e267]: "1"
+        - generic [ref=e268]:
+          - generic [ref=e269]: user-agent
+          - generic [ref=e271]: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36
+        - generic [ref=e272]:
+          - generic [ref=e273]: accept
+          - generic [ref=e275]: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+        - generic [ref=e276]:
+          - generic [ref=e277]: sec-fetch-site
+          - generic [ref=e279]: none
+        - generic [ref=e280]:
+          - generic [ref=e281]: sec-fetch-mode
+          - generic [ref=e283]: navigate
+        - generic [ref=e284]:
+          - generic [ref=e285]: sec-fetch-user
+          - generic [ref=e287]: "?1"
+        - generic [ref=e288]:
+          - generic [ref=e289]: sec-fetch-dest
+          - generic [ref=e291]: document
+        - generic [ref=e292]:
+          - generic [ref=e293]: accept-encoding
+          - generic [ref=e295]: gzip, deflate, br, zstd
+        - generic [ref=e296]:
+          - generic [ref=e297]: accept-language
+          - generic [ref=e299]: en-US,en;q=0.9
+    - generic [ref=e300]:
+      - heading "Body" [level=2] [ref=e301]
+      - generic [ref=e302]: // No request body
+    - generic [ref=e303]:
+      - heading "Routing" [level=2] [ref=e304]
+      - generic [ref=e305]:
+        - generic [ref=e306]:
+          - generic [ref=e307]: controller
+          - generic [ref=e309]: Closure
+        - generic [ref=e310]:
+          - generic [ref=e311]: route name
+          - generic [ref=e313]: home
+        - generic [ref=e314]:
+          - generic [ref=e315]: middleware
+          - generic [ref=e317]: web
+    - generic [ref=e318]:
+      - heading "Routing parameters" [level=2] [ref=e319]
+      - generic [ref=e320]: // No routing parameters

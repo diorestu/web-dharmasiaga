@@ -2,6 +2,35 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { getLoanPolicy, calculateLoanSimulation } from '../../public/assets/js/loan-simulation.js';
 
+for (const [principal, rate, maximumMonths] of [
+  [20000000, 1.6, 36], [50000000, 1.6, 36],
+  [51000000, 1.5, 60], [100000000, 1.5, 60],
+  [101000000, 1.4, 36], [200000000, 1.4, 36],
+]) {
+  test(`UMKM policy for Rp ${principal}`, () => {
+    const policy = getLoanPolicy(principal, 'business');
+    assert.equal(policy.monthlyRatePercent, rate);
+    assert.equal(policy.maximumMonths, maximumMonths);
+    const result = calculateLoanSimulation(principal, 12, 'business');
+    assert.equal(result.monthlyRatePercent, rate);
+    assert.ok(result.totalPayment > principal);
+    assert.equal(calculateLoanSimulation(principal, maximumMonths + 1, 'business'), null);
+    assert.equal(calculateLoanSimulation(principal, 11, 'business'), null);
+  });
+}
+
+test('UMKM rejects amounts outside the specified ranges', () => {
+  for (const principal of [0, NaN, 19999999, 50000001, 50500000, 50999999, 100000001, 100500000, 100999999, 200000001]) {
+    assert.equal(getLoanPolicy(principal, 'business'), null);
+    assert.equal(calculateLoanSimulation(principal, 12, 'business'), null);
+  }
+});
+
+test('UMKM annuity uses the monthly business rate', () => {
+  const result = calculateLoanSimulation(20000000, 12, 'business');
+  assert.ok(Math.abs(result.monthlyPayment - 1845041.128804) < 0.01);
+});
+
 for (const [principal, monthlyRatePercent, maximumMonths] of [
   [1000000, 2, 36], [25000000, 2, 36],
   [25000001, 1.9, 36], [50000000, 1.9, 36],

@@ -3,7 +3,7 @@
                 <div class="sec-title text-center">
                     <h2>Rencanakan keuangan Anda</h2>
                     <div class="sub-title">
-                        <p>Simulasi pinjaman anuitas dan perencanaan simpanan, bukan penawaran resmi.</p>
+                        <p>Simulasi pinjaman anuitas dan Simpanan Siaga, bukan penawaran resmi.</p>
                     </div>
                 </div>
                 <div class="row">
@@ -26,7 +26,7 @@
                                         <div class="icon-box">
                                             <span class="icon-loan-2"></span>
                                             <div class="overlay-text">
-                                                <p>Simpanan</p>
+                                                <p>Simpanan Siaga</p>
                                             </div>
                                         </div>
                                     </li>
@@ -129,7 +129,7 @@
                                                                     <span class="icon-right-arrow"></span>
                                                                 </div>
                                                                 <div class="text">
-                                                                    <a href="{{ route('home') }}#contact">Estimasi hasil</a>
+                                                                    <a href="{{ route('home') }}#contact">Total bunga</a>
                                                                     <p>Rp 0</p>
                                                                 </div>
                                                             </div>
@@ -153,7 +153,7 @@
                                     </div>
 
                                     <!--Tab-->
-                                    <div class="tab-content-box-item" id="vehicle-loan" data-calculator="loan">
+                                    <div class="tab-content-box-item" id="vehicle-loan" data-calculator="loan" data-loan-type="business">
                                         <div class="emi-calculator-tab-content-box-item">
 
                                             @include('partials.template-calculator-fields', ['calculatorId' => 'vehicle-loan', 'isSaving' => false])

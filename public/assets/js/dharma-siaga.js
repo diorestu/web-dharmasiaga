@@ -1,4 +1,5 @@
 import { getLoanPolicy, calculateLoanSimulation } from './loan-simulation.js';
+import { calculateSavingsSimulation } from './savings-simulation.js';
 
 (function ($) {
   'use strict';
@@ -74,6 +75,7 @@ import { getLoanPolicy, calculateLoanSimulation } from './loan-simulation.js';
 
   function configureCalculator(panel) {
     const isSaving = panel.dataset.calculator === 'saving';
+    const loanType = panel.dataset.loanType ?? 'standard';
     const amount = panel.querySelector('[data-calculator-amount]');
     const months = panel.querySelector('[data-calculator-months]');
     const customMonths = panel.querySelector('[data-calculator-custom-months]');
@@ -86,8 +88,9 @@ import { getLoanPolicy, calculateLoanSimulation } from './loan-simulation.js';
     result.setAttribute('aria-live', 'polite');
 
     function synchronizeLoanPolicy(principal) {
-      const policy = getLoanPolicy(principal);
+      const policy = getLoanPolicy(principal, loanType);
       if (!policy) {
+        rate.value = '';
         return;
       }
       rate.value = policy.monthlyRatePercent.toLocaleString('id-ID');
@@ -114,7 +117,7 @@ import { getLoanPolicy, calculateLoanSimulation } from './loan-simulation.js';
         amount.value = '';
         return;
       }
-      const value = Math.min(Number(digits), Number(amount.dataset.maxAmount));
+      const value = Math.min(Number(digits), loanType === 'business' ? Number.MAX_SAFE_INTEGER : Number(amount.dataset.maxAmount));
       const formatted = integer.format(value);
       amount.value = formatted;
       const targetDigits = Math.min(digitsBeforeCaret, String(value).length);
@@ -138,7 +141,7 @@ import { getLoanPolicy, calculateLoanSimulation } from './loan-simulation.js';
       customField.hidden = !usesCustomMonths;
       customMonths.disabled = !usesCustomMonths;
       if (!isSaving) {
-        const outOfRange = Number.isFinite(principal) && (principal < Number(amount.dataset.minAmount) || principal > Number(amount.dataset.maxAmount));
+        const outOfRange = Number.isFinite(principal) && (principal < Number(amount.dataset.minAmount) || principal > Number(amount.dataset.maxAmount) || !getLoanPolicy(principal, loanType));
         amount.setCustomValidity(outOfRange ? panel.querySelector('.invalid-feedback').textContent.trim() : '');
       }
       const controls = [amount, rate, ...(usesCustomMonths ? [customMonths] : [])];
@@ -155,13 +158,12 @@ import { getLoanPolicy, calculateLoanSimulation } from './loan-simulation.js';
         return;
       }
       if (isSaving) {
-        const deposited = principal * duration;
-        const interest = deposited * rate.valueAsNumber / 100 * duration / 12;
-        result.textContent = currency.format(deposited + interest).replace(/\u00a0/g, ' ');
-        totals[0].textContent = currency.format(interest);
-        totals[1].textContent = currency.format(deposited);
+        const simulation = calculateSavingsSimulation(principal, duration);
+        result.textContent = simulation ? currency.format(simulation.finalBalance).replace(/\u00a0/g, ' ') : '—';
+        totals[0].textContent = simulation ? currency.format(simulation.totalInterest) : '—';
+        totals[1].textContent = simulation ? currency.format(simulation.totalDeposited) : '—';
       } else {
-        const simulation = calculateLoanSimulation(principal, duration);
+        const simulation = calculateLoanSimulation(principal, duration, loanType);
         result.textContent = simulation ? currency.format(simulation.monthlyPayment).replace(/\u00a0/g, ' ') : '—';
         totals[0].textContent = simulation ? currency.format(simulation.totalInterest) : '—';
         totals[1].textContent = simulation ? currency.format(simulation.totalPayment) : '—';
