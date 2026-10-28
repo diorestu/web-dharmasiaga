@@ -6,13 +6,13 @@ test('Simpanan Siaga rejects deposits below Rp100,000 and invalid durations', ()
   for (const amount of [0, 99999, -1, NaN, Infinity, 100000.5, 5000001]) {
     assert.equal(calculateSavingsSimulation(amount, 12), null);
   }
-  for (const months of [0, -1, 121, NaN, Infinity, 12.5]) {
+  for (const months of [0, -1, 1, 2, 3, 6, 9, 11, 121, NaN, Infinity, 12.5]) {
     assert.equal(calculateSavingsSimulation(100000, months), null);
   }
 });
 
-test('the first end-of-month deposit has not yet earned interest', () => {
-  const result = calculateSavingsSimulation(100000, 1);
+test('the first end-of-month deposit has not yet earned interest (tested with minMonths=1)', () => {
+  const result = calculateSavingsSimulation(100000, 1, 1);
   assert.equal(result.finalBalance, 100000);
   assert.equal(result.totalInterest, 0);
   assert.equal(result.totalDeposited, 100000);
@@ -26,8 +26,8 @@ for (const [months, interest, balance] of [
   [10, 45910, 10228024], [11, 51140, 11279164], [12, 56395, 12335559],
 ]) {
   test(`matches month ${months} in the supplied Simpanan Siaga table`, () => {
-    const result = calculateSavingsSimulation(1000000, months);
-    const previousBalance = months === 1 ? 0 : calculateSavingsSimulation(1000000, months - 1).finalBalance;
+    const result = calculateSavingsSimulation(1000000, months, 1);
+    const previousBalance = months === 1 ? 0 : calculateSavingsSimulation(1000000, months - 1, 1).finalBalance;
     assert.equal(result.finalBalance, balance);
     assert.equal(result.finalBalance - previousBalance - 1000000, interest);
     assert.equal(result.totalDeposited, 1000000 * months);
@@ -36,8 +36,8 @@ for (const [months, interest, balance] of [
 }
 
 test('monthly interest is floored to whole rupiah before adding the next deposit', () => {
-  assert.equal(calculateSavingsSimulation(100199, 2).finalBalance, 200898);
-  assert.equal(calculateSavingsSimulation(100200, 2).finalBalance, 200901);
+  assert.equal(calculateSavingsSimulation(100199, 2, 1).finalBalance, 200898);
+  assert.equal(calculateSavingsSimulation(100200, 2, 1).finalBalance, 200901);
 });
 
 test('minimum and maximum supported deposits produce whole-rupiah balances', () => {

@@ -1,5 +1,5 @@
-export function calculateSavingsSimulation(monthlyDeposit, months) {
-  if (!Number.isSafeInteger(monthlyDeposit) || monthlyDeposit < 100000 || monthlyDeposit > 5000000 || !Number.isInteger(months) || months < 1 || months > 120) {
+export function calculateSavingsSimulation(monthlyDeposit, months, minMonths = 12) {
+  if (!Number.isSafeInteger(monthlyDeposit) || monthlyDeposit < 100000 || monthlyDeposit > 5000000 || !Number.isInteger(months) || months < minMonths || months > 120) {
     return null;
   }
 

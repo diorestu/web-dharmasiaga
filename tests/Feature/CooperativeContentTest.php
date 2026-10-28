@@ -47,4 +47,29 @@ class CooperativeContentTest extends TestCase
             ->assertSeeText('Video Company Profile')
             ->assertDontSee('ScMzIvxBSi4');
     }
+
+    public function test_simpanan_siaga_simulation_options_start_at_12_months_and_exclude_shorter_periods(): void
+    {
+        $response = $this->get('/');
+
+        $response->assertOk();
+        $response->assertSee('id="personal-loan"', false);
+        $response->assertSee('<option value="12" selected>12 bulan</option>', false);
+        $response->assertDontSee('<option value="3">3 bulan</option>', false);
+        $response->assertDontSee('<option value="6">6 bulan</option>', false);
+        $response->assertDontSee('<option value="9">9 bulan</option>', false);
+        $response->assertSee('id="personal-loan-custom-months" type="number" inputmode="numeric" min="12" max="120"', false);
+        $response->assertSeeText('Masukkan durasi antara 12 dan 120 bulan.');
+    }
+
+    public function test_loan_simulation_fields_and_hints_render_expected_tiers(): void
+    {
+        $response = $this->get('/');
+
+        $response->assertOk();
+        $response->assertSee('id="home-loan"', false);
+        $response->assertSee('id="vehicle-loan"', false);
+        $response->assertSeeText('Pinjaman: Rp20–<50 juta = 1,6% (maks. 3 th); Rp50–<100 juta = 1,5% (maks. 5 th); Rp100–200 juta = 1,4% (maks. 5 th) per bulan.');
+        $response->assertSeeText('Masukkan pinjaman antara Rp20.000.000 dan Rp200.000.000.');
+    }
 }

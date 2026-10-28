@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\SiteContent;
+use Illuminate\Http\Request;
 
 class CmsController extends Controller
 {
     public function edit()
     {
         $content = SiteContent::pluck('value', 'key')->all();
+
         return view('admin.edit', compact('content'));
     }
 
@@ -21,7 +22,10 @@ class CmsController extends Controller
             'whatsapp' => ['required', 'string', 'max:30'],
             'meta_description' => ['required', 'string', 'max:180'],
         ]);
-        foreach ($data as $key => $value) SiteContent::updateOrCreate(['key' => $key], ['value' => $value]);
+        foreach ($data as $key => $value) {
+            SiteContent::updateOrCreate(['key' => $key], ['value' => $value]);
+        }
+
         return back()->with('status', 'Konten tersimpan ke SQLite.');
     }
 }
