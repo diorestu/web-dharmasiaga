@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="{{ asset('assets/vendors/aos/aos.css') }}">
     <!-- Module css -->
     <link rel="stylesheet" href="{{ asset('assets/css/module-css/01-header-section.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/module-css/02-banner-section.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/module-css/02-banner-section.css') }}?v={{ filemtime(public_path('assets/css/module-css/02-banner-section.css')) }}">
     <link rel="stylesheet" href="{{ asset('assets/css/module-css/03-about-section.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/module-css/04-fact-counter-section.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/module-css/05-testimonial-section.css') }}">

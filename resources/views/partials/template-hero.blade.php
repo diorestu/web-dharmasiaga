@@ -1,166 +1,83 @@
 <section id="home" class="main-slider main-slider-style1">
-            <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true,
-                "effect": "fade",
-                "pagination": {
-                "el": "#main-slider-pagination",
-                "type": "bullets",
-                "clickable": true
-                },
-                "navigation": {
-                "nextEl": "#main-slider__swiper-button-next",
-                "prevEl": "#main-slider__swiper-button-prev"
-                },
-                "autoplay": {
-                "delay": 5000
-                }}'>
-                <div class="swiper-wrapper">
-                    <div class="slider-buttom-box">
-                        <a class="style2" href="{{ route('home') }}#service">Lihat layanan <span class="icon-play-button"></span></a>
-                        <a href="{{ route('home') }}#contact">Hubungi kami <span class="icon-play-button"></span></a>
-                    </div>
+    <div class="sr-only">
+        <h1 data-copy-id="{{ $content['hero_title_id'] ?? 'Tumbuh bersama,|untuk masa depan|yang lebih baik.' }}" data-copy-en="{{ $content['hero_title_en'] ?? 'Grow together,|for a better|tomorrow.' }}">
+            @if(!empty($content['hero_title_id'])){{ $content['hero_title_id'] }}@else Tumbuh bersama,<br> untuk masa depan<br> yang lebih baik.@endif
+        </h1>
+        <p>KSP Dharma Siaga mendampingi kebutuhan simpanan dan pinjaman anggota di Denpasar, Bali.</p>
+    </div>
 
-                    <!--Start Single Swiper Slide-->
-                    <div class="swiper-slide">
-                        <div class="image-layer" style="background-image: url({{ asset('assets/images/resources/dharma-loan-service.jpeg') }}); background-position: center 25%;">
-                        </div>
-                        <div class="main-slider-style1__shape1"
-                            style="background-image: url({{ asset('assets/images/shapes/slider-1-shape-1.png') }});">
-                        </div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xl-12">
-                                    <div class="main-slider-content">
-                                        <div class="main-slider-content__inner">
-                                            <div class="big-title">
-                                                <h1 data-copy-id="{{ $content['hero_title_id'] ?? 'Tumbuh bersama,|untuk masa depan|yang lebih baik.' }}" data-copy-en="{{ $content['hero_title_en'] ?? 'Grow together,|for a better|tomorrow.' }}">@if(!empty($content['hero_title_id'])){{ $content['hero_title_id'] }}@else Tumbuh bersama,<br> untuk masa depan<br> yang lebih baik.@endif</h1>
-                                            </div>
-                                            <div class="text">
-                                                <p>
-                                                    KSP Dharma Siaga mendampingi kebutuhan simpanan<br> dan pinjaman anggota di Denpasar, Bali.
-                                                </p>
-                                            </div>
-                                            <div class="btns-box">
-                                                <a class="btn-one" href="{{ route('home') }}#contact">
-                                                    <span class="txt">
-                                                        Konsultasi keanggotaan
-                                                    </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End Single Swiper Slide-->
-
-                    <!--Start Single Swiper Slide-->
-                    <div class="swiper-slide">
-                        <div class="image-layer" style="background-image: url({{ asset('assets/images/resources/dharma-teller-service.jpeg') }}); background-position: center 25%;">
-                        </div>
-                        <div class="main-slider-style1__shape1"
-                            style="background-image: url({{ asset('assets/images/shapes/slider-1-shape-1.png') }});">
-                        </div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xl-12">
-                                    <div class="main-slider-content">
-                                        <div class="main-slider-content__inner">
-                                            <div class="big-title">
-                                                <h2>Simpanan terarah,<br> rencana keluarga<br> lebih terjaga.</h2>
-                                            </div>
-                                            <div class="text">
-                                                <p>
-                                                    Mulai dari percakapan tentang kebutuhan Anda.<br> Temukan layanan yang sesuai bersama tim koperasi.
-                                                </p>
-                                            </div>
-                                            <div class="btns-box">
-                                                <a class="btn-one" href="{{ route('home') }}#contact">
-                                                    <span class="txt">
-                                                        Konsultasi keanggotaan
-                                                    </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End Single Swiper Slide-->
-
-                    <!--Start Single Swiper Slide-->
-                    <div class="swiper-slide">
-                        <div class="image-layer" style="background-image: url({{ asset('assets/images/slides/dharma-hero.png') }});">
-                        </div>
-                        <div class="main-slider-style1__shape1"
-                            style="background-image: url({{ asset('assets/images/shapes/slider-1-shape-1.png') }});">
-                        </div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xl-12">
-                                    <div class="main-slider-content">
-                                        <div class="main-slider-content__inner">
-                                            <div class="big-title">
-                                                <h2>Dukung usaha,<br> bangun peluang<br> bersama anggota.</h2>
-                                            </div>
-                                            <div class="text">
-                                                <p>
-                                                    Mulai dari percakapan tentang kebutuhan Anda.<br> Temukan layanan yang sesuai bersama tim koperasi.
-                                                </p>
-                                            </div>
-                                            <div class="btns-box">
-                                                <a class="btn-one" href="{{ route('home') }}#contact">
-                                                    <span class="txt">
-                                                        Konsultasi keanggotaan
-                                                    </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End Single Swiper Slide-->
-                    @foreach(['dharma-office-front.jpeg', 'dharma-office-angle.jpeg'] as $officePhoto)
-                    <div class="swiper-slide">
-                        <div class="image-layer" style="background-image: url({{ asset('assets/images/resources/'.$officePhoto) }}); background-position: center;">
-                        </div>
-                        <div class="main-slider-style1__shape1"
-                            style="background-image: url({{ asset('assets/images/shapes/slider-1-shape-1.png') }});"></div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xl-12">
-                                    <div class="main-slider-content">
-                                        <div class="main-slider-content__inner">
-                                            <div class="big-title">
-                                                <h2>KSP Dharma Siaga,<br> dekat dengan<br> kebutuhan anggota.</h2>
-                                            </div>
-                                            <div class="text">
-                                                <p>Kunjungi kantor layanan kami di Denpasar.<br> Diskusikan kebutuhan simpanan dan pinjaman bersama tim koperasi.</p>
-                                            </div>
-                                            <div class="btns-box">
-                                                <a class="btn-one" href="{{ route('pages.branches') }}"><span class="txt">Lokasi kantor layanan</span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-
-                <!-- If we need navigation buttons -->
-                <div class="main-slider__nav">
-                    <div class="swiper-button-prev" id="main-slider__swiper-button-next">
-                        <i class="icon-chevron left"></i>
-                    </div>
-                    <div class="swiper-button-next" id="main-slider__swiper-button-prev">
-                        <i class="icon-chevron right"></i>
-                    </div>
-                </div>
-
+    <div class="swiper-container thm-swiper__slider" data-swiper-options='{
+        "slidesPerView": 1,
+        "loop": true,
+        "effect": "fade",
+        "pagination": {
+            "el": "#main-slider-pagination",
+            "type": "bullets",
+            "clickable": true
+        },
+        "navigation": {
+            "nextEl": "#main-slider__swiper-button-next",
+            "prevEl": "#main-slider__swiper-button-prev"
+        },
+        "autoplay": {
+            "delay": 5000
+        }
+    }'>
+        <div class="swiper-wrapper">
+            <!-- Slide 1: HUT ke-23 -->
+            <div class="swiper-slide">
+                <a href="{{ route('home') }}#service" class="slider-full-link" aria-label="23 Tahun KSP Dharma Siaga - Bersama Anggota, Menuju Sejahtera">
+                    <div class="image-layer" style="background-image: url({{ asset('assets/images/slides/header-slide-1.png') }});"></div>
+                </a>
             </div>
-        </section>
+
+            <!-- Slide 2: Gebyar Simpanan Berhadiah -->
+            <div class="swiper-slide">
+                <a href="{{ route('pages.savings') }}" class="slider-full-link" aria-label="Gebyar Simpanan Berhadiah Periode XII KSP Dharma Siaga">
+                    <div class="image-layer" style="background-image: url({{ asset('assets/images/slides/header-slide-2.jpg') }});"></div>
+                </a>
+            </div>
+
+            <!-- Slide 3: Pinjaman Modal Usaha -->
+            <div class="swiper-slide">
+                <a href="{{ route('home') }}#calculator" class="slider-full-link" aria-label="Pinjaman Modal Usaha KSP Dharma Siaga Bunga Mulai 1% per Bulan">
+                    <div class="image-layer" style="background-image: url({{ asset('assets/images/slides/header-slide-3.jpg') }});"></div>
+                </a>
+            </div>
+
+            <!-- Slide 4: Informasi Official -->
+            <div class="swiper-slide">
+                <a href="{{ route('home') }}#contact" class="slider-full-link" aria-label="Informasi Official KSP Dharma Siaga - WhatsApp dan Call Center">
+                    <div class="image-layer" style="background-image: url({{ asset('assets/images/slides/header-slide-4.jpg') }});"></div>
+                </a>
+            </div>
+
+            <!-- Slide 5: Membership Plus (+) -->
+            <div class="swiper-slide">
+                <a href="{{ route('pages.savings') }}" class="slider-full-link" aria-label="Membership Plus KSP Dharma Siaga - Perlindungan Hari Tua dan BPJS Ketenagakerjaan">
+                    <div class="image-layer" style="background-image: url({{ asset('assets/images/slides/header-slide-5.jpg') }});"></div>
+                </a>
+            </div>
+
+            <!-- Slide 6: Waspada Penipuan -->
+            <div class="swiper-slide">
+                <a href="{{ route('pages.branches') }}" class="slider-full-link" aria-label="Perhatian Waspada Penipuan KSP Dharma Siaga">
+                    <div class="image-layer" style="background-image: url({{ asset('assets/images/slides/header-slide-6.jpg') }});"></div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Pagination Bullets -->
+        <div class="swiper-pagination" id="main-slider-pagination"></div>
+
+        <!-- Navigation Buttons -->
+        <div class="main-slider__nav">
+            <div class="swiper-button-prev" id="main-slider__swiper-button-prev" aria-label="Slide sebelumnya">
+                <i class="icon-chevron left"></i>
+            </div>
+            <div class="swiper-button-next" id="main-slider__swiper-button-next" aria-label="Slide berikutnya">
+                <i class="icon-chevron right"></i>
+            </div>
+        </div>
+    </div>
+</section>
