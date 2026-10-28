@@ -40,7 +40,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/module-css/09-breadcrumb-section.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/module-css/10-contact.css') }}">
     <!-- Template styles -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}?v={{ filemtime(public_path('assets/css/style.css')) }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/dharma-motion.css') }}?v={{ filemtime(public_path('assets/css/dharma-motion.css')) }}" />
 

@@ -14,7 +14,10 @@ class CooperativeContentTest extends TestCase
         $response = $this->get('/');
 
         $response->assertSee('id="assets"', false)->assertSeeText('Gambaran koperasi')
-            ->assertSeeText('Jumlah anggota')->assertSeeText('Aset koperasi');
+            ->assertSeeText('Jumlah anggota')->assertSeeText('Aset koperasi')
+            ->assertSee('<canvas data-overview-chart="members"', false)
+            ->assertSee('<canvas data-overview-chart="assets"', false)
+            ->assertSee('id="cooperative-overview-data"', false);
         foreach (['2.902', '3.573', '4.105', '4.356', '84.653.416.322', '99.709.162.452', '111.681.495.129', '116.685.986.612'] as $value) {
             $response->assertSeeText($value);
         }

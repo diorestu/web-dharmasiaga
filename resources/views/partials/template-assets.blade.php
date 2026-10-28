@@ -1,8 +1,8 @@
 @php
     $history = config('cooperative.overview');
     $charts = [
-        ['key' => 'members', 'title' => 'Jumlah anggota', 'unit' => 'Orang', 'maximum' => 5000, 'divisor' => 1],
-        ['key' => 'assets', 'title' => 'Aset koperasi', 'unit' => 'Rp miliar', 'maximum' => 120000000000, 'divisor' => 1000000000],
+        ['key' => 'members', 'title' => 'Jumlah anggota', 'unit' => 'Orang'],
+        ['key' => 'assets', 'title' => 'Aset koperasi', 'unit' => 'Rp miliar'],
     ];
 @endphp
 <section id="assets" class="cooperative-overview" aria-labelledby="asset-overview-title">
@@ -19,21 +19,8 @@
                         <p>{{ $chart['unit'] }}</p>
                     </figcaption>
                     <p class="sr-only" id="overview-{{ $chart['key'] }}-description">Grafik batang {{ strtolower($chart['title']) }} tahun 2022–2025. Nilai lengkap tersedia pada tabel di bawah kedua grafik.</p>
-                    <div class="overview-chart" role="img" aria-labelledby="overview-{{ $chart['key'] }}-title overview-{{ $chart['key'] }}-description">
-                        @foreach($history as $row)
-                            @php
-                                $height = ($row[$chart['key']] / $chart['maximum']) * 100;
-                                $value = number_format($row[$chart['key']] / $chart['divisor'], $chart['key'] === 'assets' ? 1 : 0, ',', '.');
-                            @endphp
-                            <div class="overview-chart-column" aria-hidden="true" title="{{ $row['year'] }}: {{ $chart['key'] === 'assets' ? 'Rp' : '' }}{{ number_format($row[$chart['key']], 0, ',', '.') }}{{ $chart['key'] === 'members' ? ' anggota' : '' }}">
-                                <div class="overview-chart-track">
-                                    <div class="overview-chart-bar {{ $loop->last ? 'overview-chart-bar--latest' : '' }}" style="height: {{ $height }}%">
-                                        <span class="overview-chart-value">{{ $value }}</span>
-                                    </div>
-                                </div>
-                                <span class="overview-chart-year">{{ $row['year'] }}</span>
-                            </div>
-                        @endforeach
+                    <div class="overview-chart">
+                        <canvas data-overview-chart="{{ $chart['key'] }}" role="img" aria-labelledby="overview-{{ $chart['key'] }}-title overview-{{ $chart['key'] }}-description">Data {{ strtolower($chart['title']) }} tersedia pada tabel lengkap di bawah grafik.</canvas>
                     </div>
                 </figure>
             @endforeach
@@ -54,3 +41,5 @@
         </details>
     </div>
 </section>
+<script type="application/json" id="cooperative-overview-data">{!! json_encode($history, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_THROW_ON_ERROR) !!}</script>
+@vite('resources/js/cooperative-overview.js')

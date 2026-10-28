@@ -7269,6 +7269,9 @@ li.single-benefits-box-colum:nth-child(6) .single-benefits-box .icon {
 .overview-figure {
   min-width: 0;
   margin: 0;
+  padding: 20px;
+  border: 1px solid #d7d0ca;
+  border-radius: 6px;
 }
 
 .overview-figure figcaption h3 {
@@ -7283,51 +7286,10 @@ li.single-benefits-box-colum:nth-child(6) .single-benefits-box .icon {
 }
 
 .overview-chart {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  font-variant-numeric: tabular-nums;
-}
-
-.overview-chart-column {
-  min-width: 0;
-  text-align: center;
-}
-
-.overview-chart-track {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  height: 190px;
-  border-bottom: 1px solid #e6e2df;
-}
-
-.overview-chart-value {
-  position: absolute;
-  top: -26px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #1a1c23;
-  font-size: 14px;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-.overview-chart-year {
-  display: block;
-  padding-top: 10px;
-  color: #655e59;
-  font-size: 13px;
-}
-
-.overview-chart-bar {
   position: relative;
-  width: 48px;
-  max-width: 60%;
-  background: #b57a90;
-}
-
-.overview-chart-bar--latest {
-  background: var(--thm-base);
+  width: 100%;
+  min-width: 0;
+  height: 240px;
 }
 
 .overview-details {
@@ -7386,6 +7348,10 @@ li.single-benefits-box-colum:nth-child(6) .single-benefits-box .icon {
     gap: 20px;
   }
 
+  .overview-figure {
+    padding: 14px 4px;
+  }
+
   .overview-figure figcaption h3 {
     font-size: 16px;
     line-height: 1.4;
@@ -7395,17 +7361,8 @@ li.single-benefits-box-colum:nth-child(6) .single-benefits-box .icon {
     font-size: 12px;
   }
 
-  .overview-chart-track {
-    height: 140px;
-  }
-
-  .overview-chart-value {
-    top: -24px;
-    font-size: 10px;
-  }
-
-  .overview-chart-year {
-    font-size: 10px;
+  .overview-chart {
+    height: 200px;
   }
 
   .overview-data-table {
