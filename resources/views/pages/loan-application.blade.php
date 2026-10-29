@@ -61,13 +61,14 @@
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label class="form-label fw-semibold">2. Pekerjaan / Usaha <span class="text-danger">*</span></label>
-                                    <div class="d-flex flex-wrap gap-2 pt-1">
+                                    <label class="form-label fw-semibold d-block">2. Pekerjaan / Usaha <span class="text-danger">*</span></label>
+                                    <!-- Radio button list ke bawah -->
+                                    <div class="d-flex flex-column gap-2 pt-1">
                                         @foreach(['Dagang', 'Pariwisata', 'Jasa', 'Industri', 'Pegawai', 'dll'] as $occ)
-                                            <div class="form-check form-check-inline me-2">
-                                                <input class="form-check-input occupation-radio" type="radio" name="occupation" id="occ_{{ $occ }}" value="{{ $occ }}" {{ old('occupation') === $occ ? 'checked' : '' }} required>
-                                                <label class="form-check-label" for="occ_{{ $occ }}">{{ $occ }}</label>
-                                            </div>
+                                            <label class="radio-list-item" for="occ_{{ $occ }}">
+                                                <input class="form-check-input occupation-radio me-3 mt-0" type="radio" name="occupation" id="occ_{{ $occ }}" value="{{ $occ }}" {{ old('occupation') === $occ ? 'checked' : '' }} required>
+                                                <span class="text-dark flex-grow-1">{{ $occ }}</span>
+                                            </label>
                                         @endforeach
                                     </div>
                                     <div id="occupation_other_wrapper" class="mt-2 {{ old('occupation') === 'dll' ? '' : 'd-none' }}">
@@ -95,15 +96,15 @@
 
                                 <div class="col-md-6">
                                     <label for="phone" class="form-label fw-semibold">6. No. Telp / WhatsApp <span class="text-danger">*</span></label>
-                                    <input type="tel" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" value="{{ old('phone') }}" placeholder="Contoh: 08123456789" required>
+                                    <input type="tel" inputmode="numeric" class="form-control phone-mask @error('phone') is-invalid @enderror" id="phone" name="phone" value="{{ old('phone') }}" placeholder="Contoh: 0812-3456-7890" required>
                                     @error('phone')<div class="invalid-feedback">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label for="loan_amount" class="form-label fw-semibold">7. Jumlah Pinjaman (Rp) <span class="text-danger">*</span></label>
+                                    <label for="loan_amount_input" class="form-label fw-semibold">7. Jumlah Pinjaman (Rp) <span class="text-danger">*</span></label>
                                     <div class="input-group">
-                                        <span class="input-group-text bg-light fw-bold">Rp</span>
-                                        <input type="text" class="form-control @error('loan_amount') is-invalid @enderror" id="loan_amount_input" placeholder="Contoh: 50.000.000" value="{{ old('loan_amount') ? number_format((float) old('loan_amount'), 0, ',', '.') : '' }}" required>
+                                        <span class="input-group-text bg-light fw-bold text-dark">Rp</span>
+                                        <input type="text" inputmode="numeric" class="form-control currency-mask @error('loan_amount') is-invalid @enderror" id="loan_amount_input" placeholder="Contoh: 50.000.000" value="{{ old('loan_amount') ? number_format((float) old('loan_amount'), 0, ',', '.') : '' }}" required>
                                         <input type="hidden" name="loan_amount" id="loan_amount" value="{{ old('loan_amount') }}">
                                     </div>
                                     <small class="text-muted">Plafon pinjaman KSP Dharma Siaga mulai Rp 1.000.000 hingga Rp 200.000.000+</small>
@@ -118,7 +119,7 @@
 
                                 <div class="col-md-6">
                                     <label for="loan_term_months" class="form-label fw-semibold">9. Jangka Waktu / Tenor <span class="text-danger">*</span></label>
-                                    <select class="form-select @error('loan_term_months') is-invalid @enderror" id="loan_term_months" name="loan_term_months" required>
+                                    <select class="form-select ignore w-100 @error('loan_term_months') is-invalid @enderror" id="loan_term_months" name="loan_term_months" required style="width: 100% !important; display: block !important;">
                                         <option value="" disabled {{ old('loan_term_months') ? '' : 'selected' }}>Pilih jangka waktu...</option>
                                         <option value="6" {{ old('loan_term_months') == 6 ? 'selected' : '' }}>6 Bulan</option>
                                         <option value="12" {{ old('loan_term_months') == 12 ? 'selected' : '' }}>12 Bulan (1 Tahun)</option>
@@ -132,7 +133,7 @@
 
                                 <div class="col-md-6">
                                     <label for="collateral_type" class="form-label fw-semibold">10. Agunan Pinjaman <span class="text-danger">*</span></label>
-                                    <select class="form-select @error('collateral_type') is-invalid @enderror" id="collateral_type" name="collateral_type" required>
+                                    <select class="form-select ignore w-100 @error('collateral_type') is-invalid @enderror" id="collateral_type" name="collateral_type" required style="width: 100% !important; display: block !important;">
                                         <option value="" disabled {{ old('collateral_type') ? '' : 'selected' }}>Pilih jenis agunan...</option>
                                         <option value="BPKB Sepeda Motor" {{ old('collateral_type') === 'BPKB Sepeda Motor' ? 'selected' : '' }}>BPKB Sepeda Motor</option>
                                         <option value="BPKB Mobil" {{ old('collateral_type') === 'BPKB Mobil' ? 'selected' : '' }}>BPKB Mobil</option>
@@ -147,13 +148,14 @@
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label class="form-label fw-semibold">11. Skema Pembayaran <span class="text-danger">*</span></label>
-                                    <div class="d-flex flex-wrap gap-3 pt-1">
+                                    <label class="form-label fw-semibold d-block">11. Skema Pembayaran <span class="text-danger">*</span></label>
+                                    <!-- Radio button list ke bawah -->
+                                    <div class="d-flex flex-column gap-2 pt-1">
                                         @foreach(['Langsung', 'Transfer', 'Di Jemput', 'Debet Tabungan'] as $scheme)
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="payment_scheme" id="scheme_{{ $loop->index }}" value="{{ $scheme }}" {{ old('payment_scheme', 'Langsung') === $scheme ? 'checked' : '' }} required>
-                                                <label class="form-check-label" for="scheme_{{ $loop->index }}">{{ $scheme }}</label>
-                                            </div>
+                                            <label class="radio-list-item" for="scheme_{{ $loop->index }}">
+                                                <input class="form-check-input me-3 mt-0" type="radio" name="payment_scheme" id="scheme_{{ $loop->index }}" value="{{ $scheme }}" {{ old('payment_scheme', 'Langsung') === $scheme ? 'checked' : '' }} required>
+                                                <span class="text-dark flex-grow-1">{{ $scheme }}</span>
+                                            </label>
                                         @endforeach
                                     </div>
                                     @error('payment_scheme')<div class="text-danger small mt-1">{{ $message }}</div>@enderror
@@ -194,7 +196,7 @@
 
                                 <div class="col-md-6">
                                     <label for="guarantor_phone" class="form-label fw-semibold">18. No. Telp / HP</label>
-                                    <input type="tel" class="form-control" id="guarantor_phone" name="guarantor_phone" value="{{ old('guarantor_phone') }}" placeholder="No telepon penanggung jawab">
+                                    <input type="tel" inputmode="numeric" class="form-control phone-mask" id="guarantor_phone" name="guarantor_phone" value="{{ old('guarantor_phone') }}" placeholder="Contoh: 0812-3456-7890">
                                 </div>
 
                                 <div class="col-md-6">
@@ -236,7 +238,7 @@
 
                                 <div class="col-md-6">
                                     <label for="heir_phone" class="form-label fw-semibold">24. No. Telp / HP</label>
-                                    <input type="tel" class="form-control" id="heir_phone" name="heir_phone" value="{{ old('heir_phone') }}" placeholder="Nomor telepon ahli waris">
+                                    <input type="tel" inputmode="numeric" class="form-control phone-mask" id="heir_phone" name="heir_phone" value="{{ old('heir_phone') }}" placeholder="Contoh: 0812-3456-7890">
                                 </div>
 
                                 <div class="col-md-6">
@@ -268,7 +270,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <label for="emergency_sibling_phone" class="form-label small fw-semibold">28. No. Telp</label>
-                                        <input type="tel" class="form-control form-control-sm" id="emergency_sibling_phone" name="emergency_sibling_phone" value="{{ old('emergency_sibling_phone') }}" placeholder="No telepon">
+                                        <input type="tel" inputmode="numeric" class="form-control form-control-sm phone-mask" id="emergency_sibling_phone" name="emergency_sibling_phone" value="{{ old('emergency_sibling_phone') }}" placeholder="Contoh: 0812-3456-7890">
                                     </div>
                                     <div class="col-12">
                                         <label for="emergency_sibling_address" class="form-label small fw-semibold">27. Alamat</label>
@@ -286,7 +288,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <label for="emergency_other_phone" class="form-label small fw-semibold">31. No. Telp</label>
-                                        <input type="tel" class="form-control form-control-sm" id="emergency_other_phone" name="emergency_other_phone" value="{{ old('emergency_other_phone') }}" placeholder="No telepon">
+                                        <input type="tel" inputmode="numeric" class="form-control form-control-sm phone-mask" id="emergency_other_phone" name="emergency_other_phone" value="{{ old('emergency_other_phone') }}" placeholder="Contoh: 0812-3456-7890">
                                     </div>
                                     <div class="col-12">
                                         <label for="emergency_other_address" class="form-label small fw-semibold">30. Alamat</label>
@@ -297,7 +299,7 @@
                         </div>
                     </div>
 
-                    <!-- PERSYARATAN & BERKAS DOKUMEN -->
+                    <!-- PERSYARATAN & BERKAS DOKUMEN (DROPZONE) -->
                     <div class="card border-0 shadow-sm mb-4" style="border-radius: 12px;">
                         <div class="card-header bg-white py-3 px-4 border-bottom d-flex align-items-center gap-2">
                             <span class="badge rounded-circle p-2 text-white" style="background-color: #28a745; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center;"><i class="fas fa-paperclip"></i></span>
@@ -313,38 +315,159 @@
                                     <li>Denah Lokasi Rumah / Usaha</li>
                                     <li>Slip Gaji / Bukti Usaha dan Bersedia di Survey</li>
                                 </ul>
-                                <small class="text-muted d-block mt-2"><em>* Berkas dapat diunggah sekarang (PDF/Foto) atau diserahkan langsung saat tim KSP Dharma Siaga melakukan survei.</em></small>
+                                <small class="text-muted d-block mt-2"><em>* Berkas dapat diunggah melalui kotak dropzone di bawah ini atau diserahkan langsung saat tim survei KSP Dharma Siaga datang.</em></small>
                             </div>
 
-                            <div class="row g-3">
+                            <!-- Dropzone File Upload Grid -->
+                            <div class="row g-4">
+                                <!-- 1. KTP -->
                                 <div class="col-md-6">
-                                    <label for="ktp_file" class="form-label small fw-semibold">Foto / Scan KTP (Peminjam & Penanggung Jawab)</label>
-                                    <input class="form-control form-control-sm @error('ktp_file') is-invalid @enderror" type="file" id="ktp_file" name="ktp_file" accept=".pdf,.jpg,.jpeg,.png">
-                                    @error('ktp_file')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                                    <label class="form-label small fw-semibold d-block">Foto / Scan KTP (Peminjam & Penanggung Jawab)</label>
+                                    <div class="dropzone-box" data-dropzone="ktp_file">
+                                        <input type="file" id="ktp_file" name="ktp_file" class="d-none dropzone-input" accept=".pdf,.jpg,.jpeg,.png">
+                                        <div class="dropzone-area p-3 text-center border-2 border-dashed rounded-3">
+                                            <i class="fas fa-id-card fa-2x text-primary mb-2"></i>
+                                            <div class="fw-semibold text-dark small">Tarik & lepas file di sini, atau <span class="text-primary text-decoration-underline">Pilih Berkas</span></div>
+                                            <div class="text-muted" style="font-size: 11px;">PDF, JPG, JPEG, PNG (Maks. 5 MB)</div>
+                                        </div>
+                                        <div class="dropzone-preview p-3 border rounded-3 bg-white d-none align-items-center justify-content-between gap-3">
+                                            <div class="d-flex align-items-center gap-3 overflow-hidden">
+                                                <div class="dropzone-thumb-container rounded overflow-hidden flex-shrink-0" style="width: 52px; height: 52px; background: #f1f5f9; display: grid; place-items: center;">
+                                                    <img src="" class="dropzone-thumb w-100 h-100 object-fit-cover d-none" alt="Preview">
+                                                    <i class="fas fa-file-pdf fa-2x text-danger dropzone-pdf-icon d-none"></i>
+                                                </div>
+                                                <div class="overflow-hidden">
+                                                    <strong class="d-block text-dark small text-truncate dropzone-filename">nama-file</strong>
+                                                    <span class="text-muted dropzone-filesize" style="font-size: 11px;">0 MB</span>
+                                                    <span class="badge bg-success-subtle text-success py-0 px-1" style="font-size: 10px;">Siap Diunggah</span>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn btn-outline-danger btn-sm dropzone-remove flex-shrink-0 py-1 px-2" title="Ganti berkas">
+                                                <i class="fas fa-trash-alt me-1"></i> Ganti
+                                            </button>
+                                        </div>
+                                    </div>
+                                    @error('ktp_file')<div class="text-danger small mt-1">{{ $message }}</div>@enderror
                                 </div>
 
+                                <!-- 2. KK -->
                                 <div class="col-md-6">
-                                    <label for="kk_file" class="form-label small fw-semibold">Foto / Scan Kartu Keluarga / Surat Nikah</label>
-                                    <input class="form-control form-control-sm @error('kk_file') is-invalid @enderror" type="file" id="kk_file" name="kk_file" accept=".pdf,.jpg,.jpeg,.png">
-                                    @error('kk_file')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                                    <label class="form-label small fw-semibold d-block">Foto / Scan Kartu Keluarga / Surat Nikah</label>
+                                    <div class="dropzone-box" data-dropzone="kk_file">
+                                        <input type="file" id="kk_file" name="kk_file" class="d-none dropzone-input" accept=".pdf,.jpg,.jpeg,.png">
+                                        <div class="dropzone-area p-3 text-center border-2 border-dashed rounded-3">
+                                            <i class="fas fa-users fa-2x text-primary mb-2"></i>
+                                            <div class="fw-semibold text-dark small">Tarik & lepas file di sini, atau <span class="text-primary text-decoration-underline">Pilih Berkas</span></div>
+                                            <div class="text-muted" style="font-size: 11px;">PDF, JPG, JPEG, PNG (Maks. 5 MB)</div>
+                                        </div>
+                                        <div class="dropzone-preview p-3 border rounded-3 bg-white d-none align-items-center justify-content-between gap-3">
+                                            <div class="d-flex align-items-center gap-3 overflow-hidden">
+                                                <div class="dropzone-thumb-container rounded overflow-hidden flex-shrink-0" style="width: 52px; height: 52px; background: #f1f5f9; display: grid; place-items: center;">
+                                                    <img src="" class="dropzone-thumb w-100 h-100 object-fit-cover d-none" alt="Preview">
+                                                    <i class="fas fa-file-pdf fa-2x text-danger dropzone-pdf-icon d-none"></i>
+                                                </div>
+                                                <div class="overflow-hidden">
+                                                    <strong class="d-block text-dark small text-truncate dropzone-filename">nama-file</strong>
+                                                    <span class="text-muted dropzone-filesize" style="font-size: 11px;">0 MB</span>
+                                                    <span class="badge bg-success-subtle text-success py-0 px-1" style="font-size: 10px;">Siap Diunggah</span>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn btn-outline-danger btn-sm dropzone-remove flex-shrink-0 py-1 px-2" title="Ganti berkas">
+                                                <i class="fas fa-trash-alt me-1"></i> Ganti
+                                            </button>
+                                        </div>
+                                    </div>
+                                    @error('kk_file')<div class="text-danger small mt-1">{{ $message }}</div>@enderror
                                 </div>
 
+                                <!-- 3. JAMINAN -->
                                 <div class="col-md-6">
-                                    <label for="collateral_file" class="form-label small fw-semibold">Foto / Scan Jaminan (BPKB & STNK / Sertifikat)</label>
-                                    <input class="form-control form-control-sm @error('collateral_file') is-invalid @enderror" type="file" id="collateral_file" name="collateral_file" accept=".pdf,.jpg,.jpeg,.png">
-                                    @error('collateral_file')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                                    <label class="form-label small fw-semibold d-block">Foto / Scan Jaminan (BPKB & STNK / Sertifikat SHM)</label>
+                                    <div class="dropzone-box" data-dropzone="collateral_file">
+                                        <input type="file" id="collateral_file" name="collateral_file" class="d-none dropzone-input" accept=".pdf,.jpg,.jpeg,.png">
+                                        <div class="dropzone-area p-3 text-center border-2 border-dashed rounded-3">
+                                            <i class="fas fa-file-contract fa-2x text-primary mb-2"></i>
+                                            <div class="fw-semibold text-dark small">Tarik & lepas file di sini, atau <span class="text-primary text-decoration-underline">Pilih Berkas</span></div>
+                                            <div class="text-muted" style="font-size: 11px;">PDF, JPG, JPEG, PNG (Maks. 5 MB)</div>
+                                        </div>
+                                        <div class="dropzone-preview p-3 border rounded-3 bg-white d-none align-items-center justify-content-between gap-3">
+                                            <div class="d-flex align-items-center gap-3 overflow-hidden">
+                                                <div class="dropzone-thumb-container rounded overflow-hidden flex-shrink-0" style="width: 52px; height: 52px; background: #f1f5f9; display: grid; place-items: center;">
+                                                    <img src="" class="dropzone-thumb w-100 h-100 object-fit-cover d-none" alt="Preview">
+                                                    <i class="fas fa-file-pdf fa-2x text-danger dropzone-pdf-icon d-none"></i>
+                                                </div>
+                                                <div class="overflow-hidden">
+                                                    <strong class="d-block text-dark small text-truncate dropzone-filename">nama-file</strong>
+                                                    <span class="text-muted dropzone-filesize" style="font-size: 11px;">0 MB</span>
+                                                    <span class="badge bg-success-subtle text-success py-0 px-1" style="font-size: 10px;">Siap Diunggah</span>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn btn-outline-danger btn-sm dropzone-remove flex-shrink-0 py-1 px-2" title="Ganti berkas">
+                                                <i class="fas fa-trash-alt me-1"></i> Ganti
+                                            </button>
+                                        </div>
+                                    </div>
+                                    @error('collateral_file')<div class="text-danger small mt-1">{{ $message }}</div>@enderror
                                 </div>
 
+                                <!-- 4. SLIP GAJI / BUKTI USAHA -->
                                 <div class="col-md-6">
-                                    <label for="income_slip_file" class="form-label small fw-semibold">Slip Gaji / Rekening Koran / Bukti Usaha</label>
-                                    <input class="form-control form-control-sm @error('income_slip_file') is-invalid @enderror" type="file" id="income_slip_file" name="income_slip_file" accept=".pdf,.jpg,.jpeg,.png">
-                                    @error('income_slip_file')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                                    <label class="form-label small fw-semibold d-block">Slip Gaji / Rekening Koran / Bukti Usaha</label>
+                                    <div class="dropzone-box" data-dropzone="income_slip_file">
+                                        <input type="file" id="income_slip_file" name="income_slip_file" class="d-none dropzone-input" accept=".pdf,.jpg,.jpeg,.png">
+                                        <div class="dropzone-area p-3 text-center border-2 border-dashed rounded-3">
+                                            <i class="fas fa-money-check-alt fa-2x text-primary mb-2"></i>
+                                            <div class="fw-semibold text-dark small">Tarik & lepas file di sini, atau <span class="text-primary text-decoration-underline">Pilih Berkas</span></div>
+                                            <div class="text-muted" style="font-size: 11px;">PDF, JPG, JPEG, PNG (Maks. 5 MB)</div>
+                                        </div>
+                                        <div class="dropzone-preview p-3 border rounded-3 bg-white d-none align-items-center justify-content-between gap-3">
+                                            <div class="d-flex align-items-center gap-3 overflow-hidden">
+                                                <div class="dropzone-thumb-container rounded overflow-hidden flex-shrink-0" style="width: 52px; height: 52px; background: #f1f5f9; display: grid; place-items: center;">
+                                                    <img src="" class="dropzone-thumb w-100 h-100 object-fit-cover d-none" alt="Preview">
+                                                    <i class="fas fa-file-pdf fa-2x text-danger dropzone-pdf-icon d-none"></i>
+                                                </div>
+                                                <div class="overflow-hidden">
+                                                    <strong class="d-block text-dark small text-truncate dropzone-filename">nama-file</strong>
+                                                    <span class="text-muted dropzone-filesize" style="font-size: 11px;">0 MB</span>
+                                                    <span class="badge bg-success-subtle text-success py-0 px-1" style="font-size: 10px;">Siap Diunggah</span>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn btn-outline-danger btn-sm dropzone-remove flex-shrink-0 py-1 px-2" title="Ganti berkas">
+                                                <i class="fas fa-trash-alt me-1"></i> Ganti
+                                            </button>
+                                        </div>
+                                    </div>
+                                    @error('income_slip_file')<div class="text-danger small mt-1">{{ $message }}</div>@enderror
                                 </div>
 
+                                <!-- 5. DENAH LOKASI -->
                                 <div class="col-12">
-                                    <label for="location_sketch_file" class="form-label small fw-semibold">Denah Lokasi (Foto gambar tangan / screenshot maps)</label>
-                                    <input class="form-control form-control-sm @error('location_sketch_file') is-invalid @enderror" type="file" id="location_sketch_file" name="location_sketch_file" accept=".pdf,.jpg,.jpeg,.png">
-                                    @error('location_sketch_file')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                                    <label class="form-label small fw-semibold d-block">Denah Lokasi (Foto gambar sketsa tangan / screenshot maps)</label>
+                                    <div class="dropzone-box" data-dropzone="location_sketch_file">
+                                        <input type="file" id="location_sketch_file" name="location_sketch_file" class="d-none dropzone-input" accept=".pdf,.jpg,.jpeg,.png">
+                                        <div class="dropzone-area p-3 text-center border-2 border-dashed rounded-3">
+                                            <i class="fas fa-map-marked-alt fa-2x text-primary mb-2"></i>
+                                            <div class="fw-semibold text-dark small">Tarik & lepas file di sini, atau <span class="text-primary text-decoration-underline">Pilih Berkas</span></div>
+                                            <div class="text-muted" style="font-size: 11px;">PDF, JPG, JPEG, PNG (Maks. 5 MB)</div>
+                                        </div>
+                                        <div class="dropzone-preview p-3 border rounded-3 bg-white d-none align-items-center justify-content-between gap-3">
+                                            <div class="d-flex align-items-center gap-3 overflow-hidden">
+                                                <div class="dropzone-thumb-container rounded overflow-hidden flex-shrink-0" style="width: 52px; height: 52px; background: #f1f5f9; display: grid; place-items: center;">
+                                                    <img src="" class="dropzone-thumb w-100 h-100 object-fit-cover d-none" alt="Preview">
+                                                    <i class="fas fa-file-pdf fa-2x text-danger dropzone-pdf-icon d-none"></i>
+                                                </div>
+                                                <div class="overflow-hidden">
+                                                    <strong class="d-block text-dark small text-truncate dropzone-filename">nama-file</strong>
+                                                    <span class="text-muted dropzone-filesize" style="font-size: 11px;">0 MB</span>
+                                                    <span class="badge bg-success-subtle text-success py-0 px-1" style="font-size: 10px;">Siap Diunggah</span>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn btn-outline-danger btn-sm dropzone-remove flex-shrink-0 py-1 px-2" title="Ganti berkas">
+                                                <i class="fas fa-trash-alt me-1"></i> Ganti
+                                            </button>
+                                        </div>
+                                    </div>
+                                    @error('location_sketch_file')<div class="text-danger small mt-1">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="col-12 mt-3">
@@ -374,11 +497,11 @@
 
                     <!-- SUBMIT BUTTON -->
                     <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 pt-2">
-                        <a href="{{ route('pages.loans') }}" class="btn btn-outline-secondary px-4 py-2" style="border-radius: 8px;">
-                            <i class="fas fa-arrow-left me-1"></i> Kembali ke Produk Pinjaman
+                        <a href="{{ route('pages.loans') }}" class="btn-one px-4 py-2" style="border-radius: 8px;">
+                            <span class="txt"><i class="fas fa-arrow-left me-1"></i> Kembali ke Produk Pinjaman</span>
                         </a>
-                        <button type="submit" class="btn btn-primary px-5 py-3 fw-bold shadow" style="background-color: #164b78; border-color: #164b78; border-radius: 8px; font-size: 16px;">
-                            <i class="fas fa-paper-plane me-2"></i> Kirim Permohonan Pinjaman
+                        <button type="submit" class="btn-one px-5 py-3 fw-bold" style="border-radius: 8px; font-size: 16px;">
+                            <span class="txt"><i class="fas fa-paper-plane me-2"></i> Kirim Permohonan Pinjaman</span>
                         </button>
                     </div>
                 </form>
@@ -389,12 +512,21 @@
 </section>
 
 <script>
-document-ready: {
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Prevent niceSelect from breaking select on mobile / creating duplicate chevron arrows
+    if (typeof jQuery !== 'undefined') {
+        jQuery('.loan-application-section select').removeClass('nice-select');
+        if (typeof jQuery.fn.niceSelect !== 'undefined') {
+            jQuery('.loan-application-section select').niceSelect('destroy');
+        }
+    }
+
+    // 2. Input Masking: Currency (Jumlah Pinjaman)
     const loanInput = document.getElementById('loan_amount_input');
     const loanHidden = document.getElementById('loan_amount');
 
     if (loanInput && loanHidden) {
-        loanInput.addEventListener('input', function(e) {
+        loanInput.addEventListener('input', function() {
             let val = this.value.replace(/\D/g, '');
             if (val !== '') {
                 loanHidden.value = val;
@@ -406,6 +538,24 @@ document-ready: {
         });
     }
 
+    // 3. Input Masking: Phone Numbers (Digits only with friendly format e.g. 0812-3456-7890)
+    document.querySelectorAll('.phone-mask').forEach(input => {
+        input.addEventListener('input', function() {
+            let val = this.value.replace(/\D/g, '');
+            if (val.length > 15) val = val.substring(0, 15);
+            let formatted = '';
+            if (val.length > 8) {
+                formatted = val.substring(0, 4) + '-' + val.substring(4, 8) + '-' + val.substring(8);
+            } else if (val.length > 4) {
+                formatted = val.substring(0, 4) + '-' + val.substring(4);
+            } else {
+                formatted = val;
+            }
+            this.value = formatted;
+        });
+    });
+
+    // 4. Radio toggle for "dll" pekerjaan
     const radios = document.querySelectorAll('.occupation-radio');
     const otherWrapper = document.getElementById('occupation_other_wrapper');
     radios.forEach(radio => {
@@ -417,6 +567,91 @@ document-ready: {
             }
         });
     });
-}
+
+    // 5. Interactive Dropzone File Uploader
+    document.querySelectorAll('.dropzone-box').forEach(box => {
+        const fileInput = box.querySelector('.dropzone-input');
+        const dropArea = box.querySelector('.dropzone-area');
+        const previewBox = box.querySelector('.dropzone-preview');
+        const thumbImg = box.querySelector('.dropzone-thumb');
+        const pdfIcon = box.querySelector('.dropzone-pdf-icon');
+        const fileNameEl = box.querySelector('.dropzone-filename');
+        const fileSizeEl = box.querySelector('.dropzone-filesize');
+        const removeBtn = box.querySelector('.dropzone-remove');
+
+        if (!fileInput || !dropArea || !previewBox) return;
+
+        dropArea.addEventListener('click', () => fileInput.click());
+
+        ['dragenter', 'dragover'].forEach(evt => {
+            dropArea.addEventListener(evt, (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                dropArea.classList.add('dropzone-active');
+            });
+        });
+
+        ['dragleave', 'drop'].forEach(evt => {
+            dropArea.addEventListener(evt, (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                dropArea.classList.remove('dropzone-active');
+            });
+        });
+
+        dropArea.addEventListener('drop', (e) => {
+            if (e.dataTransfer && e.dataTransfer.files.length > 0) {
+                fileInput.files = e.dataTransfer.files;
+                handleFile(fileInput.files[0]);
+            }
+        });
+
+        fileInput.addEventListener('change', () => {
+            if (fileInput.files && fileInput.files.length > 0) {
+                handleFile(fileInput.files[0]);
+            }
+        });
+
+        removeBtn.addEventListener('click', () => {
+            fileInput.value = '';
+            dropArea.classList.remove('d-none');
+            previewBox.classList.add('d-none');
+            previewBox.classList.remove('d-flex');
+            thumbImg.src = '';
+            thumbImg.classList.add('d-none');
+            pdfIcon.classList.add('d-none');
+        });
+
+        function handleFile(file) {
+            if (!file) return;
+
+            if (file.size > 5 * 1024 * 1024) {
+                alert('Ukuran berkas ' + file.name + ' melebihi batas 5 MB.');
+                fileInput.value = '';
+                return;
+            }
+
+            fileNameEl.textContent = file.name;
+            fileSizeEl.textContent = (file.size / (1024 * 1024)).toFixed(2) + ' MB';
+
+            if (file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    thumbImg.src = e.target.result;
+                    thumbImg.classList.remove('d-none');
+                    pdfIcon.classList.add('d-none');
+                };
+                reader.readAsDataURL(file);
+            } else {
+                thumbImg.classList.add('d-none');
+                pdfIcon.classList.remove('d-none');
+            }
+
+            dropArea.classList.add('d-none');
+            previewBox.classList.remove('d-none');
+            previewBox.classList.add('d-flex');
+        }
+    });
+});
 </script>
 @endsection

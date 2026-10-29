@@ -7458,18 +7458,22 @@ li.single-benefits-box-colum:nth-child(6) .single-benefits-box .icon {
   text-align: center !important;
 }
 
-/* Button normal state border and WhatsApp icon */
+/* Button normal state border and WhatsApp icon: border warna merah marun senada dengan button ketika state hover */
 .product-page .btn-one,
+.product-page .btn-two,
 #savings-products .btn-one,
 .savings-detail .btn-one,
 #loan-products .btn-one,
 #membership-products .btn-one {
-  border: 2px solid #1a1c23 !important;
+  border: 2px solid var(--thm-base) !important;
   line-height: 50px !important;
   font-size: 15px !important;
 }
 
 .product-page .btn-one:hover,
+.product-page .btn-one:focus,
+.product-page .btn-two:hover,
+.product-page .btn-two:focus,
 #savings-products .btn-one:hover,
 .savings-detail .btn-one:hover,
 #loan-products .btn-one:hover,
@@ -7482,7 +7486,7 @@ li.single-benefits-box-colum:nth-child(6) .single-benefits-box .icon {
 .savings-detail a[href*="wa.me"].btn-one,
 #loan-products a[href*="wa.me"].btn-one,
 #membership-products a[href*="wa.me"].btn-one {
-  border-color: #25d366 !important;
+  border-color: var(--thm-base) !important;
 }
 
 .product-page a[href*="wa.me"].btn-one:hover,
@@ -7490,7 +7494,7 @@ li.single-benefits-box-colum:nth-child(6) .single-benefits-box .icon {
 .savings-detail a[href*="wa.me"].btn-one:hover,
 #loan-products a[href*="wa.me"].btn-one:hover,
 #membership-products a[href*="wa.me"].btn-one:hover {
-  border-color: #128c7e !important;
+  border-color: var(--thm-base) !important;
 }
 
 .btn-one .fa-whatsapp {

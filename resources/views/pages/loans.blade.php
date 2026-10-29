@@ -96,7 +96,7 @@
                                                 <a class="btn-one" href="{{ $waLink }}" target="_blank" rel="noopener noreferrer">
                                                     <span class="txt"><i class="fab fa-whatsapp"></i>Ajukan Lewat WhatsApp</span>
                                                 </a>
-                                                <a class="btn-two" href="{{ route('home') }}#loan-simulation">
+                                                <a class="btn-one" href="{{ route('home') }}#loan-simulation">
                                                     <span class="txt">Simulasi Pinjaman</span>
                                                 </a>
                                             </div>
