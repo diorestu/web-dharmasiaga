@@ -1,7 +1,8 @@
 const loanPolicies = [
-  {minimumPrincipal: 20000000, maximumPrincipal: 49999999, monthlyRatePercent: 1.6, minimumMonths: 12, maximumMonths: 36},
-  {minimumPrincipal: 50000000, maximumPrincipal: 99999999, monthlyRatePercent: 1.5, minimumMonths: 12, maximumMonths: 60},
-  {minimumPrincipal: 100000000, maximumPrincipal: 200000000, monthlyRatePercent: 1.4, minimumMonths: 12, maximumMonths: 60}
+  {maximumPrincipal: 25000000, monthlyRatePercent: 2, minimumMonths: 12, maximumMonths: 36},
+  {maximumPrincipal: 50000000, monthlyRatePercent: 1.9, minimumMonths: 12, maximumMonths: 36},
+  {maximumPrincipal: 100000000, monthlyRatePercent: 1.8, minimumMonths: 12, maximumMonths: 60},
+  {maximumPrincipal: Infinity, monthlyRatePercent: 1.7, minimumMonths: 12, maximumMonths: 36}
 ];
 
 const businessLoanPolicies = [
@@ -11,11 +12,19 @@ const businessLoanPolicies = [
 ];
 
 export function getLoanPolicy(principal, loanType = 'standard') {
-  if (!Number.isSafeInteger(principal) || principal < 20000000) {
+  if (!Number.isSafeInteger(principal)) {
     return null;
   }
-  const policies = loanType === 'business' ? businessLoanPolicies : loanPolicies;
-  return policies.find(policy => principal >= policy.minimumPrincipal && principal <= policy.maximumPrincipal) ?? null;
+  if (loanType === 'business') {
+    if (principal < 20000000 || principal > 200000000) {
+      return null;
+    }
+    return businessLoanPolicies.find(policy => principal >= policy.minimumPrincipal && principal <= policy.maximumPrincipal) ?? null;
+  }
+  if (principal < 1000000) {
+    return null;
+  }
+  return loanPolicies.find(policy => principal <= policy.maximumPrincipal) ?? null;
 }
 
 export function calculateLoanSimulation(principal, months, loanType = 'standard') {

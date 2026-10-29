@@ -69,13 +69,20 @@ class CooperativeContentTest extends TestCase
         $response->assertOk();
         $response->assertSee('id="home-loan"', false);
         $response->assertSee('id="vehicle-loan"', false);
+
+        // Standard loan uses original rules
+        $response->assertSee('data-min-amount="1000000"', false);
+        $response->assertSee('value="10.000.000"', false);
+        $response->assertSee('value="2"', false);
+        $response->assertSee('Rp 945.596', false);
+        $response->assertSeeText('Masukkan jumlah pinjaman minimal Rp 1.000.000.');
+
+        // Business loan uses promotional / low interest brochure rules
         $response->assertSee('data-min-amount="20000000"', false);
         $response->assertSee('value="20.000.000"', false);
         $response->assertSee('value="1,6"', false);
         $response->assertSee('Rp 1.845.041', false);
         $response->assertSeeText('Pinjaman bunga rendah: Rp20–50 juta = 1,6% (maks. 3 th); Rp50–100 juta = 1,5% (maks. 5 th); Rp100–200 juta = 1,4% (maks. 5 th) per bulan.');
-        $response->assertSeeText('Masukkan pinjaman antara Rp20.000.000 dan Rp200.000.000.');
-        $response->assertDontSee('value="10.000.000"', false);
-        $response->assertDontSee('data-min-amount="1000000"', false);
+        $response->assertSeeText('Masukkan pinjaman usaha antara Rp20.000.000 dan Rp200.000.000.');
     }
 }
