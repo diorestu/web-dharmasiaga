@@ -25,8 +25,8 @@
                                     <h3>Rencanakan keuangan lebih terarah</h3>
                                     <p>Kenali pilihan simpanan dan ketentuannya bersama tim koperasi.</p>
                                     <div class="btn-box">
-                                        <a href="{{ route('home') }}#contact">
-                                            Pelajari layanan
+                                        <a href="{{ route('pages.savings') }}">
+                                            Pelajari simpanan
                                             <i class="fas fa-plus"></i>
                                         </a>
                                     </div>
@@ -49,10 +49,10 @@
                                 <div class="text-box">
                                     <h4>Pinjaman anggota</h4>
                                     <h3>Dukungan untuk kebutuhan Anda</h3>
-                                    <p>Diskusikan kebutuhan dana dan kemampuan angsuran sebelum mengajukan.</p>
+                                    <p>Pinjaman Konsumtif & Pinjaman UMKM bunga ringan mulai 1,4% per bulan.</p>
                                     <div class="btn-box">
-                                        <a href="{{ route('home') }}#contact">
-                                            Pelajari layanan
+                                        <a href="{{ route('pages.loans') }}">
+                                            Pelajari pinjaman
                                             <i class="fas fa-plus"></i>
                                         </a>
                                     </div>
@@ -73,12 +73,12 @@
                                     <img src="{{ asset('assets/images/resources/dharma-keanggotaan.jpeg') }}" alt="Kebersamaan anggota KSP Dharma Siaga" width="1254" height="1254" loading="lazy" decoding="async">
                                 </div>
                                 <div class="text-box">
-                                    <h4>Keanggotaan</h4>
+                                    <h4>Membership</h4>
                                     <h3>Bertumbuh sebagai bagian koperasi</h3>
-                                    <p>Dapatkan informasi layanan dan ikut memahami perkembangan koperasi.</p>
+                                    <p>Membership Plus (BPJS Ketenagakerjaan), Membership Silver & Gold.</p>
                                     <div class="btn-box">
-                                        <a href="{{ route('home') }}#contact">
-                                            Pelajari layanan
+                                        <a href="{{ route('pages.membership') }}">
+                                            Pelajari membership
                                             <i class="fas fa-plus"></i>
                                         </a>
                                     </div>

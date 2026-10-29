@@ -14,7 +14,7 @@ class SeoTest extends TestCase
         config(['seo.indexable' => true]);
         $titles = [];
         $descriptions = [];
-        $paths = ['/', '/tentang-kami', '/sejarah-kami', '/simpanan', '/kantor-cabang', '/blog'];
+        $paths = ['/', '/tentang-kami', '/sejarah-kami', '/simpanan', '/pinjaman', '/membership', '/kantor-cabang', '/blog'];
         foreach (config('cooperative.savings') as $product) {
             $paths[] = '/simpanan/'.$product['id'];
         }
@@ -49,7 +49,9 @@ class SeoTest extends TestCase
         $xml = simplexml_load_string($response->getContent());
         $this->assertNotFalse($xml);
         $urls = array_map(fn ($url) => (string) $url->loc, iterator_to_array($xml->url, false));
-        $this->assertCount(12, $urls);
+        $this->assertCount(14, $urls);
+        $this->assertContains('https://kspdharmasiaga.com/pinjaman', $urls);
+        $this->assertContains('https://kspdharmasiaga.com/membership', $urls);
         $this->assertContains('https://kspdharmasiaga.com/simpanan/siduta', $urls);
         $this->assertNotContains('https://kspdharmasiaga.com/admin', $urls);
         foreach ($urls as $url) {

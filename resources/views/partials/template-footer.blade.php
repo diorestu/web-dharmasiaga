@@ -17,7 +17,7 @@
                                     <h3>Keanggotaan</h3>
                                 </div>
                                 <div class="footer-widget-links">
-                                    <ul><li><a href="{{ route('home') }}#contact">Cara bergabung</a></li><li><a href="{{ route('pages.savings.show', 'simpanan-anggota') }}">Simpanan anggota</a></li><li><a href="{{ route('home') }}#service">Pinjaman anggota</a></li><li><a href="{{ route('home') }}#benefits">Manfaat keanggotaan</a></li></ul>
+                                    <ul><li><a href="{{ route('home') }}#contact">Cara bergabung</a></li><li><a href="{{ route('pages.savings.show', 'simpanan-anggota') }}">Simpanan anggota</a></li><li><a href="{{ route('pages.loans') }}">Pinjaman anggota</a></li><li><a href="{{ route('pages.membership') }}">Program membership</a></li><li><a href="{{ route('home') }}#benefits">Manfaat keanggotaan</a></li></ul>
                                 </div>
                             </div>
                         </div>
@@ -63,7 +63,7 @@
                                     <h3>Layanan</h3>
                                 </div>
                                 <div class="footer-widget-links">
-                                    <ul><li><a href="{{ route('pages.savings') }}">Pilihan Simpanan</a></li><li><a href="{{ route('home') }}#contact">Konsultasi pinjaman</a></li><li><a href="{{ route('home') }}#contact">Informasi anggota</a></li><li><a href="{{ route('home') }}#faq">Pertanyaan umum</a></li></ul>
+                                    <ul><li><a href="{{ route('pages.savings') }}">Pilihan Simpanan</a></li><li><a href="{{ route('pages.loans') }}">Pinjaman Koperasi</a></li><li><a href="{{ route('loan-applications.create') }}">Pengajuan Pinjaman Online</a></li><li><a href="{{ route('pages.membership') }}">Program Membership</a></li><li><a href="{{ route('home') }}#contact">Konsultasi layanan</a></li><li><a href="{{ route('home') }}#faq">Pertanyaan umum</a></li></ul>
                                 </div>
                             </div>
                         </div>
@@ -105,7 +105,7 @@
                                     <ul>
                                         <li>
                                             <h3>
-                                                <a href="tel:03618466651">0361 8466651–52</a>
+                                                <a href="tel:03618466651">{{ config('cooperative.office.telephone_display') }}</a>
                                             </h3>
                                             <p>Konsultasi anggota</p>
                                         </li>
@@ -125,6 +125,12 @@
                                 <div class="single-footer-widget-right-colum">
                                     <ul>
                                         <li>
+                                            <a href="https://wa.me/{{ config('cooperative.office.whatsapp_number') }}" target="_blank" rel="noopener noreferrer">
+                                                WhatsApp: {{ config('cooperative.office.whatsapp_display') }}
+                                                <span class="icon-chatting"></span>
+                                            </a>
+                                        </li>
+                                        <li class="mt-2">
                                             <a href="{{ route('home') }}#contact">
                                                 Hubungi tim kami
                                                 <span class="icon-feedback"></span>
@@ -148,11 +154,19 @@
                             <ul>
                                 <li><a href="{{ route('home') }}#contact">Informasi resmi</a></li>
                                 <li><a href="{{ route('pages.history') }}">Sejarah Kami</a></li><li><a href="{{ route('pages.about') }}">Profil Koperasi</a></li>
-                                <li><a href="{{ route('home') }}#contact">Ketentuan layanan</a></li>
+                                <li><a href="{{ route('pages.loans') }}">Pinjaman</a></li>
+                                <li><a href="{{ route('pages.membership') }}">Membership</a></li>
                                 <li><a href="{{ route('home') }}#faq">Pertanyaan anggota</a></li>
                             </ul>
                         </div>
-                        <div class="footer-social-link"><ul class="clearfix"><li><a href="{{ route('home') }}#contact" aria-label="Hubungi koperasi"><i class="fas fa-envelope"></i></a></li></ul></div>
+                        <div class="footer-social-link">
+                            <ul class="clearfix">
+                                <li><a href="{{ config('cooperative.social_media.facebook.url') }}" target="_blank" rel="noopener noreferrer" aria-label="Facebook KSP Dharma Siaga"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="{{ config('cooperative.social_media.instagram.url') }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram KSP Dharma Siaga"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="{{ config('cooperative.social_media.tiktok.url') }}" target="_blank" rel="noopener noreferrer" aria-label="TikTok KSP Dharma Siaga"><i class="fab fa-tiktok"></i></a></li>
+                                <li><a href="https://wa.me/{{ config('cooperative.office.whatsapp_number') }}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp KSP Dharma Siaga"><i class="fab fa-whatsapp"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -63,7 +63,7 @@
                                     </a>
                                     <ul class="main-menu__list">
 <li><a href="{{ route('home') }}">Beranda</a></li>
-<li class="dropdown"><a href="{{ route('home') }}#service">Produk</a><ul><li><a href="{{ route('pages.savings') }}">Semua Simpanan</a></li>@foreach(config('cooperative.savings') as $product)<li><a href="{{ route('pages.savings.show', $product['id']) }}">{{ $product['menu_title'] ?? $product['title'] }}</a></li>@endforeach<li><a href="{{ route('home') }}#simulator">Pinjaman</a></li><li><a href="{{ route('home') }}#simulator">Simulasi keuangan</a></li></ul></li>
+<li class="dropdown"><a href="{{ route('home') }}#service">Produk</a><ul><li><a href="{{ route('pages.savings') }}">Semua Simpanan</a></li>@foreach(config('cooperative.savings') as $product)<li><a href="{{ route('pages.savings.show', $product['id']) }}">{{ $product['menu_title'] ?? $product['title'] }}</a></li>@endforeach<li><a href="{{ route('pages.loans') }}">Pinjaman</a></li><li><a href="{{ route('loan-applications.create') }}">Pengajuan Pinjaman</a></li><li><a href="{{ route('pages.membership') }}">Membership</a></li><li><a href="{{ route('home') }}#simulator">Simulasi Keuangan</a></li></ul></li>
 <li class="dropdown"><a href="{{ route('pages.about') }}">Tentang</a><ul><li><a href="{{ route('pages.history') }}">Sejarah Kami</a></li><li><a href="{{ route('pages.about') }}">Profil Koperasi</a></li><li><a href="{{ route('pages.branches') }}">Lokasi Kantor</a></li></ul></li>
 <li><a href="{{ route('blog.index') }}">Berita</a></li><li><a href="{{ route('home') }}#contact">Kontak</a></li></ul>
                                 </div>

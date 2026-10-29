@@ -29,7 +29,7 @@
                                         <div class="inner">
                                             <div class="left">
                                                 <h4>Layanan untuk</h4>
-                                                <h3>Anggota</h3>
+                                                <h3>Simpanan & Membership</h3>
                                             </div>
                                             <div class="right">
                                                 <span class="icon-down-arrow"></span>
@@ -40,7 +40,7 @@
                                         <div class="inner">
                                             <div class="left">
                                                 <h4>Layanan untuk</h4>
-                                                <h3>Pelaku usaha</h3>
+                                                <h3>Pinjaman & Usaha</h3>
                                             </div>
                                             <div class="right">
                                                 <span class="icon-down-arrow"></span>
@@ -64,12 +64,12 @@
                                                     <div class="icon">
                                                         <span class="icon-safebox"></span>
                                                     </div>
-                                                    <h3><a href="{{ route('pages.savings.show', 'simpanan-anggota') }}">Simpanan anggota</a></h3>
+                                                    <h3><a href="{{ route('pages.savings') }}">Pilihan Simpanan</a></h3>
                                                     <div class="border-box"></div>
-                                                    <p>Bangun kebiasaan menyimpan untuk rencana dan kebutuhan mendatang.</p>
-                                                    <h6><span>*</span> Ketentuan mengikuti produk</h6>
+                                                    <p>Simpanan Anggota, SIDUTA, Sukarela, Siaga, Berjangka, dan SAHAM.</p>
+                                                    <h6><span>*</span> Menguntungkan & aman</h6>
                                                     <div class="btn-box">
-                                                        <a href="{{ route('home') }}#contact"><span class="icon-right-arrow"></span></a>
+                                                        <a href="{{ route('pages.savings') }}"><span class="icon-right-arrow"></span></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -80,12 +80,12 @@
                                                     <div class="icon">
                                                         <span class="icon-online"></span>
                                                     </div>
-                                                    <h3><a href="{{ route('home') }}#contact">Konsultasi layanan</a></h3>
+                                                    <h3><a href="{{ route('pages.membership') }}">Membership Plus</a></h3>
                                                     <div class="border-box"></div>
-                                                    <p>Tanyakan pilihan layanan, persyaratan, dan ketentuan langsung kepada tim.</p>
-                                                    <h6><span>*</span> Informasi melalui tim koperasi</h6>
+                                                    <p>Kolaborasi BPJS Ketenagakerjaan: Jaminan tutup usia, kecelakaan kerja & beasiswa anak.</p>
+                                                    <h6><span>*</span> Perlindungan menyeluruh</h6>
                                                     <div class="btn-box">
-                                                        <a href="{{ route('home') }}#contact"><span class="icon-right-arrow"></span></a>
+                                                        <a href="{{ route('pages.membership') }}"><span class="icon-right-arrow"></span></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -96,12 +96,12 @@
                                                     <div class="icon">
                                                         <span class="icon-loan"></span>
                                                     </div>
-                                                    <h3><a href="{{ route('home') }}#contact">Pinjaman anggota</a></h3>
+                                                    <h3><a href="{{ route('pages.membership') }}">Silver & Gold</a></h3>
                                                     <div class="border-box"></div>
-                                                    <p>Rencanakan kebutuhan dana dengan angsuran yang sesuai kemampuan.</p>
-                                                    <h6><span>*</span> Melalui penilaian koperasi</h6>
+                                                    <p>Fasilitas pinjaman eksklusif bunga 1% dengan limit hingga Rp 20 Juta.</p>
+                                                    <h6><span>*</span> Proses prioritas</h6>
                                                     <div class="btn-box">
-                                                        <a href="{{ route('home') }}#contact"><span class="icon-right-arrow"></span></a>
+                                                        <a href="{{ route('pages.membership') }}"><span class="icon-right-arrow"></span></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -120,12 +120,12 @@
                                                     <div class="icon">
                                                         <span class="icon-safebox"></span>
                                                     </div>
-                                                    <h3><a href="{{ route('pages.savings.show', 'simpanan-anggota') }}">Simpanan anggota</a></h3>
+                                                    <h3><a href="{{ route('pages.loans') }}">Pinjaman Konsumtif</a></h3>
                                                     <div class="border-box"></div>
-                                                    <p>Bangun kebiasaan menyimpan untuk rencana dan kebutuhan mendatang.</p>
-                                                    <h6><span>*</span> Ketentuan mengikuti produk</h6>
+                                                    <p>Fasilitas pinjaman produktif & multiguna jaminan BPKB atau SHM tanah/bangunan.</p>
+                                                    <h6><span>*</span> BPKB / SHM</h6>
                                                     <div class="btn-box">
-                                                        <a href="{{ route('home') }}#contact"><span class="icon-right-arrow"></span></a>
+                                                        <a href="{{ route('pages.loans') }}"><span class="icon-right-arrow"></span></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -136,12 +136,12 @@
                                                     <div class="icon">
                                                         <span class="icon-online"></span>
                                                     </div>
-                                                    <h3><a href="{{ route('home') }}#contact">Konsultasi layanan</a></h3>
+                                                    <h3><a href="{{ route('pages.loans') }}">Pinjaman UMKM</a></h3>
                                                     <div class="border-box"></div>
-                                                    <p>Tanyakan pilihan layanan, persyaratan, dan ketentuan langsung kepada tim.</p>
-                                                    <h6><span>*</span> Informasi melalui tim koperasi</h6>
+                                                    <p>Bunga ringan HANYA 1,4% per bulan, proses cepat, tenor fleksibel hingga 5 tahun.</p>
+                                                    <h6><span>*</span> Khusus pelaku UMKM</h6>
                                                     <div class="btn-box">
-                                                        <a href="{{ route('home') }}#contact"><span class="icon-right-arrow"></span></a>
+                                                        <a href="{{ route('pages.loans') }}"><span class="icon-right-arrow"></span></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -152,12 +152,12 @@
                                                     <div class="icon">
                                                         <span class="icon-loan"></span>
                                                     </div>
-                                                    <h3><a href="{{ route('home') }}#contact">Pinjaman anggota</a></h3>
+                                                    <h3><a href="{{ route('home') }}#simulator">Simulasi Pinjaman</a></h3>
                                                     <div class="border-box"></div>
-                                                    <p>Rencanakan kebutuhan dana dengan angsuran yang sesuai kemampuan.</p>
-                                                    <h6><span>*</span> Melalui penilaian koperasi</h6>
+                                                    <p>Hitung estimasi angsuran bulanan sesuai plafon dan tenor pinjaman Anda.</p>
+                                                    <h6><span>*</span> Kalkulator interaktif</h6>
                                                     <div class="btn-box">
-                                                        <a href="{{ route('home') }}#contact"><span class="icon-right-arrow"></span></a>
+                                                        <a href="{{ route('home') }}#simulator"><span class="icon-right-arrow"></span></a>
                                                     </div>
                                                 </div>
                                             </div>

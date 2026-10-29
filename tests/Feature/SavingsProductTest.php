@@ -69,4 +69,57 @@ class SavingsProductTest extends TestCase
 
         $this->get('/simpanan/siduta')->assertSee('https://wa.me/6281234567890?', false);
     }
+
+    public function test_simpanan_berjangka_renders_interest_rate_table(): void
+    {
+        $response = $this->get('/simpanan/simpanan-berjangka')->assertOk();
+
+        $response->assertSeeText('Nominal')
+            ->assertSeeText('12 Bulan')
+            ->assertSeeText('6 Bulan')
+            ->assertSeeText('3 Bulan')
+            ->assertSeeText('Rp 1jt - 50jt')
+            ->assertSeeText('Rp 50jt - 100jt')
+            ->assertSeeText('> Rp 100jt')
+            ->assertSeeText('7%')
+            ->assertSeeText('6%')
+            ->assertSeeText('4%')
+            ->assertSeeText('8%');
+
+        $listResponse = $this->get('/simpanan')->assertOk();
+        $listResponse->assertSeeText('Rp 1jt - 50jt')
+            ->assertSeeText('Rp 50jt - 100jt')
+            ->assertSeeText('> Rp 100jt');
+    }
+
+    public function test_saham_renders_placement_and_return_table(): void
+    {
+        $response = $this->get('/simpanan/saham')->assertOk();
+
+        $response->assertSeeText('MINIMAL PENEMPATAN')
+            ->assertSeeText('TENOR')
+            ->assertSeeText('JASA MODAL')
+            ->assertSeeText('RP. 1.000.000,-')
+            ->assertSeeText('2 - 4 TAHUN')
+            ->assertSeeText('8 %')
+            ->assertSeeText('5 TAHUN')
+            ->assertSeeText('8,5 %');
+
+        $listResponse = $this->get('/simpanan')->assertOk();
+        $listResponse->assertSeeText('MINIMAL PENEMPATAN')
+            ->assertSeeText('RP. 1.000.000,-')
+            ->assertSeeText('8,5 %');
+    }
+
+    public function test_savings_page_cta_has_whatsapp_icon_and_referral(): void
+    {
+        $response = $this->get('/simpanan')->assertOk();
+
+        $response->assertSee('fa-whatsapp', false)
+            ->assertSeeText('Konsultasi WhatsApp')
+            ->assertSee('https://wa.me/6281338728258', false);
+
+        $showResponse = $this->get('/simpanan/siduta')->assertOk();
+        $showResponse->assertSee('fa-whatsapp', false);
+    }
 }

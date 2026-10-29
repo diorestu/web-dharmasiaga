@@ -26,6 +26,16 @@ return [
             'description' => 'Bandingkan Simpanan Anggota, SIDUTA, Simpanan Sukarela, Simpanan Siaga, Simpanan Berjangka, dan SAHAM. Pelajari manfaat serta persyaratannya.',
             'label' => 'Simpanan',
         ],
+        'pages.loans' => [
+            'title' => 'Layanan Pinjaman Konsumtif dan Pinjaman UMKM — KSP Dharma Siaga',
+            'description' => 'Pinjaman produktif & multiguna serta pinjaman UMKM dengan bunga ringan 1,4%, proses cepat, persyaratan mudah, dan tenor fleksibel hingga 5 tahun di Bali.',
+            'label' => 'Pinjaman',
+        ],
+        'pages.membership' => [
+            'title' => 'Membership Plus, Silver, dan Gold — KSP Dharma Siaga',
+            'description' => 'Program Membership Plus kolaborasi BPJS Ketenagakerjaan dengan jaminan sosial menyeluruh, serta fasilitas Membership Silver dan Gold dengan bunga 1%.',
+            'label' => 'Membership',
+        ],
         'pages.branches' => [
             'title' => 'Alamat dan Kontak Kantor Denpasar — KSP Dharma Siaga',
             'description' => 'Temukan alamat kantor KSP Dharma Siaga di Jalan Pura Demak Gang I No. 9, Denpasar, Bali, beserta nomor telepon dan WhatsApp layanan anggota.',

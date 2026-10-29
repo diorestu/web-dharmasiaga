@@ -88,6 +88,10 @@
         <i class="icon-chevron"></i>
     </a>
 
+    <a href="https://wa.me/{{ config('cooperative.office.whatsapp_number') }}?text={{ rawurlencode('Halo KSP Dharma Siaga, saya ingin konsultasi layanan koperasi.') }}" class="whatsapp-floating-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat WhatsApp KSP Dharma Siaga">
+        <img src="{{ asset('icons/whatsapp.webp') }}" alt="WhatsApp KSP Dharma Siaga" width="60" height="60" loading="lazy">
+    </a>
+
 
 
 <script src="{{ asset('assets/vendors/jquery/jquery-3.6.0.min.js') }}"></script>
