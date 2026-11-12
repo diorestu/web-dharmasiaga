@@ -22,6 +22,9 @@
                                 </div>
                                 <div id="{{ $loan['id'] }}-details" class="acc-content {{ $loop->first ? 'current' : '' }}">
                                     <div class="pb-4 text-dark">
+                                        @if(isset($loan['header_image']))
+                                            <img class="d-block w-100 h-auto mb-4" src="{{ asset($loan['header_image']) }}" alt="{{ $loan['title'] }} — KSP Dharma Siaga" width="1881" height="836" loading="lazy">
+                                        @endif
                                         <p class="mb-4">{{ $loan['description'] }}</p>
 
                                         @if(isset($loan['requirements']))
@@ -46,6 +49,10 @@
                                                     </li>
                                                 @endforeach
                                             </ul>
+                                        @endif
+
+                                        @if(isset($loan['rate_table']))
+                                            @include('partials.product-rate-table', ['table' => $loan['rate_table']])
                                         @endif
 
                                         @if(isset($loan['table']))

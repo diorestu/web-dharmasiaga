@@ -1,7 +1,9 @@
 @extends('layouts.finbank')
 @php($title = $product['title'].' — KSP Dharma Siaga')
 @section('content')
-@include('partials.template-breadcrumb', ['pageTitle' => 'Produk Simpanan', 'secondaryHeading' => true])
+<div class="product-header">
+    <img class="d-block w-100 h-auto" src="{{ asset($product['header_image']) }}" alt="{{ $product['title'] }} — KSP Dharma Siaga" width="1881" height="836" fetchpriority="high">
+</div>
 <section class="savings-detail product-page py-5">
     <div class="container py-4">
         <div class="row justify-content-center">
@@ -76,4 +78,17 @@
         </div>
     </div>
 </section>
+@if($product['id'] === 'simpanan-siaga')
+    <section class="emi-calculator-area" aria-labelledby="siaga-simulator-title">
+        <div class="container">
+            <div class="sec-title text-center">
+                <h2 id="siaga-simulator-title">Simulasi Simpanan Siaga</h2>
+                <div class="sub-title"><p>Hitung estimasi saldo dengan setoran bulanan tanpa batas maksimum. Simulasi bukan penawaran resmi.</p></div>
+            </div>
+            <div class="emi-calculator-tab-content-box-item" data-calculator="saving">
+                @include('partials.savings-calculator', ['calculatorId' => 'siaga-saving'])
+            </div>
+        </div>
+    </section>
+@endif
 @endsection

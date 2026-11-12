@@ -49,6 +49,16 @@ class SavingsProductTest extends TestCase
         }
     }
 
+    public function test_siaga_has_a_savings_simulator_without_a_deposit_ceiling(): void
+    {
+        $response = $this->get('/simpanan/simpanan-siaga')->assertOk();
+        $response->assertSeeText('Simulasi Simpanan Siaga')
+            ->assertSee('data-calculator="saving"', false)
+            ->assertDontSee('max="5000000"', false);
+
+        $this->get('/simpanan/siduta')->assertDontSee('data-calculator="saving"', false);
+    }
+
     public function test_unknown_savings_product_returns_not_found(): void
     {
         $this->get('/simpanan/produk-tidak-ada')->assertNotFound();

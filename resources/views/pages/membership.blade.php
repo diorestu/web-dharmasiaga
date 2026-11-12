@@ -72,43 +72,40 @@
                                         @endif
 
                                         @if(isset($member['table']))
-                                            <div class="membership-loan-table mb-4">
-                                                <div class="card border-0 shadow-sm" style="border-radius: 12px; overflow: hidden; border: 1px solid {{ $member['table']['border_color'] ?? '#d0d7de' }} !important;">
-                                                    <div class="text-center py-3 text-white fw-bold" style="background-color: {{ $member['table']['header_bg'] ?? '#0b3b7a' }}; font-size: 1.15rem; letter-spacing: 0.5px;">
-                                                        {{ $member['table']['title'] }}
-                                                    </div>
-                                                    <div class="table-responsive">
-                                                        <table class="table table-bordered mb-0 align-middle text-center bg-white" style="border-color: {{ $member['table']['border_color'] ?? '#dee2e6' }};">
-                                                            <thead style="background-color: {{ $member['table']['thead_bg'] ?? '#f8f9fa' }}; color: {{ isset($member['table']['thead_bg']) ? '#ffffff' : '#212529' }};">
-                                                                <tr>
-                                                                    @foreach($member['table']['headers'] as $header)
-                                                                        <th scope="col" class="py-3 fw-bold" style="border-color: {{ $member['table']['border_color'] ?? '#dee2e6' }};">{{ $header }}</th>
-                                                                    @endforeach
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                @foreach($member['table']['rows'] as $row)
-                                                                    <tr style="background-color: {{ $loop->iteration % 2 === 0 ? '#fdf8f8' : '#ffffff' }};">
-                                                                        @foreach($row as $cell)
-                                                                            <td class="py-2 fw-bold" style="color: #212529; border-color: {{ $member['table']['border_color'] ?? '#dee2e6' }};">{{ $cell }}</td>
-                                                                        @endforeach
-                                                                    </tr>
-                                                                @endforeach
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            @include('partials.product-rate-table', ['table' => $member['table']])
                                         @endif
 
                                         @if(isset($member['payment_options']))
                                             <h4 class="mb-3">PILIHAN CARA PEMBAYARAN :</h4>
                                             <div class="row g-3 mb-4">
                                                 @foreach($member['payment_options'] as $pay)
-                                                    <div class="col-md-6">
+                                                    <div class="{{ isset($pay['installments']) ? 'col-lg-8' : 'col-lg-4' }}">
                                                         <div class="p-3 border rounded h-100 bg-white shadow-sm">
                                                             <span class="badge bg-secondary mb-2">{{ $pay['type'] }}</span>
-                                                            <p class="mb-0 text-dark">{{ $pay['detail'] }}</p>
+                                                            <p class="mb-0 text-dark text-start">{{ $pay['detail'] }}</p>
+                                                            @if(isset($pay['installments']))
+                                                                <div class="mt-3 border rounded overflow-hidden">
+                                                                    <h5 class="p-3 mb-0 text-white text-start" style="background-color: #007a3d;">TABEL PINJAMAN MEMBERSHIP PLUS</h5>
+                                                                    <div class="table-responsive">
+                                                                        <table class="table table-bordered align-middle text-center mb-0">
+                                                                            <thead style="background-color: #007a3d; color: #ffffff;">
+                                                                                <tr><th scope="col">BAKI DEBET</th><th scope="col">TENOR PINJAMAN</th><th scope="col">ANGSURAN PER BULAN</th></tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                @foreach($pay['installments'] as $installment)
+                                                                                    <tr>
+                                                                                        @if($loop->first)
+                                                                                            <th scope="rowgroup" rowspan="{{ count($pay['installments']) }}" style="background-color: #fff8dc; color: #0b5834;">Rp 6.000.000,-<br><small class="fw-normal">Baki Debet Tetap</small></th>
+                                                                                        @endif
+                                                                                        <th scope="row">{{ $installment[0] }}</th>
+                                                                                        <td class="fw-bold text-nowrap">{{ $installment[1] }}</td>
+                                                                                    </tr>
+                                                                                @endforeach
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 @endforeach

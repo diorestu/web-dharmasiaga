@@ -67,6 +67,7 @@ return [
     'savings' => [
         [
             'id' => 'simpanan-anggota',
+            'header_image' => 'assets/images/resources/simpanan-anggota-header.jpg',
             'title' => 'Simpanan Anggota',
             'referral_code' => 'DS-SIMPANAN-ANGGOTA',
             'description' => 'Simpanan Anggota adalah dana yang dihimpun dari anggota menjadi modal bersama untuk mendukung kesejahteraan seluruh anggota melalui pengelolaan yang aman, transparan, dan bertanggung jawab. Di KSP Dharma Siaga, simpanan anggota tidak hanya menabung, tetapi ikut membangun masa depan bersama. Persyaratan keanggotaan di KSP Dharma Siaga adalah dengan penyetoran:',
@@ -79,6 +80,7 @@ return [
         ],
         [
             'id' => 'siduta',
+            'header_image' => 'assets/images/resources/siduta-header.jpg',
             'menu_title' => 'SIDUTA',
             'title' => 'Simpanan Duka Anggota (SIDUTA)',
             'referral_code' => 'DS-SIDUTA',
@@ -98,6 +100,7 @@ return [
         ],
         [
             'id' => 'simpanan-sukarela',
+            'header_image' => 'assets/images/resources/simpanan-sukarela-header.jpg',
             'title' => 'Simpanan Sukarela',
             'referral_code' => 'DS-SIMPANAN-SUKARELA',
             'description' => 'Simpanan Sukarela adalah simpanan anggota yang diperuntukkan bagi masyarakat umum, di mana penyetoran dan penarikannya dapat dilakukan sewaktu-waktu sesuai ketentuan. Produk paling fleksibel, aman, dan menguntungkan untuk masa depan Anda.',
@@ -116,6 +119,7 @@ return [
         ],
         [
             'id' => 'simpanan-siaga',
+            'header_image' => 'assets/images/resources/simpanan-siaga-header.jpg',
             'title' => 'Simpanan Siaga',
             'referral_code' => 'DS-SIMPANAN-SIAGA',
             'description' => 'Simpanan Siaga adalah produk tabungan program unggulan KSP Dharma Siaga dengan sistem setoran rutin sekali sebulan. Dirancang untuk membantu anggota mewujudkan impian masa depan secara terencana, disiplin, dan menguntungkan. Dana akan berkembang dengan sistem bunga berbunga (compound interest) sehingga hasil lebih maksimal untuk tujuan spesifik.',
@@ -134,6 +138,7 @@ return [
         ],
         [
             'id' => 'simpanan-berjangka',
+            'header_image' => 'assets/images/resources/simpanan-berjangka-header.jpg',
             'title' => 'Simpanan Berjangka',
             'referral_code' => 'DS-SIMPANAN-BERJANGKA',
             'description' => 'Simpanan Berjangka adalah produk simpanan investasi dengan jangka waktu tertentu (3, 6, dan 12 bulan) yang memberikan imbal hasil bunga kompetitif dan pasti. Dana Anda dikelola secara aman, serta memberikan keuntungan optimal sesuai pilihan tenor.',
@@ -159,6 +164,7 @@ return [
         ],
         [
             'id' => 'saham',
+            'header_image' => 'assets/images/resources/saham-header.jpg',
             'menu_title' => 'SAHAM',
             'title' => 'Sertifikat Modal Siaga Mandiri (SAHAM)',
             'referral_code' => 'DS-SAHAM',
@@ -191,6 +197,17 @@ return [
             'badge' => 'Multiguna & Modal Kerja',
             'referral_code' => 'DS-PINJAMAN-KONSUMTIF',
             'description' => 'Fasilitas pinjaman produktif dan multiguna yang diperuntukkan bagi pelaku usaha kecil dan mikro, karyawan, dan masyarakat umum yang membutuhkan modal kerja, investasi, maupun pembelian kendaraan roda dua dan roda empat.',
+            'rate_table' => [
+                'title' => 'Tabel Pinjaman Konsumtif',
+                'header_bg' => '#0b3b7a',
+                'headers' => ['PINJAMAN', 'SUKU BUNGA', 'JANGKA WAKTU'],
+                'rows' => [
+                    ['1.000.000 - 25.000.000', '1,5% - 2%', '12 - 36 BULAN'],
+                    ['25.001.000 - 50.000.000', '1,1% - 1,9%', '12 - 36 BULAN'],
+                    ['50.001.000 - 100.000.000', '1,1% - 1,8%', '12 - 60 BULAN'],
+                    ['>100.000.000', '1,1% - 1,7%', '12 - 60 BULAN'],
+                ],
+            ],
             'requirements' => [
                 'Jaminan BPKB / SHM',
                 'Mengisi Formulir Pengajuan',
@@ -203,6 +220,7 @@ return [
         ],
         [
             'id' => 'pinjaman-umkm',
+            'header_image' => 'assets/images/resources/pinjaman-umkm-header.png',
             'title' => 'Pinjaman UMKM',
             'badge' => 'Bunga Ringan 1,4% / Bulan',
             'referral_code' => 'DS-PINJAMAN-UMKM',
@@ -247,17 +265,6 @@ return [
             'badge' => 'Perlindungan Total',
             'referral_code' => 'DS-MEMBERSHIP-PLUS',
             'registration_fee' => 'Rp 6.000.000,-',
-            'table' => [
-                'title' => 'TABEL PINJAMAN MEMBERSHIP PLUS',
-                'header_bg' => '#0b3b7a',
-                'headers' => ['PINJAMAN', 'SUKU BUNGA', 'JANGKA WAKTU'],
-                'rows' => [
-                    ['1.000.000 - 25.000.000', '1,5% - 2%', '12 - 36 BULAN'],
-                    ['25.001.000 - 50.000.000', '1,1% - 1,9%', '12 - 36 BULAN'],
-                    ['50.001.000 - 100.000.000', '1,1% - 1,8%', '12 - 60 BULAN'],
-                    ['>100.000.000', '1,1% - 1,7%', '12 - 60 BULAN'],
-                ],
-            ],
             'description' => 'Membership Plus adalah produk inovatif dari KSP Dharma Siaga yang bekerja sama dengan BPJS Ketenagakerjaan. Program ini dirancang untuk memberikan rasa aman dan perlindungan menyeluruh bagi para anggota pekerja di Indonesia. Produk ini memberikan Santunan Jaminan Sosial bagi anggota yang dapat dicairkan oleh ahli waris pada saat pendaftar Tutup Usia, atau pendaftar itu sendiri pada saat mengalami kecelakaan kerja. Tujuannya jelas melindungi anggota pekerja dari risiko kerja dan memberikan jaminan keuangan yang pasti di masa depan. Pendaftaran senilai Rp 6.000.000,- yang memberikan jaminan sosial bagi ahli waris dan perlindungan risiko kerja.',
             'requirements' => [
                 'Terdaftar menjadi anggota KSP Dharma Siaga.',
@@ -301,7 +308,14 @@ return [
                 ],
                 [
                     'type' => 'Cicilan / Kredit',
-                    'detail' => 'Melalui fasilitas pinjaman internal koperasi dengan angsuran ringan HANYA Rp 163.500,- / bulan dengan bunga hanya 1% per bulan!',
+                    'detail' => 'Bunga 1% per bulan',
+                    'installments' => [
+                        ['1 Th', 'Rp 563.500'],
+                        ['2 Th', 'Rp 312.500'],
+                        ['3 Th', 'Rp 229.500'],
+                        ['4 Th', 'Rp 188.500'],
+                        ['5 Th', 'Rp 163.500'],
+                    ],
                 ],
             ],
         ],

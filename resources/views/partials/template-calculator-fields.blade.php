@@ -8,14 +8,14 @@
     <div class="form-group mb-4">
         <label class="form-label fw-bold text-dark" for="{{ $calculatorId }}-amount">{{ $isSaving ? 'Setoran per bulan (Rp)' : 'Jumlah pinjaman (Rp)' }}</label>
         @if($isSaving)
-            <input class="form-control form-control-lg" id="{{ $calculatorId }}-amount" type="number" inputmode="numeric" min="100000" max="5000000" step="1" value="100000" data-calculator-amount required aria-describedby="{{ $calculatorId }}-amount-hint {{ $calculatorId }}-amount-error">
+            <input class="form-control form-control-lg" id="{{ $calculatorId }}-amount" type="number" inputmode="numeric" min="100000" step="1" value="100000" data-calculator-amount required aria-describedby="{{ $calculatorId }}-amount-hint {{ $calculatorId }}-amount-error">
         @elseif($isBusiness)
             <input class="form-control form-control-lg" id="{{ $calculatorId }}-amount" type="text" inputmode="numeric" pattern="[0-9.]+" data-min-amount="20000000" data-max-amount="200000000" value="20.000.000" data-calculator-amount required aria-describedby="{{ $calculatorId }}-amount-hint {{ $calculatorId }}-amount-error">
         @else
             <input class="form-control form-control-lg" id="{{ $calculatorId }}-amount" type="text" inputmode="numeric" pattern="[0-9.]+" data-min-amount="1000000" data-max-amount="9007199254740991" value="10.000.000" data-calculator-amount required aria-describedby="{{ $calculatorId }}-amount-hint {{ $calculatorId }}-amount-error">
         @endif
         <div class="form-text text-dark" id="{{ $calculatorId }}-amount-hint" data-amount-hint></div>
-        <div class="invalid-feedback text-dark" id="{{ $calculatorId }}-amount-error">{{ $isSaving ? 'Masukkan setoran Simpanan Siaga antara Rp100.000 dan Rp5.000.000 per bulan.' : ($isBusiness ? 'Masukkan pinjaman usaha antara Rp20.000.000 dan Rp200.000.000.' : 'Masukkan jumlah pinjaman minimal Rp 1.000.000.') }}</div>
+        <div class="invalid-feedback text-dark" id="{{ $calculatorId }}-amount-error">{{ $isSaving ? 'Masukkan setoran Simpanan Siaga minimal Rp100.000 per bulan.' : ($isBusiness ? 'Masukkan pinjaman usaha antara Rp20.000.000 dan Rp200.000.000.' : 'Masukkan jumlah pinjaman minimal Rp 1.000.000.') }}</div>
     </div>
     <div class="form-group mb-4">
         <label class="form-label fw-bold text-dark" for="{{ $calculatorId }}-months">{{ $isSaving ? 'Durasi (bulan)' : 'Tenor (bulan)' }}</label>

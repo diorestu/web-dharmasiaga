@@ -3,7 +3,7 @@ import test from 'node:test';
 import { calculateSavingsSimulation } from '../../public/assets/js/savings-simulation.js';
 
 test('Simpanan Siaga rejects deposits below Rp100,000 and invalid durations', () => {
-  for (const amount of [0, 99999, -1, NaN, Infinity, 100000.5, 5000001]) {
+  for (const amount of [0, 99999, -1, NaN, Infinity, 100000.5]) {
     assert.equal(calculateSavingsSimulation(amount, 12), null);
   }
   for (const months of [0, -1, 1, 2, 3, 6, 9, 11, 121, NaN, Infinity, 12.5]) {
@@ -40,8 +40,8 @@ test('monthly interest is floored to whole rupiah before adding the next deposit
   assert.equal(calculateSavingsSimulation(100200, 2, 1).finalBalance, 200901);
 });
 
-test('minimum and maximum supported deposits produce whole-rupiah balances', () => {
-  for (const amount of [100000, 5000000]) {
+test('deposits above the former cap produce whole-rupiah balances', () => {
+  for (const amount of [100000, 5000000, 5000001, 10000000, 1000000000]) {
     const result = calculateSavingsSimulation(amount, 120);
     assert.ok(Number.isSafeInteger(result.finalBalance));
     assert.ok(Number.isSafeInteger(result.totalInterest));

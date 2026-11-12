@@ -28,7 +28,7 @@ class CooperativeContentTest extends TestCase
     {
         $this->get('/sejarah-kami')->assertSee('18 Oktober 2003')->assertSeeText('Berawal dari Kebersamaan, Bertumbuh dalam Kepercayaan');
         $this->get('/simpanan')->assertSee('Simpanan Duka Anggota (SIDUTA)');
-        $this->get('/')->assertSee(route('pages.history'), false)->assertSee(route('pages.savings'), false)->assertSee(route('pages.loans'), false)->assertSee(route('pages.membership'), false);
+        $this->get('/')->assertDontSee('max="5000000"', false)->assertSee(route('pages.history'), false)->assertSee(route('pages.savings'), false)->assertSee(route('pages.loans'), false)->assertSee(route('pages.membership'), false);
     }
 
     public function test_about_page_shows_leadership_vision_mission_and_legalities(): void
@@ -55,6 +55,10 @@ class CooperativeContentTest extends TestCase
         $response->assertSeeText('Pinjaman Konsumtif')
             ->assertSeeText('Jaminan BPKB / SHM')
             ->assertSeeText('Slip Gaji untuk Karyawan')
+            ->assertSeeText('Tabel Pinjaman Konsumtif')
+            ->assertSeeText('1.000.000 - 25.000.000')
+            ->assertSeeText('1,5% - 2%')
+            ->assertSeeText('1,1% - 1,7%')
             ->assertSeeText('DS-PINJAMAN-KONSUMTIF')
             ->assertSeeText('Pinjaman UMKM')
             ->assertSeeText('1,4%')
@@ -78,11 +82,14 @@ class CooperativeContentTest extends TestCase
             ->assertSeeText('Rp 76.000.000,-')
             ->assertSeeText('Rp 174.000.000,-')
             ->assertSeeText('TABEL PINJAMAN MEMBERSHIP PLUS')
-            ->assertSeeText('1.000.000 - 25.000.000')
-            ->assertSeeText('1,5% - 2%')
-            ->assertSeeText('12 - 36 BULAN')
-            ->assertSeeText('>100.000.000')
-            ->assertSeeText('1,1% - 1,7%')
+            ->assertSeeText('Bunga 1% per bulan')
+            ->assertSeeText('BAKI DEBET')
+            ->assertSeeText('Rp 563.500')
+            ->assertSeeText('Rp 312.500')
+            ->assertSeeText('Rp 229.500')
+            ->assertSeeText('Rp 188.500')
+            ->assertSeeText('Rp 163.500')
+            ->assertDontSeeText('1.000.000 - 25.000.000')
             ->assertSeeText('Membership Silver')
             ->assertSeeText('1% (menurun)')
             ->assertSeeText('TABEL ANGSURAN PINJAMAN MEMBERSHIP SILVER')
