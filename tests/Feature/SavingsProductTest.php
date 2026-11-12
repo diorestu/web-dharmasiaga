@@ -59,6 +59,22 @@ class SavingsProductTest extends TestCase
         $this->get('/simpanan/siduta')->assertDontSee('data-calculator="saving"', false);
     }
 
+    public function test_product_headers_render_when_configuration_has_no_header_image(): void
+    {
+        $products = config('cooperative.savings');
+        foreach ($products as &$product) {
+            unset($product['header_image']);
+        }
+        unset($product);
+        config(['cooperative.savings' => $products]);
+
+        foreach ($products as $product) {
+            $this->get('/simpanan/'.$product['id'])
+                ->assertOk()
+                ->assertSee(asset('assets/images/resources/'.$product['id'].'-header.jpg'), false);
+        }
+    }
+
     public function test_unknown_savings_product_returns_not_found(): void
     {
         $this->get('/simpanan/produk-tidak-ada')->assertNotFound();

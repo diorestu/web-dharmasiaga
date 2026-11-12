@@ -2,7 +2,7 @@
 @php($title = $product['title'].' — KSP Dharma Siaga')
 @section('content')
 <div class="product-header">
-    <img class="d-block w-100 h-auto" src="{{ asset($product['header_image']) }}" alt="{{ $product['title'] }} — KSP Dharma Siaga" width="1881" height="836" fetchpriority="high">
+    <img class="d-block w-100 h-auto" src="{{ asset($product['header_image'] ?? 'assets/images/resources/'.$product['id'].'-header.jpg') }}" alt="{{ $product['title'] }} — KSP Dharma Siaga" width="1881" height="836" fetchpriority="high">
 </div>
 <section class="savings-detail product-page py-5">
     <div class="container py-4">
