@@ -3,7 +3,7 @@
 @section('content')
 <div class="product-header">
     <h1 class="sr-only">Pinjaman</h1>
-    <img class="d-block w-100 h-auto" src="{{ asset('assets/images/resources/saham-header.jpg') }}" alt="Sertifikat Modal Siaga Mandiri — KSP Dharma Siaga" width="1881" height="836" fetchpriority="high">
+    <img class="d-block w-100 h-auto" src="{{ asset('assets/images/resources/pinjaman-umkm-header.png') }}" alt="Promosi Pinjaman UMKM — KSP Dharma Siaga" width="1881" height="836" fetchpriority="high">
 </div>
 <section class="faq-style1-area product-page" id="loan-products">
     <div class="container">
