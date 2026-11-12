@@ -75,37 +75,24 @@
                                             @include('partials.product-rate-table', ['table' => $member['table']])
                                         @endif
 
+                                        @if($member['id'] === 'membership-gold')
+                                            <div class="mb-4">
+                                                <h4 class="mb-3 text-start">Tabel Angsuran Fasilitas Pinjaman Membership Gold</h4>
+                                                <a class="d-block" href="{{ asset('assets/images/resources/membership-gold-installments.jpeg') }}" target="_blank" rel="noopener noreferrer" aria-label="Perbesar tabel angsuran Membership Gold">
+                                                    <img class="d-block w-100 h-auto" src="{{ asset('assets/images/resources/membership-gold-installments.jpeg') }}" alt="Tabel angsuran Membership Gold untuk plafon Rp 5.000.000 sampai Rp 20.000.000 dengan tenor 1 dan 2 tahun" width="1280" height="650" loading="lazy">
+                                                </a>
+                                                <p class="small mt-2 mb-0 text-start">Klik tabel untuk memperbesar.</p>
+                                            </div>
+                                        @endif
+
                                         @if(isset($member['payment_options']))
                                             <h4 class="mb-3">PILIHAN CARA PEMBAYARAN :</h4>
                                             <div class="row g-3 mb-4">
                                                 @foreach($member['payment_options'] as $pay)
-                                                    <div class="{{ isset($pay['installments']) ? 'col-lg-8' : 'col-lg-4' }}">
+                                                    <div class="col-md-6">
                                                         <div class="p-3 border rounded h-100 bg-white shadow-sm">
                                                             <span class="badge bg-secondary mb-2">{{ $pay['type'] }}</span>
                                                             <p class="mb-0 text-dark text-start">{{ $pay['detail'] }}</p>
-                                                            @if(isset($pay['installments']))
-                                                                <div class="mt-3 border rounded overflow-hidden">
-                                                                    <h5 class="p-3 mb-0 text-white text-start" style="background-color: #007a3d;">TABEL PINJAMAN MEMBERSHIP PLUS</h5>
-                                                                    <div class="table-responsive">
-                                                                        <table class="table table-bordered align-middle text-center mb-0">
-                                                                            <thead style="background-color: #007a3d; color: #ffffff;">
-                                                                                <tr><th scope="col">BAKI DEBET</th><th scope="col">TENOR PINJAMAN</th><th scope="col">ANGSURAN PER BULAN</th></tr>
-                                                                            </thead>
-                                                                            <tbody>
-                                                                                @foreach($pay['installments'] as $installment)
-                                                                                    <tr>
-                                                                                        @if($loop->first)
-                                                                                            <th scope="rowgroup" rowspan="{{ count($pay['installments']) }}" style="background-color: #fff8dc; color: #0b5834;">Rp 6.000.000,-<br><small class="fw-normal">Baki Debet Tetap</small></th>
-                                                                                        @endif
-                                                                                        <th scope="row">{{ $installment[0] }}</th>
-                                                                                        <td class="fw-bold text-nowrap">{{ $installment[1] }}</td>
-                                                                                    </tr>
-                                                                                @endforeach
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </div>
-                                                                </div>
-                                                            @endif
                                                         </div>
                                                     </div>
                                                 @endforeach

@@ -208,6 +208,13 @@ return [
                     ['>100.000.000', '1,1% - 1,7%', '12 - 60 BULAN'],
                 ],
             ],
+            'membership_installments' => [
+                ['1 Th', 'Rp 563.500'],
+                ['2 Th', 'Rp 312.500'],
+                ['3 Th', 'Rp 229.500'],
+                ['4 Th', 'Rp 188.500'],
+                ['5 Th', 'Rp 163.500'],
+            ],
             'requirements' => [
                 'Jaminan BPKB / SHM',
                 'Mengisi Formulir Pengajuan',
@@ -309,13 +316,6 @@ return [
                 [
                     'type' => 'Cicilan / Kredit',
                     'detail' => 'Bunga 1% per bulan',
-                    'installments' => [
-                        ['1 Th', 'Rp 563.500'],
-                        ['2 Th', 'Rp 312.500'],
-                        ['3 Th', 'Rp 229.500'],
-                        ['4 Th', 'Rp 188.500'],
-                        ['5 Th', 'Rp 163.500'],
-                    ],
                 ],
             ],
         ],
