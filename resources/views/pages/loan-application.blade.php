@@ -3,7 +3,7 @@
 @section('content')
 <div class="product-header">
     <h1 class="sr-only">Formulir Pengajuan Pinjaman</h1>
-    <img class="d-block w-100 h-auto" src="{{ asset('assets/images/resources/loan-application-header.jpeg') }}" alt="Membership KSP Dharma Siaga" width="1280" height="568" fetchpriority="high">
+    <img class="d-block w-100 h-auto" src="{{ asset('assets/images/resources/loan-application-header.jpeg') }}?v={{ filemtime(public_path('assets/images/resources/loan-application-header.jpeg')) }}" alt="Formulir Pengajuan Pinjaman KSP Dharma Siaga" width="1881" height="836" fetchpriority="high">
 </div>
 
 <section class="loan-application-section py-5 bg-light product-page">
