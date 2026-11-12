@@ -1,7 +1,10 @@
 @extends('layouts.finbank')
 @php($title = 'Formulir Permohonan Pinjaman Kredit — KSP Dharma Siaga')
 @section('content')
-@include('partials.template-breadcrumb', ['pageTitle' => 'Formulir Pengajuan Pinjaman'])
+<div class="product-header">
+    <h1 class="sr-only">Formulir Pengajuan Pinjaman</h1>
+    <img class="d-block w-100 h-auto" src="{{ asset('assets/images/resources/loan-application-header.jpeg') }}" alt="Membership KSP Dharma Siaga" width="1280" height="568" fetchpriority="high">
+</div>
 
 <section class="loan-application-section py-5 bg-light product-page">
     <div class="container">
