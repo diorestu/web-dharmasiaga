@@ -58,36 +58,6 @@
                                             @include('partials.product-rate-table', ['table' => $loan['rate_table']])
                                         @endif
 
-                                        @if($loan['id'] === 'pinjaman-konsumtif')
-                                            <a class="d-block mt-3" href="{{ asset('assets/images/resources/membership-plus-installments.jpeg') }}" target="_blank" rel="noopener noreferrer" aria-label="Perbesar tabel pinjaman Membership Plus">
-                                                <img class="d-block w-100 h-auto" src="{{ asset('assets/images/resources/membership-plus-installments.jpeg') }}" alt="Tabel pinjaman Membership Plus dengan baki debet Rp 6.000.000 dan tenor 1 sampai 5 tahun" width="1600" height="400" loading="lazy">
-                                            </a>
-                                            <p class="small mt-2 mb-0 text-start">Klik tabel untuk memperbesar.</p>
-                                        @endif
-                                        @if(isset($loan['membership_installments']))
-                                            <div class="sr-only">
-                                                <h5 class="p-3 mb-0 text-white text-start" style="background-color: #007a3d;">TABEL PINJAMAN MEMBERSHIP PLUS</h5>
-                                                <div class="table-responsive">
-                                                    <table class="table table-bordered align-middle text-center mb-0">
-                                                        <thead style="background-color: #007a3d; color: #ffffff;">
-                                                            <tr><th scope="col">BAKI DEBET</th><th scope="col">TENOR PINJAMAN</th><th scope="col">ANGSURAN PER BULAN</th></tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            @foreach($loan['membership_installments'] as $installment)
-                                                                <tr>
-                                                                    @if($loop->first)
-                                                                        <th scope="rowgroup" rowspan="{{ count($loan['membership_installments']) }}" style="background-color: #fff8dc; color: #0b5834;">Rp 6.000.000,-<br><small class="fw-normal">Baki Debet Tetap</small></th>
-                                                                    @endif
-                                                                    <th scope="row">{{ $installment[0] }}</th>
-                                                                    <td class="fw-bold text-nowrap">{{ $installment[1] }}</td>
-                                                                </tr>
-                                                            @endforeach
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        @endif
-
                                         @if(isset($loan['table']))
                                             <div class="loan-installment-table mb-4">
                                                 @if(isset($loan['table']['title']))

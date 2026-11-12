@@ -93,6 +93,35 @@
                                                         <div class="p-3 border rounded h-100 bg-white shadow-sm">
                                                             <span class="badge bg-secondary mb-2">{{ $pay['type'] }}</span>
                                                             <p class="mb-0 text-dark text-start">{{ $pay['detail'] }}</p>
+                                                            @if($member['id'] === 'membership-plus' && $pay['type'] === 'Cicilan / Kredit')
+                                                                <a class="d-block mt-3" href="{{ asset('assets/images/resources/membership-plus-installments.jpeg') }}" target="_blank" rel="noopener noreferrer" aria-label="Perbesar tabel pinjaman Membership Plus">
+                                                                    <img class="d-block w-100 h-auto" src="{{ asset('assets/images/resources/membership-plus-installments.jpeg') }}" alt="Tabel pinjaman Membership Plus dengan baki debet Rp 6.000.000 dan tenor 1 sampai 5 tahun" width="1600" height="400" loading="lazy">
+                                                                </a>
+                                                                <p class="small mt-2 mb-0 text-start">Klik tabel untuk memperbesar.</p>
+                                                            @endif
+                                                            @if(isset($pay['installments']))
+                                                                <div class="sr-only">
+                                                                    <h5 class="p-3 mb-0 text-white text-start" style="background-color: #007a3d;">TABEL PINJAMAN MEMBERSHIP PLUS</h5>
+                                                                    <div class="table-responsive">
+                                                                        <table class="table table-bordered align-middle text-center mb-0">
+                                                                            <thead style="background-color: #007a3d; color: #ffffff;">
+                                                                                <tr><th scope="col">BAKI DEBET</th><th scope="col">TENOR PINJAMAN</th><th scope="col">ANGSURAN PER BULAN</th></tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                @foreach($pay['installments'] as $installment)
+                                                                                    <tr>
+                                                                                        @if($loop->first)
+                                                                                            <th scope="rowgroup" rowspan="{{ count($pay['installments']) }}" style="background-color: #fff8dc; color: #0b5834;">Rp 6.000.000,-<br><small class="fw-normal">Baki Debet Tetap</small></th>
+                                                                                        @endif
+                                                                                        <th scope="row">{{ $installment[0] }}</th>
+                                                                                        <td class="fw-bold text-nowrap">{{ $installment[1] }}</td>
+                                                                                    </tr>
+                                                                                @endforeach
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 @endforeach
